@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+//=======================================================
+// mixins
+//=======================================================
+
+@import "mixins/blind";
+// @import "mixins/breakpoints";
+// @import "mixins/caret";
+@import "mixins/clearfix";
+@import "mixins/ellipsis";
+@import "mixins/flex";
+@import "mixins/grid";
+@import "mixins/rem";
+@import "mixins/scroll";
+@import "mixins/svg.color";
+@import "mixins/board";
+@import "mixins/font";
+
+// Motion
+@mixin trans($type: all, $time: 0.2s, $delay: 0.05s) {
+	transition: $type $time ease-in $delay;
+}
+
+@mixin formWidth() {
+	&.xs {
+		width: rem(10);
+	}
+	&.sm {
+		width: rem(200);
+	}
+	&.sm24 {
+		width: rem(240);
+	}
+	&.md {
+		width: rem(320);
+	}
+	&.auto {
+		width: auto;
+		min-width: rem(140);
+	}
+
+	&.lg {
+		width: rem(480);
+	}
+	&.xg {
+		width: rem(840);
+	}
+
+	&.full {
+		width: 100%;
+	}
+}
+
+//=========================================asis
+
+@mixin imgBackround {
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-color: transparent;
+}
+
+@mixin img16 {
+	display: inline-block;
+	width: rem(16);
+	min-width: rem(16);
+	height: rem(16);
+	background-size: rem(16) auto;
+}
+
+@mixin img20 {
+	display: inline-block;
+	width: rem(20);
+	min-width: rem(20);
+	height: rem(20);
+	background-size: rem(20) auto;
+}
+
+@mixin img24 {
+	display: inline-block;
+	width: rem(24);
+	min-width: rem(24);
+	height: rem(24);
+	background-size: rem(24) auto;
+}
+
+@mixin img64 {
+	display: inline-block;
+	width: rem(64);
+	min-width: rem(64);
+	height: rem(64);
+	background-size: rem(64) auto;
+}
+
+@mixin imgSize($value) {
+	display: inline-block;
+	width: rem($value);
+	min-width: rem($value);
+	height: rem($value);
+	background-size: rem($value) auto;
+}

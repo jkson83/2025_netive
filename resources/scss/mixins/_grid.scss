@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+//=======================================================
+// Mixins: grid
+//=======================================================
+
+@mixin grid($_grid:2, $_gutter:.4rem, $_hgap:.4rem){
+	$gutter: $_gutter;
+	$hgap: $_hgap;
+	$width1: calc(100% / $_grid);
+	$width: calc( #{$width1} - #{$gutter} );
+	@if ($gutter==0) {
+		$width: $width1;
+	}
+	& {display:flex; flex-wrap: wrap; gap: $hgap $gutter; 
+		justify-content: space-between; 
+	}
+	& > *{width: $width;}
+	&.noPad{gap:0;}
+	&.noPad > *{width: $width1; }
+}
+
+@mixin gridList($columns: '', $gap: 0){
+  display: grid;
+	@if $columns !='' {
+    grid-template-columns: repeat($columns, 1fr);
+	}
+	@if $gap !='' {
+		grid-gap: $gap;
+	}
+}
+
+
+

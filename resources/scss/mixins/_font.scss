@@ -1,0 +1,38 @@
+/**
+ * font: Pretendard.custom
+ * ------------------------------------
+ */
+
+$fontpath: '../fonts/pretendard/';
+
+
+@font-face {
+	font-family: 'Pretendard';
+	src: url($fontpath + 'Pretendard-Regular.woff') format('woff');
+	font-weight: 400;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Pretendard';
+	src: url($fontpath + 'Pretendard-Medium.woff') format('woff');
+	font-weight: 500;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Pretendard';
+	src: url($fontpath + 'Pretendard-SemiBold.woff') format('woff');
+	font-weight: 600;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Pretendard';
+	src: url($fontpath + 'Pretendard-Bold.woff') format('woff');
+	font-weight: 700;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Pretendard';
+	src: url($fontpath + 'Pretendard-ExtraBold.woff') format('woff');
+	font-weight: 800;
+	font-display: swap;
+}

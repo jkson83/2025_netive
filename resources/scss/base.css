@@ -1,0 +1,24 @@
+html {
+  font-size: 62.5%;
+}
+
+body ul,
+body li,
+body nav,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body div {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body a {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+}/*# sourceMappingURL=base.css.map */

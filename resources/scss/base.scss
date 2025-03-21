@@ -2,6 +2,11 @@ html {
   font-size: 62.5%; // 16px × 0.625 = 10px → 1rem = 10px
 }
 body {
+  overflow: hidden;
+	overflow-y: overlay;
+  margin:0;
+  padding:0;
+  font-family: 'Pretendard';
   ul,
   li,
   nav,

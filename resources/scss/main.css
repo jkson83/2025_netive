@@ -1,0 +1,208 @@
+table {
+  border: 0;
+  border-spacing: 0;
+}
+
+.tableStyle {
+  width: 100%;
+}
+.tableStyle thead {
+  background-color: darkcyan;
+  color: #fff;
+}
+.tableStyle thead th {
+  padding: 1rem 0;
+}
+.tableStyle thead th:first-of-type {
+  border-radius: 8px 0 0 8px;
+}
+.tableStyle thead th:last-of-type {
+  border-radius: 0 8px 8px 0;
+}
+.tableStyle tbody tr:hover {
+  background-color: #fdf5ea;
+}
+.tableStyle tbody td {
+  text-align: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+/**
+ * font: Pretendard.custom
+ * ------------------------------------
+ */
+@font-face {
+  font-family: "Pretendard";
+  src: url("../fonts/pretendard/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("../fonts/pretendard/Pretendard-Medium.woff") format("woff");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("../fonts/pretendard/Pretendard-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("../fonts/pretendard/Pretendard-Bold.woff") format("woff");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("../fonts/pretendard/Pretendard-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-display: swap;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  overflow: hidden;
+  overflow-y: overlay;
+  margin: 0;
+  padding: 0;
+  font-family: "Pretendard";
+}
+body ul,
+body li,
+body nav,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body div {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body a {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+}
+
+#wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: 1px solid red;
+}
+#wrap .header {
+  position: fixed;
+  width: inherit;
+  color: #fff;
+  min-height: 6rem;
+  padding-top: 3rem;
+  z-index: 999;
+}
+#wrap .header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 3rem;
+  text-align: center;
+}
+#wrap .header .nav {
+  position: absolute;
+  top: 3rem;
+  right: 4rem;
+}
+#wrap .header .nav > ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  align-items: center !important;
+  flex-wrap: noWrap;
+  gap: 0.8rem;
+}
+#wrap .header .nav > ul > li .btnSt {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  color: #fff;
+  background-color: #232323;
+  padding: 0.4rem 1.6rem;
+  border-radius: 10rem;
+}
+#wrap .container {
+  width: inherit;
+  height: 100vh;
+}
+#wrap .container > .sec {
+  height: inherit;
+}
+#wrap .container > .sec.sec1 {
+  position: relative;
+  height: 118.55vh;
+  background-color: #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+#wrap .container > .sec.sec1 .ImgBox {
+  position: relative;
+  width: 120.74vh;
+  height: 76.4vh;
+  margin-top: 23.27vh;
+  color: #fff;
+}
+#wrap .container > .sec.sec1 .ImgBox::before {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url("../img/pc/Rectangle.png") no-repeat center center;
+  background-size: contain;
+}
+#wrap .container > .sec.sec1 .ImgBox > span {
+  position: absolute;
+  display: inline-block;
+  font-size: 1px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  visibility: hidden;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
+#wrap .container > .sec.sec1 .textBox {
+  position: absolute;
+  top: 29.78vh;
+  left: 30.95vh;
+  right: 29.19vh;
+}
+#wrap .container > .sec.sec1 .textBox > span {
+  display: block;
+  color: #fff;
+  font-size: 10rem;
+  line-height: 10rem;
+  font-weight: 700;
+  letter-spacing: -0.2rem;
+}
+#wrap .container > .sec.sec1 .textBox > span:nth-of-type(2) {
+  text-align: right;
+  padding: 9.75vh 0 8.66vh;
+}/*# sourceMappingURL=main.css.map */

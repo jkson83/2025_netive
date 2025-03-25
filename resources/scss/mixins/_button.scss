@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+//=======================================================
+// Mixins: button
+//=======================================================
+button{
+	border:0;
+	padding:0;
+	background-color:transparent;
+	cursor: pointer;
+}
+
+@mixin RoundSt($Fsize:'', $Fheight:'', $FWeight:'', $color:'', $bgColor:''){
+	border-radius: rem(100);
+	@if $Fsize !=''{
+		font-size:$Fsize;
+	}
+	@if $Fheight != ''{
+		line-height:$Fheight;
+	}
+	@if $FWeight != ''{
+		font-weight:$FWeight;
+	}
+	@if $color != ''{
+		color:$color;
+	}
+	@if $bgColor != ''{
+		background-color:$bgColor;
+	}
+	letter-spacing: rem(-0.4);
+}
+
+@mixin ArrowSt($Width:'',$Height:'', $bgColor:'', $ImgName:''){
+	position: relative;
+	border-radius: rem(100);
+	@if $Width != ''{
+		width:$Width;
+	}
+	@if $Height != ''{
+		height:$Height;
+	}
+	@if $bgColor !=''{
+		background-color: $bgColor;
+	}
+	&:before{
+		position: absolute;
+		display: block;
+		content:'';
+		width:rem(20);
+		height:rem(20);
+		top:50%;
+		left:50%;
+		transform: translate(-50% , -50%);
+		background:url('../img/pc/'+ $ImgName) no-repeat 100% 100%;
+	}
+}

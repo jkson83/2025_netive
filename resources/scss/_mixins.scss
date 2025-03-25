@@ -16,6 +16,7 @@
 @import "mixins/svg.color";
 @import "mixins/board";
 @import "mixins/font";
+@import "mixins/button";
 
 // Motion
 @mixin trans($type: all, $time: 0.2s, $delay: 0.05s) {

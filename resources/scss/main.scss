@@ -6,7 +6,6 @@
   @include flexCol(flex-start, center,0);
   width:100%;
   height:100%;
-  border:1px solid red;
   & .header{
     position: fixed;
     width:inherit;
@@ -27,13 +26,8 @@
       > ul{
         @include flexRow(flex-end, center, noWrap, rem(8));
         > li .btnSt{
-          font-size:rem(18);
-          font-weight: 500;
-          line-height: rem(25);
-          color:#fff;
-          background-color: #232323;
+          @include RoundSt(rem(18), rem(25), 500, #fff, #232323);
           padding:rem(4) rem(16);
-          border-radius: rem(100);
         }
       }
       
@@ -41,9 +35,9 @@
   }
   & .container{
     width:inherit;
-    height:100vh;
+    min-height:100vh;
     > .sec{
-      height: inherit;
+      min-height:100vh;
       &.sec1{
         position: relative;
         height:118.55vh;
@@ -90,7 +84,240 @@
         }
       }
       &.sec2{
-        
+        width:calc(100% - 60vh);
+        margin:32.93vh auto 0;
+        & .titleBox{
+          margin-bottom:17.56vh;
+          font-size:rem(64);
+          font-weight: 700;
+          line-height: rem(89);
+          letter-spacing: rem(-2);
+          > span{
+            color:#999;
+          }
+        }
+        & .infoGBox{
+          @include flexRow(center, center, noWrap, rem(26));
+          & .gBox{
+            position: relative;
+            width:48.29vh;
+            height:48.29vh;
+            border-radius: rem(20);
+            &.gBox1{
+              background-color: #111;
+              padding:rem(40) 0 rem(36) rem(40);
+              > dl {
+                height: 100%;
+                @include flexCol(space-between, flex-start,0);
+                > dt{
+                  font-size: rem(72);
+                  color:#fff;
+                  letter-spacing: rem(-1.4);
+                  > span{
+                    display: block;
+                    width:rem(80);
+                    @include RoundSt(rem(20), rem(20), 500, #fff, #111);
+                    border:1px solid #fff;
+                    padding:rem(8) rem(12);
+                  }
+                }
+                > dd{
+                  font-size:18px;
+                  color:#fff;
+                  letter-spacing: rem(-0.4);
+                }
+              }
+            }
+            &.gBox2{
+              background:url('../img/pc/bg_gBox2.png') no-repeat 100% 100%;
+              background-size: contain;
+              & .moreBtn{
+                float: right;
+                margin:rem(24) rem(24) 0 0;
+                @include ArrowSt(rem(64),rem(64),#1C1E21, 'Icon_arrow.svg');
+                >span{
+                  @include blind();
+                }
+                @include clearfix();
+              }
+              > p{
+                width:100%;
+                margin-top:13.611vh;
+                font-size: rem(36);
+                line-height: rem(39);
+                letter-spacing: rem(-0.7);
+                text-align: center;
+                >strong{
+                  display: block;
+                  font-family:"Pretendard Black", serif;
+                }
+              }
+            }
+            &.gBox3{
+              background-color: #FFDF34;              
+              dl{
+                height:100%;
+                @include flexCol(center, center,0);
+                dt{
+                  font-family: "Pretendard Black", serif;
+                  font-weight: 900;
+                  font-size:rem(28);
+                  line-height:rem(28);
+                  letter-spacing: rem(-0.5);
+                }
+                dd{
+                  font-family: "PretendardM", serif;
+                  font-weight: 800;
+                  font-size:rem(100);
+                  line-height: rem(100);
+                  letter-spacing: rem(-2);
+                }
+              }
+            }
+          }
+        }
+        & .textBox{
+          margin:6.1vh 0 21.29vh;
+          > dl{
+            width:100%;
+            @include flexRow(space-between, flex-end, noWrap, 0);
+            > dt{
+              font-family: 'PretendardR';
+              font-size:rem(40);
+              font-weight: 600;
+              line-height: rem(48);
+              letter-spacing: rem(-0.8);
+            }
+            > dd{
+              > p{
+                width:43.24vh;
+                padding:rem(21) rem(24);
+                background-color: #f4f4f4;
+                border-radius: rem(12);
+                @include flexRow(flex-start, center, noWrap, 0);
+                font-size:rem(16);
+                font-weight:800;
+                line-height: rem(22);
+                letter-spacing: rem(-0.3);
+                color:#212121;
+                > span{
+                  padding-right:rem(20);
+                  border-right:1px solid #d9d9d9;
+                  margin-right:rem(20);
+                  font-family: 'Pretendard exBold';
+                }
+                > a{
+                  position: relative;
+                  width:100%;
+                  > span{                    
+                    letter-spacing: rem(-0.3);
+                    color:#212121;
+                  }
+                  &:before{
+                    display: block;
+                    position: absolute;
+                    content:'';
+                    top:rem(-5);
+                    right:0;
+                    width:rem(32);
+                    height:rem(32);
+                    background:url(../img/pc/icon_smile.png) no-repeat;
+                    background-size: contain;
+                  }
+                }
+              }
+            }
+          }
+
+        }
+      }
+      &.sec3{
+        position: relative;
+        width:calc(100% - 54.66vh);
+        margin:0 auto;        
+        @include flexCol(center, center, 0);
+        >h2{
+          position: relative;
+          font-family:'Pretendard exBold';
+          font-weight:800;
+          font-size:rem(160);
+          line-height: rem(160);
+          &::before{
+            position: absolute;
+            display: inline-flex;
+            content: 'Latest Works';
+            bottom:rem(-10);
+            right:rem(-108);
+            @include RoundSt(rem(24), rem(24), 700, #222, #FFDF34);
+            padding:rem(16) rem(32);
+            transform: rotate(-15deg);
+          }
+          margin-bottom:15.47vh;
+        }
+        & .imglistbox{
+          & .infoImg{
+            display:block;
+          }
+          > p{
+            width:100%;
+            margin:7.57vh auto;
+            @include flexRow(space-between, flex-start, noWrap, 0);
+            & .textEn{
+              font-family: 'PretendardR';
+              font-size:rem(40);
+              font-weight: 600;
+              line-height: rem(48);
+              letter-spacing: rem(-0.8);
+            }
+            & .textKo{
+              font-family: 'Pretendard';
+              font-size:rem(24);
+              font-weight: 600;
+              line-height: rem(36);
+              letter-spacing: rem(-0.5);
+            }
+          }
+          & .galleyBox{
+            width:100%;
+            @include flexRow(space-between, center, wrap, rem(90) 0);
+          }
+        }
+        > button{
+          margin:14.97vh auto 17.56vh;
+          >span{
+            @include RoundSt(rem(24), rem(33), 500, #000, #fff);
+            padding:rem(15) rem(40);
+            border:1px solid #000;
+          }
+        }
+      }
+      &.sec4{
+        width:calc(100% - 60vh);
+        padding:14.05vh 30vh 16.02vh;
+        background-color: #f4f4f4;
+        >h2{
+          font-size:rem(120);
+          font-weight:700;
+          line-height: rem(120);
+          text-align: center;
+        }
+        > ul{
+          @include flexRow(space-between,'', nowrap, rem(41));
+          height:42.81vh;
+          >li{
+            height:100%;
+            &:first-child{
+              width:83.09vh;
+              border-radius: rem(90);
+              background-color: #FFDF34;
+            }
+            &:last-child{
+              width:62.89vh;
+              border-radius: rem(999);
+              background-color: #fff;
+            }
+          }
+        }
       }
     }
   }

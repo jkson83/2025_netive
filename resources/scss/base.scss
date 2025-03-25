@@ -7,6 +7,7 @@ body {
   margin:0;
   padding:0;
   font-family: 'Pretendard';
+  letter-spacing: rem(-2);
   ul,
   li,
   nav,
@@ -16,7 +17,14 @@ body {
   h4,
   h5,
   h6,
-  div {
+  div ,
+  p,
+  a,
+  span,
+  dl,
+  dd,
+  dt
+  {
     list-style: none;
     margin: 0;
     padding: 0;

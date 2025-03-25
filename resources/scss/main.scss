@@ -37,7 +37,7 @@
     width:inherit;
     min-height:100vh;
     > .sec{
-      min-height:100vh;
+      // min-height:100vh;
       &.sec1{
         position: relative;
         height:118.55vh;
@@ -304,21 +304,60 @@
         > ul{
           @include flexRow(space-between,'', nowrap, rem(41));
           height:42.81vh;
+          margin-top:8.78vh;
           >li{
+            position: relative;
             height:100%;
+            @include flexCol(center, center, 0);
             &:first-child{
               width:83.09vh;
               border-radius: rem(90);
               background-color: #FFDF34;
+              &::after{
+                display: block;
+                position: absolute;
+                content:'';
+                bottom:0;
+                right:rem(26);
+                width:rem(382);
+                height:rem(382);
+                overflow:hidden;
+                background:url('../img/pc/logo_NVector.svg') no-repeat 100% 100%;
+                border-radius: 0 0 rem(47) 0;
+              }
             }
             &:last-child{
               width:62.89vh;
               border-radius: rem(999);
               background-color: #fff;
             }
+            > div{
+              text-align: center;
+              font-weight: 700;
+              position: relative;
+              z-index: 1;
+              >span{
+                font-size: rem(24);
+                line-height: rem(28);
+                letter-spacing: rem(-0.7);
+                color:#111;
+              }
+              >h3{
+                font-family:'PretendardM';
+                font-size: rem(52);
+                line-height: rem(62);
+                letter-spacing: rem(-1.5);
+                color:#111;
+              }
+           }
           }
         }
       }
     }
+  }
+  & .footer{
+    width:100%;
+    background-color: #111;
+    color:#fff;
   }
 }

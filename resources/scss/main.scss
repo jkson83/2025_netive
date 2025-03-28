@@ -37,7 +37,6 @@
     width:inherit;
     min-height:100vh;
     > .sec{
-      // min-height:100vh;
       &.sec1{
         position: relative;
         height:118.55vh;
@@ -97,7 +96,7 @@
           }
         }
         & .infoGBox{
-          @include flexRow(center, center, noWrap, rem(26));
+          @include flexRow(center, flex-start, noWrap, rem(26));
           & .gBox{
             position: relative;
             width:48.29vh;
@@ -113,7 +112,7 @@
                   font-size: rem(72);
                   color:#fff;
                   letter-spacing: rem(-1.4);
-                  > span{
+                  > span:not(.chaneNumber){
                     display: block;
                     width:rem(80);
                     @include RoundSt(rem(20), rem(20), 500, #fff, #111);
@@ -131,6 +130,7 @@
             &.gBox2{
               background:url('../img/pc/bg_gBox2.png') no-repeat 100% 100%;
               background-size: contain;
+              margin-top:12.18vh;
               & .moreBtn{
                 float: right;
                 margin:rem(24) rem(24) 0 0;
@@ -155,6 +155,7 @@
             }
             &.gBox3{
               background-color: #FFDF34;              
+              margin-top:26.67vh;
               dl{
                 height:100%;
                 @include flexCol(center, center,0);
@@ -331,7 +332,8 @@
               border-radius: rem(999);
               background-color: #fff;
             }
-            > div{
+            > a div{
+              display: block;
               text-align: center;
               font-weight: 700;
               position: relative;
@@ -349,15 +351,111 @@
                 letter-spacing: rem(-1.5);
                 color:#111;
               }
-           }
+              padding-bottom:rem(84);
+              &::before{
+                display: block;
+                position: absolute;
+                content:'';
+                width:rem(64);
+                height:rem(64);
+                bottom:0;
+                left:50%;
+                transform: translateX(-50%);
+                background:url('../img/pc/Icon_arrowB.svg') 100% 100%;
+                background-size: contain;
+              }
+            }
           }
         }
       }
     }
   }
   & .footer{
+    position: relative;
     width:100%;
     background-color: #111;
     color:#fff;
+    @include flexCol(flex-start,center, 0);
+    > div{
+      width:100%;
+      @include flexRow(space-between, flex-start, nowrap, 0);
+      &.CompanyInfo{
+        padding:8.78vh rem(40);
+        > p{
+          font-size: rem(32);
+          line-height: rem(32);
+          font-weight: 400;
+          letter-spacing: rem(-0.3);
+          color:#888;
+        }
+        & .siteMap{
+          width: 99.67vh;
+          @include flexRow(space-between, flex-start, nowrap, 0);          
+          > dl{
+            width:100%;
+            > dt{
+              font-size: rem(18);
+              font-weight: 500;
+              line-height: rem(25);
+              letter-spacing: rem(-0.2);
+              color:#fff;
+              padding-bottom:rem(24);
+            }
+            > dd{
+              font-size: rem(18);
+              font-weight: 500;
+              line-height: rem(25);
+              letter-spacing: rem(-0.2);
+              color:#999;
+              &:not(:first-of-type){
+                padding-top:rem(8);
+              }
+            }
+          }
+        }
+        border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+      }
+      &.copyright{
+        padding:8.78vh rem(40) 6.58vh;
+        > h2{
+          font-family: 'PretendardM';
+          font-size:rem(80);
+          font-weight:700;
+          line-height: rem(80);
+          letter-spacing: rem(-1);
+        }
+        > p{
+          @include flexCol(flex-start,flex-end, 0);
+          font-size:rem(20);
+          letter-spacing: rem(0);
+          > a.btnTop{
+            display: block;
+            position: relative;
+            >span{
+              line-height: rem(26);
+              color:#fff;
+              padding-right:rem(32);
+              &::before{
+                display: block;
+                position: absolute;
+                content:'';
+                top:rem(2);
+                right:0;
+                width:24px;
+                height:24px;
+                border:1px solid #fff;
+                border-radius: 100%;
+                background:url(../img/pc/Icon_arrow.svg) no-repeat 50% 50%;
+                background-size: rem(12);
+                transform: rotate(-45deg);
+              }
+            }
+          }
+          > span{
+            color:#888;
+          }
+        }
+      }
+    }
   }
 }

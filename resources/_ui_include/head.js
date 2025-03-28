@@ -20,6 +20,8 @@ const hstr = `
   <script src="../resources/js/plugins/gsap@3.12.5/ScrollTrigger.min.js"></script>
   <script src="../resources/js/plugins/gsap@3.12.5/ScrollToPlugin.min.js"></script>
   <script src="../resources/js/plugins/swiper/swiper-bundle.min.js"></script>
+  <script type="module" src="../resources/js/gsapMotion.js"></script>
+  <script src="../resources/js/UI_common.js"></script>
   <title>NETIVE</title>
 `;
 document.write(hstr);

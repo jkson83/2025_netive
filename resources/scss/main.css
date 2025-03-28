@@ -57,7 +57,7 @@ table {
   font-display: swap;
 }
 @font-face {
-  font-family: "Pretendard";
+  font-family: "Pretendard Bold";
   src: url("../fonts/pretendard/Pretendard-Bold.woff") format("woff");
   font-weight: 700;
   font-display: swap;
@@ -248,7 +248,7 @@ body a {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  align-items: center !important;
+  align-items: flex-start !important;
   flex-wrap: noWrap;
   gap: 2.6rem;
 }
@@ -274,7 +274,7 @@ body a {
   color: #fff;
   letter-spacing: -0.14rem;
 }
-#wrap .container > .sec.sec2 .infoGBox .gBox.gBox1 > dl > dt > span {
+#wrap .container > .sec.sec2 .infoGBox .gBox.gBox1 > dl > dt > span:not(.chaneNumber) {
   display: block;
   width: 8rem;
   border-radius: 10rem;
@@ -295,6 +295,7 @@ body a {
 #wrap .container > .sec.sec2 .infoGBox .gBox.gBox2 {
   background: url("../img/pc/bg_gBox2.png") no-repeat 100% 100%;
   background-size: contain;
+  margin-top: 12.18vh;
 }
 #wrap .container > .sec.sec2 .infoGBox .gBox.gBox2 .moreBtn {
   float: right;
@@ -348,6 +349,7 @@ body a {
 }
 #wrap .container > .sec.sec2 .infoGBox .gBox.gBox3 {
   background-color: #FFDF34;
+  margin-top: 26.67vh;
 }
 #wrap .container > .sec.sec2 .infoGBox .gBox.gBox3 dl {
   height: 100%;
@@ -566,27 +568,140 @@ body a {
   border-radius: 99.9rem;
   background-color: #fff;
 }
-#wrap .container > .sec.sec4 > ul > li > div {
+#wrap .container > .sec.sec4 > ul > li > a div {
+  display: block;
   text-align: center;
   font-weight: 700;
   position: relative;
   z-index: 1;
+  padding-bottom: 8.4rem;
 }
-#wrap .container > .sec.sec4 > ul > li > div > span {
+#wrap .container > .sec.sec4 > ul > li > a div > span {
   font-size: 2.4rem;
   line-height: 2.8rem;
   letter-spacing: -0.07rem;
   color: #111;
 }
-#wrap .container > .sec.sec4 > ul > li > div > h3 {
+#wrap .container > .sec.sec4 > ul > li > a div > h3 {
   font-family: "PretendardM";
   font-size: 5.2rem;
   line-height: 6.2rem;
   letter-spacing: -0.15rem;
   color: #111;
 }
+#wrap .container > .sec.sec4 > ul > li > a div::before {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 6.4rem;
+  height: 6.4rem;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: url("../img/pc/Icon_arrowB.svg") 100% 100%;
+  background-size: contain;
+}
 #wrap .footer {
+  position: relative;
   width: 100%;
   background-color: #111;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+#wrap .footer > div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start !important;
+  flex-wrap: nowrap;
+}
+#wrap .footer > div.CompanyInfo {
+  padding: 8.78vh 4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+#wrap .footer > div.CompanyInfo > p {
+  font-size: 3.2rem;
+  line-height: 3.2rem;
+  font-weight: 400;
+  letter-spacing: -0.03rem;
+  color: #888;
+}
+#wrap .footer > div.CompanyInfo .siteMap {
+  width: 99.67vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start !important;
+  flex-wrap: nowrap;
+}
+#wrap .footer > div.CompanyInfo .siteMap > dl {
+  width: 100%;
+}
+#wrap .footer > div.CompanyInfo .siteMap > dl > dt {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  letter-spacing: -0.02rem;
+  color: #fff;
+  padding-bottom: 2.4rem;
+}
+#wrap .footer > div.CompanyInfo .siteMap > dl > dd {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  letter-spacing: -0.02rem;
+  color: #999;
+}
+#wrap .footer > div.CompanyInfo .siteMap > dl > dd:not(:first-of-type) {
+  padding-top: 0.8rem;
+}
+#wrap .footer > div.copyright {
+  padding: 8.78vh 4rem 6.58vh;
+}
+#wrap .footer > div.copyright > h2 {
+  font-family: "PretendardM";
+  font-size: 8rem;
+  font-weight: 700;
+  line-height: 8rem;
+  letter-spacing: -0.1rem;
+}
+#wrap .footer > div.copyright > p {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  font-size: 2rem;
+  letter-spacing: 0rem;
+}
+#wrap .footer > div.copyright > p > a.btnTop {
+  display: block;
+  position: relative;
+}
+#wrap .footer > div.copyright > p > a.btnTop > span {
+  line-height: 2.6rem;
+  color: #fff;
+  padding-right: 3.2rem;
+}
+#wrap .footer > div.copyright > p > a.btnTop > span::before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 0.2rem;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #fff;
+  border-radius: 100%;
+  background: url(../img/pc/Icon_arrow.svg) no-repeat 50% 50%;
+  background-size: 1.2rem;
+  transform: rotate(-45deg);
+}
+#wrap .footer > div.copyright > p > span {
+  color: #888;
 }/*# sourceMappingURL=main.css.map */

@@ -11,7 +11,6 @@ $fontpath: '../fonts/pretendard/';
 	font-weight: 400;
 	font-display: swap;
 }
-
 @font-face {
 	font-family: 'PretendardR';
 	src: url($fontpath + 'Pretendard-Regular.woff') format('woff');
@@ -31,19 +30,17 @@ $fontpath: '../fonts/pretendard/';
 	font-display: swap;
 }
 @font-face {
-	font-family: 'Pretendard';
+	font-family: 'Pretendard Bold';
 	src: url($fontpath + 'Pretendard-Bold.woff') format('woff');
 	font-weight: 700;
 	font-display: swap;
 }
-
 @font-face {
 	font-family: 'Pretendard exBold';
 	src: url($fontpath + 'Pretendard-ExtraBold.woff') format('woff');
 	font-weight: 800;
 	font-display: swap;
 }
-
 @font-face {
 	font-family: 'Pretendard Black';
 	src: url($fontpath + 'Pretendard-Black.woff') format('woff');

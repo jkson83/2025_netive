@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+//=======================================================
+// Mixins: form
+//=======================================================
+
+.inputWrap{
+  &:not(:first-of-type){
+    margin-top:8.78vh;
+  }
+  > fieldset{
+    border:none;
+     > legend{
+        @include font18(500, #222);
+        margin-bottom:2.36vh;
+     }
+     &:not(:first-of-type){
+      margin-top:4.39vh;
+    }
+  }
+}
+
+textarea{
+  min-height: 17.40vh;
+  overflow-y:scroll;
+  padding:rem(8);
+}
+
+input[type="text"], textarea{
+  width:100%;
+  border: 1px solid #999;
+  border-radius: 12px;
+  padding:rem(15) rem(24);
+  @include font18(500, #222);
+  &::placeholder{
+    @include font18(500, #999);
+  }
+  
+}
+input[type="checkbox"]{
+  display:none;
+  & + label{
+    @include font18(500, #222);
+    padding:rem(8) rem(16);
+    border:1px solid #222;
+    border-radius:rem(8);
+    cursor: pointer;
+  }
+  &:checked + label{
+    background-color: #888;
+    color:#fff;
+    border-color: #888;
+  }
+}

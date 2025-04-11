@@ -1,3 +1,5 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 table {
   border: 0;
   border-spacing: 0;
@@ -28,6 +30,37 @@ table {
   border-bottom: 1px solid #dbdbdb;
 }
 
+/* --------------------------
+*네티브 로고 폰트
+*---------------------------*/
+.poppins-extrabold {
+  font-family: "PoppinsEX", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+/**
+ * font: Instrument Sans.custom
+ * ------------------------------------
+ */
+@font-face {
+  font-family: "Ins_SansR";
+  src: url("../fonts/InstrumentSans/InstrumentSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Ins_SansM";
+  src: url("../fonts/InstrumentSans/InstrumentSans-Medium.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Ins_SansSB";
+  src: url("../fonts/InstrumentSans/InstrumentSans-SemiBold.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
 /**
  * font: Pretendard.custom
  * ------------------------------------
@@ -81,6 +114,118 @@ button {
   cursor: pointer;
 }
 
+.btnBox {
+  text-align: center;
+}
+.btnBox > button > span {
+  font-family: "Ins_SansM";
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-items: center !important;
+  flex-wrap: nowrap;
+  gap: 1.6rem;
+  border-radius: 10rem;
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+  font-weight: 900;
+  color: #000;
+  background-color: #fff;
+  letter-spacing: -0.04rem;
+  letter-spacing: -0.03rem;
+  border: 2px solid #000;
+}
+.btnBox > button > span.st1 {
+  padding: 2rem 4rem;
+}
+.btnBox > button > span.st2 {
+  padding: 1.6rem 3.2rem;
+}
+.btnBox > button > span:hover {
+  background-color: #000;
+  color: #fff;
+}
+.btnBox > button.on > span {
+  background-color: #000;
+  color: #fff;
+}
+
+.inputWrap:not(:first-of-type) {
+  margin-top: 8.78vh;
+}
+.inputWrap > fieldset {
+  border: none;
+}
+.inputWrap > fieldset > legend {
+  font-family: "Pretendard";
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #222;
+  line-height: 2.5rem;
+  letter-spacing: -0.07rem;
+  margin-bottom: 2.36vh;
+}
+.inputWrap > fieldset:not(:first-of-type) {
+  margin-top: 4.39vh;
+}
+
+textarea {
+  min-height: 17.4vh;
+  overflow-y: scroll;
+  padding: 0.8rem;
+}
+
+input[type=text], textarea {
+  width: 100%;
+  border: 1px solid #999;
+  border-radius: 12px;
+  padding: 1.5rem 2.4rem;
+  font-family: "Pretendard";
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #222;
+  line-height: 2.5rem;
+  letter-spacing: -0.07rem;
+}
+input[type=text]::-moz-placeholder, textarea::-moz-placeholder {
+  font-family: "Pretendard";
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #999;
+  line-height: 2.5rem;
+  letter-spacing: -0.07rem;
+}
+input[type=text]::placeholder, textarea::placeholder {
+  font-family: "Pretendard";
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #999;
+  line-height: 2.5rem;
+  letter-spacing: -0.07rem;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+input[type=checkbox] + label {
+  font-family: "Pretendard";
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #222;
+  line-height: 2.5rem;
+  letter-spacing: -0.07rem;
+  padding: 0.8rem 1.6rem;
+  border: 1px solid #222;
+  border-radius: 0.8rem;
+  cursor: pointer;
+}
+input[type=checkbox]:checked + label {
+  background-color: #888;
+  color: #fff;
+  border-color: #888;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -90,8 +235,6 @@ body {
   overflow-y: overlay;
   margin: 0;
   padding: 0;
-  font-family: "Pretendard";
-  letter-spacing: -0.2rem;
 }
 body ul,
 body li,
@@ -128,6 +271,12 @@ body a {
   align-items: center;
   width: 100%;
   height: 100%;
+  font-family: "Pretendard";
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #000;
+  line-height: 2.5rem;
+  letter-spacing: -0.07rem;
 }
 #wrap .header {
   position: fixed;
@@ -137,11 +286,17 @@ body a {
   padding-top: 3rem;
   z-index: 999;
 }
-#wrap .header h1 {
-  font-size: 3rem;
+#wrap .header > h1 {
+  font-family: "PoppinsEX", sans-serif;
   font-weight: 800;
-  line-height: 3rem;
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+  letter-spacing: -0.05rem;
   text-align: center;
+}
+#wrap .header > h1 > a {
+  background-color: transparent;
+  color: #fff;
 }
 #wrap .header .nav {
   position: absolute;
@@ -158,14 +313,19 @@ body a {
   gap: 0.8rem;
 }
 #wrap .header .nav > ul > li .btnSt {
-  border-radius: 10rem;
-  font-size: 1.8rem;
-  line-height: 2.5rem;
-  font-weight: 500;
+  font-family: "Ins_SansM ";
+  font-size: 1.6rem;
+  font-weight: 700;
   color: #fff;
-  background-color: #232323;
-  letter-spacing: -0.04rem;
   padding: 0.4rem 1.6rem;
+  letter-spacing: -0.03rem;
+}
+#wrap .header.subPage {
+  position: relative;
+  color: #000;
+}
+#wrap .header.subPage .btnSt {
+  color: #000 !important;
 }
 #wrap .container {
   width: inherit;
@@ -177,26 +337,29 @@ body a {
   background-color: #111;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 #wrap .container > .sec.sec1 .ImgBox {
+  border: 1px solid red;
   position: relative;
-  width: 120.74vh;
-  height: 76.4vh;
-  margin-top: 23.27vh;
+  width: 100%;
+  height: 100%;
+  top: 0;
   color: #fff;
+  opacity: 0;
 }
 #wrap .container > .sec.sec1 .ImgBox::before {
   display: block;
   position: absolute;
   content: "";
-  width: 100%;
+  width: 95%;
   height: 100%;
-  top: 0;
-  left: 0;
-  background: url("../img/pc/Rectangle.png") no-repeat center center;
-  background-size: contain;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url("../img/pc/motionbg.png") no-repeat 20% center;
+  background-size: cover;
 }
 #wrap .container > .sec.sec1 .ImgBox > span {
   position: absolute;
@@ -212,22 +375,22 @@ body a {
   clip: rect(0, 0, 0, 0);
 }
 #wrap .container > .sec.sec1 .textBox {
+  border: 1px solid red;
+  width: 100%;
   position: absolute;
-  top: 29.78vh;
-  left: 30.95vh;
-  right: 29.19vh;
 }
-#wrap .container > .sec.sec1 .textBox > span {
-  display: block;
+#wrap .container > .sec.sec1 .textBox > p {
+  position: relative;
+  height: 9.87vh;
+  text-align: center;
+}
+#wrap .container > .sec.sec1 .textBox > p > span {
   color: #fff;
-  font-size: 10rem;
-  line-height: 10rem;
+  font-family: "Ins_SansM";
+  font-size: 8rem;
+  line-height: 8rem;
   font-weight: 700;
-  letter-spacing: -0.2rem;
-}
-#wrap .container > .sec.sec1 .textBox > span:nth-of-type(2) {
-  text-align: right;
-  padding: 9.75vh 0 8.66vh;
+  overflow: hidden;
 }
 #wrap .container > .sec.sec2 {
   width: calc(100% - 60vh);
@@ -503,19 +666,8 @@ body a {
   flex-wrap: wrap;
   gap: 9rem 0;
 }
-#wrap .container > .sec.sec3 > button {
+#wrap .container > .sec.sec3 .btnBox {
   margin: 14.97vh auto 17.56vh;
-}
-#wrap .container > .sec.sec3 > button > span {
-  border-radius: 10rem;
-  font-size: 2.4rem;
-  line-height: 3.3rem;
-  font-weight: 500;
-  color: #000;
-  background-color: #fff;
-  letter-spacing: -0.04rem;
-  padding: 1.5rem 4rem;
-  border: 1px solid #000;
 }
 #wrap .container > .sec.sec4 {
   width: calc(100% - 60vh);
@@ -600,6 +752,202 @@ body a {
   transform: translateX(-50%);
   background: url("../img/pc/Icon_arrowB.svg") 100% 100%;
   background-size: contain;
+}
+#wrap .container .subWrap {
+  margin: 0 30vh 0;
+}
+#wrap .container .subWrap .pageHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 17.56vh auto;
+}
+#wrap .container .subWrap .pageHeader > h2 {
+  font-family: "Ins_SansM";
+  font-weight: 800;
+  font-size: 20rem;
+  line-height: 100%;
+  letter-spacing: 0rem;
+}
+#wrap .container .subWrap .pageHeader .pageInfo {
+  margin-top: 3.51vh;
+  font-family: "Pretendard";
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 6.7rem;
+  letter-spacing: -0.14rem;
+}
+#wrap .container .subWrap .boardWrap {
+  border-top: 2px solid #000;
+}
+#wrap .container .subWrap .boardWrap > a.toggleLayout {
+  padding: 5.26vh 0;
+  border-bottom: 2px solid #eee;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start !important;
+  flex-wrap: noWrap;
+  gap: 2.4rem;
+}
+#wrap .container .subWrap .boardWrap > a.toggleLayout .newsDate {
+  flex-shrink: 0;
+  width: 22.83vh;
+  text-align: center;
+  font-family: "Pretendard";
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #000;
+  line-height: 2.5rem;
+  letter-spacing: -0.07rem;
+}
+#wrap .container .subWrap .boardWrap > a.toggleLayout > dl {
+  flex-grow: 2;
+  overflow: hidden;
+}
+#wrap .container .subWrap .boardWrap > a.toggleLayout > dl > dt {
+  font-family: "Pretendard";
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 3.9rem;
+  letter-spacing: -0.12rem;
+  color: #000;
+}
+#wrap .container .subWrap .boardWrap > a.toggleLayout > dl > dd {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-height: 4rem;
+  padding-top: 1.6rem;
+  font-family: "Pretendard";
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #666;
+  line-height: 2.5rem;
+  letter-spacing: -0.07rem;
+}
+#wrap .container .subWrap .boardWrap > a.toggleLayout .toggleIcon {
+  position: relative;
+  flex-shrink: 0;
+  width: 6.2rem;
+  height: 4rem;
+}
+#wrap .container .subWrap .boardWrap > a.toggleLayout .toggleIcon > em {
+  position: absolute;
+  display: inline-block;
+  font-size: 1px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  visibility: hidden;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
+#wrap .container .subWrap .boardWrap > a.toggleLayout .toggleIcon:before {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 4rem;
+  height: 4rem;
+  top: 0;
+  left: 0;
+  transform: rotate(-180deg);
+  transition: transform 0.5s ease;
+  background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.25 16.25L20.25 25.25L29.25 16.25' stroke='black' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E%0A") 100% 100%;
+}
+#wrap .container .subWrap .boardWrap > a.toggleLayout.open {
+  background-color: #FAFAFA;
+}
+#wrap .container .subWrap .boardWrap > a.toggleLayout.open > dl > dd {
+  max-height: 50rem;
+  transition: max-height 0.7s ease;
+  text-overflow: none;
+  white-space: wrap;
+}
+#wrap .container .subWrap .boardWrap > a.toggleLayout.open .toggleIcon:before {
+  transform: rotate(0);
+  transition: transform 0.5s ease;
+}
+#wrap .container .subWrap .formWrap .inputWrap > p {
+  font-family: "Pretendard";
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 3.9rem;
+  letter-spacing: -0.12rem;
+  color: #000;
+  margin-bottom: 5.26vh;
+}
+#wrap .container .subWrap .formWrap .inputWrap .inputBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  align-items: center !important;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+#wrap .container .subWrap .formWrap .inputWrap .scrollBox {
+  height: 43.9vh;
+  overflow-y: scroll;
+  padding: 2.4rem;
+  border: 1px solid #999;
+  border-radius: 1.2rem;
+  color: #555;
+}
+#wrap .container .subWrap .formWrap .inputWrap .scrollBox > p {
+  margin-bottom: 3.95vh;
+}
+#wrap .container .subWrap .formWrap .inputWrap .scrollBox > p:last-of-type {
+  margin-top: 3.95vh;
+}
+#wrap .container .subWrap .formWrap .inputWrap .scrollBox > ul:not(:first-of-type) {
+  margin-top: 3.95vh;
+}
+#wrap .container .subWrap .formWrap .inputWrap .scrollBox > ul > li > span {
+  display: inline-block;
+  margin-bottom: 2.41vh;
+}
+#wrap .container .subWrap .btnBox {
+  margin: 8.78vh auto;
+}
+#wrap .container .subWrap .btnBox.WorkSt {
+  margin: 7.02vh auto;
+}
+#wrap .container .subWrap .btnBox.WorkSt > button:not(:last-of-type) {
+  margin-right: 1.6rem;
+}
+#wrap .container .subWrap.bgBlack {
+  margin: 0 auto;
+  padding: 8.78vh 30vh;
+  background-color: #1A1A1A;
+}
+#wrap .container .subWrap.bgBlack .formWrap .inputWrap > p {
+  color: #fff;
+  margin-bottom: 5.26vh;
+}
+#wrap .container .subWrap.bgBlack .formWrap .inputWrap > p > span {
+  font-family: "Pretendard";
+  font-size: 6.4rem;
+  font-weight: 700;
+  line-height: 8.9rem;
+  letter-spacing: -0.19rem;
+  color: #fff;
+}
+#wrap .container .subWrap.bgBlack .formWrap .inputWrap > p > span:first-of-type {
+  color: #999;
+}
+#wrap .container .subWrap.bgBlack .formWrap .inputWrap .inputBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  align-items: center !important;
+  flex-wrap: nowrap;
+  gap: 1rem;
 }
 #wrap .footer {
   position: relative;

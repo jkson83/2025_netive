@@ -6,6 +6,7 @@
   @include flexCol(flex-start, center,0);
   width:100%;
   height:100%;
+  @include font18();
   & .header{
     position: fixed;
     width:inherit;
@@ -13,11 +14,13 @@
     min-height:rem(60);
     padding-top:rem(30);
     z-index: 999;
-    & h1{
-      font-size:rem(30);
-      font-weight: 800;
-      line-height: rem(30);      
+    > h1{
+      @include HeadLogo;
       text-align: center;
+      > a{
+        background-color: transparent;
+        color:#fff;
+      }
     }
     & .nav{
       position: absolute;
@@ -26,14 +29,25 @@
       > ul{
         @include flexRow(flex-end, center, noWrap, rem(8));
         > li .btnSt{
-          @include RoundSt(rem(18), rem(25), 500, #fff, #232323);
+          font-family: 'Ins_SansM ';
+          font-size:rem(16);
+          font-weight:700;
+          color:#fff;
           padding:rem(4) rem(16);
+          letter-spacing: rem(-0.3);
         }
       }
-      
+    }
+    &.subPage{
+      position: relative;
+      color:#000;
+      .btnSt{
+        color:#000 !important;
+      }
     }
   }
   & .container{
+    //메인 페이지 스타일
     width:inherit;
     min-height:100vh;
     > .sec{
@@ -41,43 +55,48 @@
         position: relative;
         height:118.55vh;
         background-color: #111;
-        @include flexCol(flex-start, center, 0);
-        & .ImgBox{
+        @include flexCol(center, center, 0);
+        & .ImgBox{ 
+          border:1px solid red;
           position: relative;
-          width:120.74vh;
-          height:76.4vh;
-          margin-top:23.27vh;
+          width:100%;
+          height:100%;
+          top:0;
           color:#fff;
+          opacity: 0;          
           &::before{
             display: block;
             position: absolute;
             content: '';            
-            width:100%;
+            width:95%;
             height:100%;
-            top:0;
-            left:0;
-            background: url('../img/pc/Rectangle.png') no-repeat center center;
-            background-size:contain;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            background: url('../img/pc/motionbg.png') no-repeat 20% center ;
+            background-size:cover;
           }
           > span{
             @include blind;
           }
         }
         & .textBox{
+          border:1px solid red;
+          width: 100%;
           position: absolute;
-          top:29.78vh;
-          left:30.95vh;
-          right:29.19vh;          
-          > span{
-            display: block;
-            color:#fff;
-            font-size:rem(100);
-            line-height: rem(100);
-            font-weight:700;
-            letter-spacing: rem(-2);
-            &:nth-of-type(2){
-              text-align: right;
-              padding:9.75vh 0 8.66vh;
+          > p { 
+            
+            position: relative;
+            height:9.87vh;
+            text-align: center;
+            > span{              
+
+              color:#fff;
+              font-family: 'Ins_SansM';
+              font-size:rem(80);
+              line-height: rem(80);
+              font-weight:700;
+              overflow: hidden;
             }
           }
         }
@@ -283,13 +302,8 @@
             @include flexRow(space-between, center, wrap, rem(90) 0);
           }
         }
-        > button{
+        & .btnBox{
           margin:14.97vh auto 17.56vh;
-          >span{
-            @include RoundSt(rem(24), rem(33), 500, #000, #fff);
-            padding:rem(15) rem(40);
-            border:1px solid #000;
-          }
         }
       }
       &.sec4{
@@ -367,6 +381,159 @@
             }
           }
         }
+      }
+    }
+    //각 컨텐츠 페이지 스타일
+    & .subWrap{
+      margin:0 30vh 0;
+      & .pageHeader{
+        @include flexCol(center, center, 0);
+        margin:17.56vh auto;
+        > h2{
+          @include PageTitle;
+        }
+        & .pageInfo{
+          margin-top:3.51vh;
+          @include TitleInfo;
+        }
+      }
+      & .boardWrap{
+        border-top:2px solid #000;
+        > a.toggleLayout{
+          padding:5.26vh 0;
+          border-bottom:2px solid #eee;
+          @include flexRow(space-between, flex-start, noWrap, rem(24));
+          // &:not(:first-of-type){
+          //   border-top:2px solid #eee;
+          // }         
+          & .newsDate{
+            flex-shrink: 0;
+            width:22.83vh;
+            text-align: center;
+            @include font18(500, #000);
+          }
+          > dl {
+            flex-grow: 2;
+            overflow: hidden;
+            > dt{
+              @include boardTitle;
+            }
+            > dd{
+              overflow:hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              max-height: rem(40);
+              //transition: max-height 0.7s ease;
+              padding-top:rem(16);
+              @include font18(400, #666);
+            }
+          }
+          & .toggleIcon{
+            position: relative;
+            flex-shrink:0;
+            width:rem(62);
+            height:rem(40);
+            > em{
+              @include blind;
+            }
+            &:before{
+              display: block;
+              position: absolute;
+              content:'';
+              width:rem(40);
+              height:rem(40);
+              top:0;
+              left:0;
+              transform: rotate(-180deg);
+              transition: transform 0.5s ease;
+              background:url($board_toggle_btn) 100% 100%;
+            }
+          }
+          &.open{
+            background-color: #FAFAFA;
+            > dl{
+              > dd{
+                max-height: rem(500);
+                transition: max-height 0.7s ease;
+                text-overflow: none;
+                white-space: wrap;
+              }
+            }
+            & .toggleIcon{
+              &:before{
+                transform: rotate(0);
+                transition: transform 0.5s ease;
+              }
+            }
+          }
+        }
+      }
+      & .formWrap{
+        & .inputWrap{
+          > p{
+            @include boardTitle;
+            margin-bottom:5.26vh;
+          }
+          & .inputBox{
+            @include flexRow(flex-start,center, nowrap, rem(10));
+          }
+          & .scrollBox{
+            height: 43.90vh;
+            overflow-y:scroll;
+            padding:rem(24);
+            border: 1px solid #999;
+            border-radius: rem(12);
+            color:#555;
+            > p{
+              margin-bottom:3.95vh;
+              &:last-of-type{
+                margin-top:3.95vh;
+              }
+              }
+            > ul{
+              &:not(:first-of-type){
+                margin-top:3.95vh;
+              }
+              > li{
+                > span{
+                  display: inline-block;
+                  margin-bottom:2.41vh;
+                }
+              }
+            }
+          }
+        }
+      }
+      & .btnBox{
+        margin:8.78vh auto;
+        &.WorkSt{
+          margin:7.02vh auto;
+          > button:not(:last-of-type){
+            margin-right:rem(16);
+          }
+        }
+      }
+      &.bgBlack{
+        margin:0 auto;
+        padding:8.78vh 30vh;
+        background-color: #1A1A1A;
+        & .formWrap{
+        & .inputWrap{
+          > p {
+            color:#fff;
+            margin-bottom:5.26vh;
+            > span{
+              @include subPageFont(#fff);
+              &:first-of-type{
+                color:#999;
+              }
+            }
+          }
+          & .inputBox{
+            @include flexRow(flex-start,center, nowrap, rem(10));
+          }
+        }
+      }
       }
     }
   }

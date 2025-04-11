@@ -1,8 +1,44 @@
+/* --------------------------
+*네티브 로고 폰트
+*---------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.poppins-extrabold {
+  font-family: "PoppinsEX", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+/**
+ * font: Instrument Sans.custom
+ * ------------------------------------
+ */
+$truepath: '../fonts/InstrumentSans/';
+@font-face {
+	font-family: 'Ins_SansR';
+	src: url($truepath + 'InstrumentSans-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Ins_SansM';
+	src: url($truepath + 'InstrumentSans-Medium.woff2') format('woff2');
+	font-weight: 400;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Ins_SansSB';
+	src: url($truepath + 'InstrumentSans-SemiBold.woff2') format('woff2');
+	font-weight: 400;
+	font-display: swap;
+}
+
 /**
  * font: Pretendard.custom
  * ------------------------------------
  */
-
 $fontpath: '../fonts/pretendard/';
 
 @font-face {
@@ -46,4 +82,70 @@ $fontpath: '../fonts/pretendard/';
 	src: url($fontpath + 'Pretendard-Black.woff') format('woff');
 	font-weight: 900;
 	font-display: swap;
+}
+
+@mixin HeadLogo {
+	font-family: "PoppinsEX", sans-serif;
+  font-weight: 800;
+	font-size:rem(24);
+  line-height: rem(24);
+	letter-spacing: rem(-0.5);
+}
+
+@mixin PageTitle {
+	font-family: "Ins_SansM";
+	font-weight: 800;
+	font-size: rem(200);
+	line-height: 100%;
+	letter-spacing: rem(0);
+}
+
+@mixin TitleInfo {
+	font-family: 'Pretendard';
+	font-size:rem(48);
+	font-weight:700;
+	line-height:rem(67);
+	letter-spacing: rem(-1.4);
+}
+
+@mixin boardTitle {
+	font-family: 'Pretendard';
+	font-size:rem(28);
+	font-weight:700;
+	line-height:rem(39);
+	letter-spacing: rem(-1.2);
+	color:#000;
+}
+
+@mixin font18($Weight:'', $Fcolor:''){ 
+	font-family: 'Pretendard';
+	font-size:rem(18);
+	@if $Weight != ''{
+		font-weight:$Weight;
+	}
+	@else{
+		font-weight:400;
+	}	
+	@if $Fcolor != ''{
+		color:$Fcolor;
+	}
+	@else{
+		color:#000;
+	}	
+	line-height: rem(25);
+	letter-spacing: rem(-0.7);
+}
+
+@mixin subPageFont($Fcolor:'') {
+	font-family: 'Pretendard';
+	font-size:rem(64);
+	font-weight:700;
+	line-height:rem(89);
+	letter-spacing: rem(-1.9);
+	@if $Fcolor != ''{
+		color:$Fcolor;
+	}
+	@else{
+		color:#000;
+	}
 }

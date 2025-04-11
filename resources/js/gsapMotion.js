@@ -2,26 +2,26 @@ function mainEffect() {
 	//**************************** */
 	// section1 효과
 	//**************************** */
-	const mainAction = gsap
-		.timeline({})
-		.from('#sec1 .ImgBox', {
-			opacity: 0,
-			y: -347,
-			scale: 0,
-			//rotation: 360,
-			duration: 2,
-			repeat: 0,
-			repeatDelay: 1,
-			ease: 'back',
-		})
-		.from('#sec1 .textBox span', {
-			opacity: 0,
-			y: 100,
-			duration: 1,
-			repeat: 0,
-			stagger: 0.7,
-			ease: 'back',
-		});
+	const mainAction = gsap.timeline({}).to('#sec1 .ImgBox', {
+		opacity: 0,
+		x: 0,
+		y: 0,
+		scale: 1.15,
+		duration: 1,
+		repeat: 0,
+		repeatDelay: 1,
+		opacity: 1,
+		backgroundSize: '100% 100%',
+		//ease: 'back',
+	});
+	// .from('#sec1 .textBox span', {
+	// 	opacity: 0,
+	// 	y: 100,
+	// 	duration: 1,
+	// 	repeat: 0,
+	// 	stagger: 0.7,
+	// 	ease: 'back',
+	// });
 
 	//**************************** */
 	// section2 효과
@@ -87,5 +87,5 @@ function mainEffect() {
 	}
 }
 
-mainEffect();
+//mainEffect();
 //infoActive();

@@ -277,6 +277,7 @@ body a {
   color: #000;
   line-height: 2.5rem;
   letter-spacing: -0.07rem;
+  overflow: auto;
 }
 #wrap .header {
   position: fixed;
@@ -334,6 +335,7 @@ body a {
 #wrap .container > .sec.sec1 {
   position: relative;
   height: 118.55vh;
+  padding-bottom: 10rem;
   background-color: #111;
   display: flex;
   flex-direction: column;
@@ -341,7 +343,6 @@ body a {
   align-items: center;
 }
 #wrap .container > .sec.sec1 .ImgBox {
-  border: 1px solid red;
   position: relative;
   width: 100%;
   height: 100%;
@@ -375,7 +376,6 @@ body a {
   clip: rect(0, 0, 0, 0);
 }
 #wrap .container > .sec.sec1 .textBox {
-  border: 1px solid red;
   width: 100%;
   position: absolute;
 }
@@ -383,14 +383,18 @@ body a {
   position: relative;
   height: 9.87vh;
   text-align: center;
+  overflow: hidden;
 }
 #wrap .container > .sec.sec1 .textBox > p > span {
+  position: absolute;
+  bottom: -9.87vh;
+  left: 50%;
+  transform: translateX(-50%);
   color: #fff;
   font-family: "Ins_SansM";
   font-size: 8rem;
   line-height: 8rem;
   font-weight: 700;
-  overflow: hidden;
 }
 #wrap .container > .sec.sec2 {
   width: calc(100% - 60vh);
@@ -1052,4 +1056,19 @@ body a {
 }
 #wrap .footer > div.copyright > p > span {
   color: #888;
+}
+#wrap::-webkit-scrollbar {
+  width: 1rem;
+  height: 1rem;
+}
+#wrap::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+#wrap::-webkit-scrollbar-thumb {
+  background: #EBEBEB;
+  border-radius: 1rem;
+}
+#wrap::-webkit-scrollbar-thumb:hover {
+  background: #BBB;
+  opacity: 0.5;
 }/*# sourceMappingURL=main.css.map */

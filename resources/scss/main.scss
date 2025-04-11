@@ -54,10 +54,10 @@
       &.sec1{
         position: relative;
         height:118.55vh;
+        padding-bottom:rem(100);
         background-color: #111;
         @include flexCol(center, center, 0);
         & .ImgBox{ 
-          border:1px solid red;
           position: relative;
           width:100%;
           height:100%;
@@ -81,22 +81,24 @@
           }
         }
         & .textBox{
-          border:1px solid red;
+          //border:1px solid red;
           width: 100%;
           position: absolute;
-          > p { 
-            
+          > p {            
             position: relative;
             height:9.87vh;
-            text-align: center;
-            > span{              
-
+            text-align: center; 
+            overflow: hidden;
+            > span{
+              position: absolute;
+              bottom:-9.87vh;
+              left:50%;
+              transform: translateX(-50%);
               color:#fff;
               font-family: 'Ins_SansM';
               font-size:rem(80);
               line-height: rem(80);
               font-weight:700;
-              overflow: hidden;
             }
           }
         }
@@ -625,4 +627,6 @@
       }
     }
   }
+
+  @include scroll;
 }

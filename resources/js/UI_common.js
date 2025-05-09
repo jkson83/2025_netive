@@ -2,13 +2,14 @@ function header_Sticky() {
 	// const wrapElement = document.querySelector('.wrap');
 	// const containerElement = document.querySelector('.container');
 	// const headerElement = document.querySelector('.header');
-	const changeElement = document.querySelector('.sec1');
+	const changeElement1 = document.querySelector('.sec1').scrollHeight;
+	const changeElement2 = document.querySelector('.sec2').scrollHeight;
+	const changeOffset = changeElement1 + changeElement2 - 100;
 	// .wrap 또는 .container가 없을 경우 오류 방지
 
 	// const totalHeight = wrapElement.scrollHeight; // 전체 컨텐츠 길이
 	// const contHeight = containerElement.scrollHeight; // 컨텐츠 영역 길이
 	// const changeOffset = totalHeight - contHeight; // 기준 높이값
-	const changeOffset = changeElement.scrollHeight;
 	//console.log(changeOffset);
 
 	// 현재 스크롤 위치 체크
@@ -18,17 +19,16 @@ function header_Sticky() {
 			color: '#111',
 			duration: 0.5, // 애니메이션 지속 시간 추가
 		});
-		//	console.log('헤더 색 변경됨');
+		//console.log('헤더 색 변경됨');
 	} else {
 		gsap.to('.header, .logo, .btnSt', {
 			backgroundColor: 'transparent',
 			color: '#fff',
 			duration: 0.5,
 		});
-		//	console.log('헤더 원래 색 유지');
+		//console.log('헤더 원래 색 유지');
 	}
-
-	//	console.log(window.scrollY);
+	console.log(window.scrollY);
 }
 
 function OpenEvent() {
@@ -64,3 +64,4 @@ document.addEventListener('DOMContentLoaded', function () {
 		window.addEventListener('scroll', header_Sticky); // 스크롤 이벤트 등록
 	}
 });
+7;

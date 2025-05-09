@@ -8,14 +8,16 @@ table {
   & thead {
     background-color: darkcyan;
     color: #fff;
+    font-weight: 400;
     th {
       padding: rem(10) 0;
-      &:first-of-type {
-        border-radius: 8px 0 0 8px;
-      }
-      &:last-of-type {
-        border-radius: 0 8px 8px 0;
-      }
+      text-align: center;
+      // &:first-of-type {
+      //   border-radius: 8px 0 0 8px;
+      // }
+      // &:last-of-type {
+      //   border-radius: 0 8px 8px 0;
+      // }
     }
   }
   & tbody {
@@ -28,6 +30,19 @@ table {
       text-align: center;
       padding: 10px 0;
       border-bottom: 1px solid #dbdbdb;
+      border-right:1px solid  #dbdbdb;
+      &.fgray{
+        color:#777;
+      }
+      &.fblue{
+        color:rgb(26, 11, 196);
+      }
+      > a{
+        color:brown;
+        &:hover{
+          color:blue;
+        }
+      }
     }
   }
 }

@@ -5,7 +5,7 @@ const str = `
     <li role="none"><a href="#" role="menuitem" aria-label="About 페이지 이동"  class="btnSt"><span>ABOUT</span></a></li>
     <li role="none"><a href="/pc/board/workList.html" role="menuitem" aria-label="Work 페이지 이동" class="btnSt"><span>WORK</span></a></li>
     <li role="none"><a href="/pc/contact.html" role="menuitem" aria-label="Contact 페이지 이동" class="btnSt"><span>CONTACT</span></a></li>
-    <li role="none"><a href="" role="menuitem" aria-label="Recruit 페이지 이동" class="btnSt"><span>RECRUIT</span></a></li>
+    <li role="none"><a href="#" role="menuitem" aria-label="Recruit 페이지 이동" class="btnSt"><span>RECRUIT</span></a></li>
     <li role="none"><a href="/pc/board/news.html" role="menuitem" aria-label="NEWS 페이지 이동" class="btnSt"><span>NEWS</span></a></li>
   </ul>
 </nav>

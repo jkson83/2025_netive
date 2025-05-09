@@ -1,0 +1,35 @@
+@import "./mixins";
+@import "./base";
+#wrap{
+  //portpolio 상단모션 박스
+  & .motionBox{
+    width:100%;
+    height:rem(1090);
+    animation: w100 1s forwards alternate;
+      @keyframes w100 {
+        0%{
+          width:0;
+        }
+        100%{
+          width:100%;
+        }    
+      }
+    &.bgBlue{
+      background-color: #0043F5;
+    }
+    & .motionItem{
+      position: relative;
+      display: block;
+      width:100%;
+      height:100%;
+      // background:url('/resources/img/pc/shinhan_item01.png') no-repeat top center;
+      > em{
+        @include blind();
+      }
+    }
+  }
+  & .container{
+    & .subWrap{
+    }
+  }
+}

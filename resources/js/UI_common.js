@@ -1,3 +1,4 @@
+//상단 헤더메뉴이벤트트
 function header_Sticky() {
 	// const wrapElement = document.querySelector('.wrap');
 	// const containerElement = document.querySelector('.container');
@@ -15,7 +16,7 @@ function header_Sticky() {
 	// 현재 스크롤 위치 체크
 	if (window.scrollY >= changeOffset) {
 		gsap.to('.header, .logo, .btnSt', {
-			backgroundColor: '#fff',
+			backgroundColor: 'transparent',
 			color: '#111',
 			duration: 0.5, // 애니메이션 지속 시간 추가
 		});
@@ -28,9 +29,9 @@ function header_Sticky() {
 		});
 		//console.log('헤더 원래 색 유지');
 	}
-	console.log(window.scrollY);
+	//console.log(window.scrollY);
 }
-
+//아코디언 메뉴 이벤트
 function OpenEvent() {
 	const obj = document.querySelectorAll('.toggleLayout');
 	//const contBox = document.querySelectorAll('.toggleCont');
@@ -50,6 +51,19 @@ function OpenEvent() {
 		});
 	});
 }
+//접속 환경체크
+function isMobile() {
+  const userAgent = navigator.userAgent.toLowerCase();
+  return /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/.test(userAgent);
+}
+
+if (isMobile()) {
+  console.log("모바일 환경입니다.");
+} else {
+  console.log("PC 환경입니다.");
+}
+
+isMobile();
 
 // 페이지가 로드된 후 실행
 document.addEventListener('DOMContentLoaded', OpenEvent);
@@ -64,4 +78,3 @@ document.addEventListener('DOMContentLoaded', function () {
 		window.addEventListener('scroll', header_Sticky); // 스크롤 이벤트 등록
 	}
 });
-7;

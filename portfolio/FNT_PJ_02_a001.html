@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="../resources/js/head.js"></script>
+    <script type="text/javascript">
+      initPage(1);
+    </script>
+    <script>
+      // pc/mobile에 따른 서브 css파일 설정
+      let cssSubFile;
+      let portstr = '';
+      if (isMobile()) {
+        cssSubFile = 'FNT_PJ_02_a001_mo.css';
+      } else {
+        cssSubFile = 'FNT_PJ_02_a001.css';
+      }
+      portstr += `<link rel="stylesheet" href="../resources/scss/portfolio/${cssSubFile}" type="text/css">`;
+      document.write(portstr);
+    </script>
+  </head>
+  <body>
+    <div id="wrap" class="wrap">
+      <header id="headerPort" class="header"></header>
+      <div class="motionBox">
+        <dl class="scroll-motion">
+          <dt>CLIENT</dt>
+          <dd>TONGYANG LIFE INSURANCE</dd>
+          <dt>RELEASE DATE</dt>
+          <dd>MAY, 2025</dd>
+        </dl>
+        <h2 class="scroll-motion">수호천사 <span>동양생명</span></h2>
+
+        <button type="button" class="scroll-down" onclick="scrollDown()">
+          <span>아래로</span>
+        </button>
+      </div>
+      <div id="container" class="container">
+        <div class="overview">
+          <h2>Experience <br />Overview</h2>
+          <div>
+            <strong>
+              <span>상품 탐색부터 관리까지</span>
+              <span>필요한 순간, 빈틈없이 채워주는</span>
+              <span>행복한 보험 여정</span>
+            </strong>
+            <p>
+              사용자의 니즈와 맥락에 따라 화면 구성과 기능을 유연하게 연결하고,<br />
+              필요한 순간 즉시 반응하는 흐름으로 구성되었습니다.
+            </p>
+            <p>
+              보험의 처음부터 끝까지 자연스럽게 이어지는 인터페이스를 통해<br />
+              누구나 빠르게 이해하고, 끊김 없이 사용할 수 있는 경험을 제공합니다.
+            </p>
+            <div>
+              <span>Responsive</span>
+              <span>WEB/APP</span>
+              <span>UI/UX Design</span>
+              <span>Publishing</span>
+            </div>
+          </div>
+        </div>
+        <div class="section01">
+          <div class="imgBox">
+            <img src="../resources/img/pc/portfolio/a001/img_cont01.png" class="pc" alt="" />
+            <img src="../resources/img/mobile/portfolio/a001/img_cont01.png" class="mo" alt="" />
+          </div>
+          <div class="tit">
+            <p>언제든, 어디서든, 어떤 환경에서도<br />끊김없이 이어지는 유연한 경험</p>
+          </div>
+          <p>
+            보험금 청구, 계약 조회 등 주요 기능은 간소화된 '심플모드'를 통해 앱에서 빠르게 접근할 수 있으며,<br />
+            PC와 모바일 간 연동으로 한 기기에서 시작한 업무를 다른 기기에서도 중단 없이 이어갈 수 있습니다.
+          </p>
+        </div>
+        <div class="section02">
+          <div class="box01">
+            <div class="imgBox">
+              <img src="../resources/img/pc/portfolio/a001/img_cont02_1.png" class="pc" alt="" />
+              <img src="../resources/img/mobile/portfolio/a001/img_cont02_1.png" class="mo" alt="" />
+            </div>
+            <div class="tit">
+              <p>누구나 익숙하게 느끼고<br />편안하게 사용할 수 있는 서비스</p>
+            </div>
+            <p>
+              정보 탐색을 최소화하고 자주 찾는 메뉴를 쉽게 찾을 수 있도록 직관적인 UI를 구현했습니다. <br />
+              또한 접근성 인증과 고령자 모드를 통해 정보취약계층의 편의성을 높였습니다.
+            </p>
+          </div>
+          <div class="box02">
+            <div class="imgBox">
+              <img src="../resources/img/pc/portfolio/a001/img_cont02_2.png" class="pc" alt="" />
+              <img src="../resources/img/mobile/portfolio/a001/img_cont02_2.png" class="mo" alt="" />
+            </div>
+            <div class="tit">
+              <p>사용자의 행동 이력을 기반으로<br />빠르고 정확한 고객 경험 완성</p>
+            </div>
+            <p>
+              보험사용자의 이용 이력이 공유되어 업무가 중단되더라도 콜센터 상담원과 자연스럽게 서비스가 이어집니다.<br />
+              이러한 연속성은 고객 신뢰와 몰입도를 높이고 이탈을 줄입니다.
+            </p>
+          </div>
+        </div>
+        <div class="section03">
+          <div class="tit">
+            <p class="pc">Best Asian financial<br />company with <strong>the best</strong><br />insurance services.</p>
+            <p class="mo">
+              Best Asian financial<br />company with<br />
+              <strong>the best</strong><br />insurance services.
+            </p>
+          </div>
+        </div>
+        <div class="section04">
+          <div class="box">
+            <h2 class="secTit01">Project Goal</h2>
+            <div class="circle-box">
+              <ul class="circle-list">
+                <li class="item">
+                  <p class="tit">Flexible</p>
+                  <p class="txt">다양한 목적과 환경에<br />상관없이 유연하게</p>
+                </li>
+                <li class="item">
+                  <p class="tit">On the Spot</p>
+                  <p class="txt">사용자에게 맞는 선택과 대안을<br />즉각적으로 제시하여</p>
+                </li>
+                <li class="item">
+                  <p class="tit">Complete</p>
+                  <p class="txt">망설임이 확신으로 변하는<br />긍정적인 완결의 경험 제공</p>
+                </li>
+              </ul>
+              <div class="circle-last">Easeful<br />Insurance<br />Journey</div>
+            </div>
+            <p class="txt">디지털 공감으로 완성되는 <span>더 쉬운 보험 여정</span></p>
+          </div>
+        </div>
+        <div class="section05">
+          <div class="txtBox">
+            <div class="inner">
+              <div class="img-app pc">
+                <img src="../resources/img/pc/portfolio/a001/img_cont03_app.svg" alt="동양생명APP" />
+              </div>
+              <div class="img-app mo">
+                <img src="../resources/img/mobile/portfolio/a001/img_cont03_app.svg" alt="동양생명APP" />
+              </div>
+              <div class="tit">
+                <p>내 보험을 한눈에,<br />내 청구는 더 빠르게!</p>
+              </div>
+              <p>
+                동양생명 모바일창구는 반복되는 보험 업무를 최소한의 단계로 설계하고,<br />
+                고객 맞춤형 화면 구성을 통해 몰입도를 높였습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="section06">
+          <div class="imgBox pc">
+            <img src="../resources/img/pc/portfolio/a001/img_cont04_1.png" alt="grid system" />
+          </div>
+          <div class="imgBox mo">
+            <img src="../resources/img/mobile/portfolio/a001/img_cont04_1.png" alt="grid system" />
+          </div>
+          <div class="bottom_box">
+            <div class="imgBox pc">
+              <img src="../resources/img/pc/portfolio/a001/img_cont04_2.png" alt="Typograhpy" />
+            </div>
+            <div class="imgBox mo">
+              <img src="../resources/img/mobile/portfolio/a001/img_cont04_2.png" alt="Typograhpy" />
+            </div>
+            <div class="imgBox pc">
+              <img src="../resources/img/pc/portfolio/a001/img_cont04_3.png" alt="color" />
+            </div>
+            <div class="imgBox mo">
+              <img src="../resources/img/mobile/portfolio/a001/img_cont04_3.png" alt="color" />
+            </div>
+          </div>
+        </div>
+        <div class="section07">
+          <div class="inner">
+            <div class="tit">
+              <p>3D graphics</p>
+            </div>
+            <div class="imgBox pc">
+              <img src="../resources/img/pc/portfolio/a001/img_cont05_1.png" alt="3D graphics 모음" />
+            </div>
+            <div class="imgBox mo">
+              <img src="../resources/img/mobile/portfolio/a001/img_cont05_1.png" alt="3D graphics 모음" />
+            </div>
+          </div>
+          <div class="inner">
+            <div class="tit">
+              <p>Product Icons</p>
+            </div>
+            <div class="imgBox pc">
+              <img src="../resources/img/pc/portfolio/a001/img_cont05_2.png" alt="Product Icons 모음" />
+            </div>
+            <div class="imgBox mo">
+              <img src="../resources/img/mobile/portfolio/a001/img_cont05_2.png" alt="Product Icons 모음" />
+            </div>
+          </div>
+        </div>
+        <div class="section08">
+          <div class="inner">
+            <div class="imgBox pc">
+              <img src="../resources/img/pc/portfolio/a001/img_cont06_1.png" alt="" />
+            </div>
+            <div class="imgBox mo">
+              <img src="../resources/img/mobile/portfolio/a001/img_cont06_1.png" alt="" />
+            </div>
+            <div class="imgBox pc">
+              <img src="../resources/img/pc/portfolio/a001/img_cont06_2.png" alt="" />
+            </div>
+            <div class="imgBox mo">
+              <img src="../resources/img/mobile/portfolio/a001/img_cont06_2.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="section09">
+          <div class="inner">
+            <div class="imgBox pc">
+              <img src="../resources/img/pc/portfolio/a001/img_cont07.png" alt="" />
+            </div>
+            <div class="imgBox mo">
+              <img src="../resources/img/mobile/portfolio/a001/img_cont07.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="section10">
+          <div class="tit">
+            <p>Asia's leader in<br /><strong>premium</strong> insurance<br />services.</p>
+          </div>
+          <div class="ico01"></div>
+          <div class="ico02"></div>
+        </div>
+        <div class="section11">
+          <div class="inner">
+            <h2>Company Site</h2>
+            <div class="cont">
+              <div class="cont_item">
+                <img src="../resources/img/pc/portfolio/a001/img_cont09_1.png" class="pc" alt="" />
+                <img src="../resources/img/mobile/portfolio/a001/img_cont09_1.png" class="mo" alt="" />
+              </div>
+              <div class="cont_item">
+                <img src="../resources/img/pc/portfolio/a001/img_cont09_2.png" class="pc" alt="" />
+                <img src="../resources/img/mobile/portfolio/a001/img_cont09_2.png" class="mo" alt="" />
+              </div>
+            </div>
+            <div class="cont_list">
+              <ul>
+                <li>
+                  <img src="../resources/img/pc/portfolio/a001/img_cont09_3.png" class="pc" alt="" />
+                  <img src="../resources/img/mobile/portfolio/a001/img_cont09_3.png" class="mo" alt="" />
+                </li>
+                <li>
+                  <img src="../resources/img/pc/portfolio/a001/img_cont09_4.png" class="pc" alt="" />
+                  <img src="../resources/img/mobile/portfolio/a001/img_cont09_4.png" class="mo" alt="" />
+                </li>
+                <li>
+                  <img src="../resources/img/pc/portfolio/a001/img_cont09_5.png" class="pc" alt="" />
+                  <img src="../resources/img/mobile/portfolio/a001/img_cont09_5.png" class="mo" alt="" />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="cont_footer">
+          <div class="tf_member">
+            <dl>
+              <dt>project manager</dt>
+              <dd><span>Byun Sukhwan</span></dd>
+            </dl>
+            <dl>
+              <dt>Planning</dt>
+              <dd>
+                <em>Kim Nakgi,</em>
+                <span>Kim Sungho,</span>
+                <span>Lee Jinhee</span>
+              </dd>
+            </dl>
+            <dl>
+              <dt>UI/UX design</dt>
+              <dd>
+                <em>Park Eunyoung,</em>
+                <span>Ryu Jieun,</span>
+                <span>Kim Ineun</span>
+              </dd>
+            </dl>
+            <dl>
+              <dt>Publishing</dt>
+              <dd>
+                <em>Sa Jaegyu,</em>
+                <span>Jang Hongjun,</span>
+                <span>Shin Saerom</span>
+              </dd>
+            </dl>
+            <div class="footer_logo">
+              <img src="../resources/img/pc/portfolio/a001/footer_logo.svg" alt="TONGYANG LIFE INSURANCE" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer id="footer" class="footer">
+        <script src="../resources/js/footer.js"></script>
+        <script type="text/javascript">
+          initFooter(1);
+        </script>
+      </footer>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', setHeader(2));
+
+    const scrollDown = () => {
+      let targetTop = document.querySelector('.motionBox').offsetHeight;
+      window.scrollTo({
+        top: targetTop,
+        behavior: 'smooth',
+        delay: 1,
+      });
+    };
+
+    // 상세 스크롤 효과
+    const ScrollEffects = () => {
+      const windowScrollTop = window.scrollY + window.innerHeight;
+      document.querySelectorAll('.scroll-motion').forEach((el, index) => {
+        if (windowScrollTop > 0) {
+          el.classList.add('active');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', ScrollEffects);
+    window.addEventListener('resize', ScrollEffects);
+
+    window.addEventListener('DOMContentLoaded', ScrollEffects);
+  </script>
+</html>

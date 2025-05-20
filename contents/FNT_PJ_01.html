@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="../resources/js/head.js"></script>
+    <script type="text/javascript">
+      initPage(1);
+    </script>
+    <script>
+      // pc/mobile에 따른 서브 css파일 설정
+      let cssSubFile;
+      let substr = '';
+      if (isMobile()) {
+        cssSubFile = 'mo_recruit.css';
+      } else {
+        cssSubFile = 'recruit.css';
+      }
+      substr += `<link rel="stylesheet" href="../resources/scss/${cssSubFile}" type="text/css">`;
+      document.write(substr);
+    </script>
+  </head>
+  <body>
+    <div id="wrap" class="wrap">
+      <header id="header" class="header subPage"></header>
+      <div id="container" class="container">
+        <div class="subWrap expensionW">
+          <div class="pageHeader">
+            <h2>PORTFOLIO</h2>
+          </div>
+          <div class="boardWrap noBorder">
+            <div class="workBox">
+              <p class="proImg">
+                <a href="../portfolio/FNT_PJ_02_a001.html" title="수호천사동양생명 페이지 이동">
+                  <img src="../resources/img/pc/port_img1.png" alt="수호천사동양생명 이미지" class="pcImg" />
+                  <img src="../resources/img/mobile/port_img1.png" alt="수호천사동양생명 이미지" class="moImg" />
+                </a>
+                <span class="proName">수호천사동양생명</span>
+              </p>
+            </div>
+            <div class="workBox">
+              <p class="proImg">
+                <a href="../portfolio/FNT_PJ_02_a002.html" title="신한 쏠 라이프 페이지 이동">
+                  <img src="../resources/img/pc/port_img2.png" alt="신한 쏠 라이프 이미지" class="pcImg" />
+                  <img src="../resources/img/mobile/port_img2.png" alt="신한 쏠 라이프 이미지" class="moImg" />
+                </a>
+                <span class="proName">신한 쏠 라이프</span>
+              </p>
+            </div>
+            <div class="halfBox">
+              <div class="workBox">
+                <p class="proImg">
+                  <a href="../portfolio/FNT_PJ_02_a003.html" title="KT 빠른기변 프로세스 페이지 이동">
+                    <img src="../resources/img/pc/port_img3.png" alt="KT 빠른기변 프로세스 이미지" class="pcImg" />
+                    <img src="../resources/img/mobile/port_img3.png" alt="KT 빠른기변 프로세스 이미지" class="moImg" />
+                  </a>
+                  <span class="proName">KT 빠른기변 프로세스</span>
+                </p>
+              </div>
+              <div class="workBox">
+                <p class="proImg">
+                  <a href="../portfolio/FNT_PJ_02_a004.html" title="삼성웰스토리 페이지 이동">
+                    <img src="../resources/img/pc/port_img4.png" alt="삼성웰스토리 이미지" class="pcImg" />
+                    <img src="../resources/img/mobile/port_img4.png" alt="삼성웰스토리 이미지" class="moImg" />
+                  </a>
+                  <span class="proName">삼성웰스토리</span>
+                </p>
+              </div>
+            </div>
+            <div class="halfBox">
+              <div class="workBox">
+                <p class="proImg">
+                  <a href="../portfolio/FNT_PJ_02_a005.html" title="마이데이터 포켓 페이지 이동">
+                    <img src="../resources/img/pc/port_img5.png" alt="마이데이터 포켓 이미지" class="pcImg" />
+                    <img src="../resources/img/mobile/port_img5.png" alt="마이데이터 포켓 이미지" class="moImg" />
+                  </a>
+                  <span class="proName">마이데이터 포켓</span>
+                </p>
+              </div>
+              <div class="workBox">
+                <p class="proImg">
+                  <a href="../portfolio/FNT_PJ_02_b002.html" title="KB헬스케어 페이지 이동">
+                    <img src="../resources/img/pc/port_img6.png" alt="KB헬스케어 운영 이미지" class="pcImg" />
+                    <img src="../resources/img/mobile/port_img6.png" alt="KB헬스케어 운영 이미지" class="moImg" />
+                  </a>
+                  <span class="proName">KB헬스케어 운영</span>
+                </p>
+              </div>
+            </div>
+            <div class="halfBox">
+              <div class="workBox">
+                <p class="proImg">
+                  <a href="../portfolio/FNT_PJ_02_b001.html" title="삼성카드 쇼핑몰 페이지 이동">
+                    <img src="../resources/img/pc/port_img7.png" alt="삼성카드 쇼핑몰 운영 이미지" class="pcImg" />
+                    <img src="../resources/img/mobile/port_img7.png" alt="삼성카드 쇼핑몰 운영 이미지" class="moImg" />
+                  </a>
+                  <span class="proName">삼성카드 쇼핑몰 운영</span>
+                </p>
+              </div>
+              <div class="workBox">
+                <p class="proImg">
+                  <a href="../portfolio/FNT_PJ_02_b004.html" title="암웨이 코리아 페이지 이동">
+                    <img src="../resources/img/pc/port_img8.png" alt="암웨이 코리아 운영 이미지" class="pcImg" />
+                    <img src="../resources/img/mobile/port_img8.png" alt="암웨이 코리아 운영 이미지" class="moImg" />
+                  </a>
+                  <span class="proName">암웨이 코리아 운영</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="btnBox">
+            <button type="button"><span class="st1">VIEW MORE</span></button>
+          </div>
+          <div class="boardWrap dataList">
+            <ul>
+              <li>2025</li>
+              <li>이륜자동차검사시스템 기능개선</li>
+              <li>엔지니어링공제조합</li>
+            </ul>
+            <ul>
+              <li>2025</li>
+              <li>AIG 손해보험 정보시스템 운영</li>
+              <li>한화시스템㈜</li>
+            </ul>
+            <ul>
+              <li>2025</li>
+              <li>AIG 손해보험 MFA 통합로그인 화면개발</li>
+              <li>한화시스템㈜</li>
+            </ul>
+            <ul>
+              <li>2025</li>
+              <li>삼성카드 통합 쇼핑몰 운영</li>
+              <li>삼성카드㈜</li>
+            </ul>
+            <ul>
+              <li>2025</li>
+              <li>안랩 30주년 기념 사이트 제작</li>
+              <li>안랩</li>
+            </ul>
+            <ul>
+              <li>2025</li>
+              <li>웹서비스디자인 정기 유지보수</li>
+              <li>안랩</li>
+            </ul>
+            <ul>
+              <li>2025</li>
+              <li>엔지니어링공제조합 스마트 금융시스템 구축 사업</li>
+              <li>엔지니어링공제조합</li>
+            </ul>
+            <ul>
+              <li>2025</li>
+              <li>2025,2026 AKL Digital Contents & Service Operation</li>
+              <li>한국암웨이㈜</li>
+            </ul>
+            <ul>
+              <li>2025</li>
+              <li>한국검인정교과서협회 AI디지털교과서 플랫폼 구축</li>
+              <li>한화시스템㈜</li>
+            </ul>
+          </div>
+          <div class="btnBox">
+            <button type="button"><span class="st1">VIEW MORE</span></button>
+          </div>
+        </div>
+      </div>
+      <!-- footer -->
+      <footer id="footer" class="footer">
+        <script type="text/javascript" src="../resources/js/footer.js"></script>
+        <script type="text/javascript">
+          initFooter(1);
+        </script>
+      </footer>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', setHeader(1));
+  </script>
+</html>

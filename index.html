@@ -1,119 +1,360 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, shrink-to-fit=no">
-	<meta name="format-detection" content="telephone=no, address=no, email=no">
-  <title>NETIVE</title>
-  <script src="./resources/_ui_include/head.js"></script>
-  <link rel="stylesheet" href="./resources/scss/main.css">
-</head>
-<body> 
-  <div id="wrap" class="wrap">
-    <!-- <div class="logoLayer"><span>NETIVE</span></div> -->
-    <header id="header" class="header">
-      <script src="./resources/js/pc/header.js"></script>
-    </header>
-    <div id="container" class="container">
-      <section id="sec1" class="sec sec1">
-        <div class="ImgBox"><span>이미지박스</span></div>
-        <div class="textBox">
-          <p><span class="motionText">WE BELIEVE</span></p>
-          <p><span class="motionText" >POWER OF CREATIVE</span></p>
-          <p><span class="motionText">IMAGINATION.</span></p>
-        </div>
-      </section>
-      <section id="sec2" class="sec sec2">
-        <div class="textBox">
-          <p><span>우리는 더 나은 미래를 </span></p>
-          <p><span>함께 고민하며 다양한 영역에서 쌓아온 경험으로</span></p>
-          <p><span>새로운 변화를 만들어갑니다.</span></p>
-        </div>
-      </section> 
-      <section id="sec3" class="sec sec3">
-        <div class="infoGBox">
-          <div class="gBox gBox1">0+
-            <span>2025</span>
+  <head>
+    <meta charset="UTF-8" />
+    <script type="text/javascript" src="./resources/js/head.js"></script>
+    <script type="text/javascript">
+      initPage(0);
+    </script>
+  </head>
+  <body>
+    <div id="wrap" class="wrap main">
+      <!-- header -->
+      <header id="header" class="header hidden scr"></header>
+
+      <!-- main -->
+      <div id="container" class="container">
+        <section class="main-visual sec1">
+          <div class="scene1">
+            <p>NETIVE</p>
           </div>
-          <div class="gBox gBox2">
-            <p>
-              NETIVE<br>
-              DESIGN SYSTEM
-            </p>
+
+          <div class="scene2">
+            <div class="motion-bg">
+              <span class="article1"></span>
+              <span class="article2"></span>
+              <span class="article3"></span>
+              <span class="article4"></span>
+              <span class="article5"></span>
+              <span class="article6"></span>
+              <span class="article7"></span>
+            </div>
+            <div class="text-field">
+              <p><span>Think new,</span></p>
+              <p><span>move creatively,</span></p>
+              <p><span>lead with initiative.</span></p>
+            </div>
           </div>
-          <div class="gBox gBox3">
+
+          <div class="scene3">
+            <div class="text-field">
+              <div class="pc-only">
+                <p class="ani">우리는 유연한 감각과 날카로운 시선으로</p>
+                <p class="ani">다음 경험을 만들어 냅니다.</p>
+              </div>
+
+              <div class="mo-only">
+                <p class="ani">우리는</p>
+                <p class="ani">유연한 감각과</p>
+                <p class="ani">날카로운 시선으로</p>
+                <p class="ani">다음 경험을</p>
+                <p class="ani">만들어 냅니다.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="scene4">
+            <div class="text-field">
+              <p>NETIVE,</p>
+              <p class="ani">Creating what’s NEXT.</p>
+            </div>
+          </div>
+
+          <button type="button" class="scroll-down" onclick="scrollDown()">
+            <span>아래로</span>
+          </button>
+        </section>
+
+        <section id="sec3" class="sec sec3">
+          <div class="infoGBox">
+            <div class="gBox gBox1">
+              <span class="since">SINCE</span>
+              <span>2002</span>
+            </div>
+            <div class="gBox gBox2">
+              <dl>
+                <dt>CLIENT</dt>
+                <dd>56+</dd>
+              </dl>
+            </div>
+            <div class="gBox gBox3">
+              <dl>
+                <dt>ANNUAL SALES</dt>
+                <dd>100+</dd>
+              </dl>
+            </div>
+          </div>
+          <div class="textBox">
             <dl>
-              <dt>AWARDS</dt>
-              <dd>56+</dd>
-            </dl>            
+              <dt>
+                WE CREATE<br class="mo-br" />
+                WHAT’S NEXT.<br />
+                STRATEGY, EXPERIENCE, AND DESIGN SHAPING<br />
+                THE NEXT EXPERIENCE.
+              </dt>
+              <dd>
+                <p>
+                  <span>RECRUIT</span>
+                  <a href="./contents/recruit.html" class="textlink"><span>채용 내용 확인하기</span></a>
+                </p>
+                <p class="brief">
+                  <a href="#" class="textlink"><span>COMPANY BRIEF</span></a>
+                </p>
+              </dd>
+            </dl>
           </div>
-        </div>
-        <div class="textBox">
-          <dl>
-            <dt>
-              WE CREATE CHANGES WITH<br>
-              THE EXPERIENCE WE HAVE BUILT<br>
-              ACROSS VARIOUS FIELDS.
-            </dt>
-            <dd>
-              <p>
-                <span>RECRUIT</span>
-                <a href="#" class="textlink"><span>네티브에 지금 지원하기</span></a>
-              </p>
-            </dd>
-          </dl>
-        </div>
-      </section>
-      <section id="sec4" class="sec sec4">
-        <h2>Portpolio </h2>      
-        <div class="imglistbox">
-          <img src="./resources/img/pc/portpolio_main.png" alt="포트폴리오소개이미지" class="infoImg">
+        </section>
+
+        <section id="sec4" class="sec sec4">
+          <h2>PORTFOLIO</h2>
+          <div class="imglistbox">
+            <!-- <img src="./resources/img/pc/portpolio_main.png" alt="포트폴리오소개이미지" class="infoImg">
           <p>
             <span class="textEn">NETIVE DRIVES<br>THE FUTURE OF BUSINESSES<br>WITH DIGITAL SOLUTIONS. </span>
             <span class="textKo">축적된 경험과 깊이 있는 고민으로<br>더 넓은 가능성을 탐색하고 혁신적인 흐름을 만들어갑니다.</span>
-          </p>
-          <div class="galleyBox">
-            <img src="./resources/img/pc/port_img1.png" alt="수호천사동양생명페이지화면">
-            <img src="./resources/img/pc/port_img2.png" alt="신한 쏠 라이프페이지화면">
-            <img src="./resources/img/pc/port_img3.png" alt="키움자산운용 KOESF ETF페이지화면">
-            <img src="./resources/img/pc/port_img4.png" alt="다이렉트페이지화면">
+          </p> -->
+            <div class="galleyBox">
+              <a href="./portfolio/FNT_PJ_02_a001.html" class="port-img" title="수호천사동양생명 페이지이동">
+                <img src="./resources/img/pc/main_port_img1.png" class="pc-only" alt="수호천사동양생명 페이지화면" />
+                <img src="./resources/img/mobile/main_port_img1.png" class="mo-only" alt="수호천사동양생명 페이지화면" />
+                <span class="title">수호천사 동양생명</span>
+              </a>
+              <a href="./portfolio/FNT_PJ_02_a002.html" class="port-img shadow" title="신한 쏠 라이프 페이지이동">
+                <!-- <img src="./resources/img/pc/main_port_img2.png" class="pc-only" alt="신한 쏠 라이프 페이지화면" />
+                <img src="./resources/img/mobile/main_port_img2.png" class="mo-only" alt="신한 쏠 라이프 페이지화면" /> -->
+                <video autoplay muted loop>
+                  <source src="./resources/video/Shinhan_Life.mp4" type="video/mp4" />
+                </video>
+                <span class="title">신한 쏠 라이프</span>
+              </a>
+              <a href="./portfolio/FNT_PJ_02_a003.html" class="port-img shadow" title="KT 빠른기변 프로세스 페이지이동">
+                <img src="./resources/img/pc/main_port_img3.png" class="pc-only" alt="KT 빠른기변 프로세스 페이지화면" />
+                <img src="./resources/img/mobile/main_port_img3.png" class="mo-only" alt="KT 빠른기변 프로세스 페이지화면" />
+                <span class="title">KT 빠른기변 프로세스</span>
+              </a>
+              <a href="./portfolio/FNT_PJ_02_a004.html" class="port-img shadow" title="삼성웰스토리 페이지이동">
+                <img src="./resources/img/pc/main_port_img4.png" class="pc-only" alt="삼성웰스토리 페이지화면" />
+                <img src="./resources/img/mobile/main_port_img4.png" class="mo-only" alt="삼성웰스토리 페이지화면" />
+                <span class="title">삼성웰스토리</span>
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="btnBox">
-          <button type="button"><span class="st1">VIEW MORE</span></button>
-        </div>
-      </section>
-      <section id="sec5" class="sec sec5">
-        <h2>Start to Journey<br>with NETIVE</h2>
-        <ul>
-          <li>
-            <a href="#" alt="프로젝트 문의">
-              <div>
-                <span>프로젝트 문의</span>
-                <h3>PROJECT</h3>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="#" alt="채용문의">
-              <div>
-                <span>채용문의</span>
-                <h3>RECRUIT</h3>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </section>
+          <div class="btnBox">
+            <a href="./contents/workList.html"><span class="st1">VIEW DETAILS</span></a>
+          </div>
+        </section>
+        <section id="sec5" class="sec sec5">
+          <h2>
+            Start to Journey<br />with<br class="mo-br" />
+            NETIVE
+          </h2>
+          <ul>
+            <li>
+              <a href="./contents/contact.html" alt="프로젝트 문의">
+                <div>
+                  <span>프로젝트 문의</span>
+                  <h3>CONTACT</h3>
+                </div>
+              </a>
+            </li>
+            <li class="style_R">
+              <a href="./contents/recruit.html" alt="채용문의">
+                <div>
+                  <span>채용정보 확인</span>
+                  <h3>RECRUIT</h3>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- footer -->
+      <footer id="footer" class="footer">
+        <script type="text/javascript" src="./resources/js/footer.js"></script>
+        <script type="text/javascript">
+          initFooter(0);
+        </script>
+      </footer>
     </div>
-    <footer id="footer" class="footer">
-      <script src="./resources/js/pc/footer.js"></script>
-    </footer>
-  </div> 
-  <div class="firstAction">
-    <div class="baseText">
-      <span>NETIVE</span>
-      <span class="actionText">NETIVE</span>
-    </div>
-  </div>
-</body>
+  </body>
+
+  <script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', setHeader(0));
+
+    window.onload = () => {
+      animateVisual();
+      moHeader();
+      setCompanyInfo();
+    };
+
+    // visual animation
+    const animateVisual = () => {
+      let header = document.querySelector('.header');
+      let scene1 = document.querySelector('.scene1');
+      let scene2 = document.querySelector('.scene2');
+      let scene3 = document.querySelector('.scene3');
+      let scene4 = document.querySelector('.scene4');
+
+      scene1.classList.add('active');
+
+      // 세 번째 영역 문구 쪼개기
+      const textAnimation = (_target) => {
+        let target = document.querySelector(`.${_target}`);
+        let textField = target.querySelector('.text-field');
+        let wordGroups = textField.querySelectorAll('p.ani');
+
+        wordGroups.forEach((word) => {
+          let texts = word.innerText;
+          let textLength = texts.length;
+          let textSpan = '';
+
+          for (let i = 0; i <= textLength; i++) {
+            let text = texts.substring(i, i + 1).replace(/\s/g, '&nbsp;');
+            textSpan += `<span>${texts.substring(i, i + 1)}</span>`;
+          }
+
+          word.innerHTML = textSpan;
+        });
+      };
+
+      textAnimation('scene3');
+      textAnimation('scene4');
+
+      // header(GNB) animation
+      let headerTimer = setTimeout(() => {
+        header.classList.remove('hidden');
+        clearTimeout(headerTimer);
+      }, 1800);
+
+      // scene2 시작
+      let sceneTimer1 = setTimeout(() => {
+        scene2.classList.add('active');
+        clearTimeout(sceneTimer1);
+      }, 2000);
+
+      // scene2 종료
+      let sceneTime1End = setTimeout(() => {
+        scene2.classList.add('hidden');
+        clearTimeout(sceneTime1End);
+      }, 5000);
+
+      // scene3 시작
+      let sceneTimer2 = setTimeout(() => {
+        scene3.classList.add('active');
+        clearTimeout(sceneTimer2);
+      }, 5500);
+
+      // scene3 종료
+      let sceneTime2End = setTimeout(() => {
+        scene3.classList.add('hidden');
+        clearTimeout(sceneTime2End);
+      }, 8500);
+
+      // scene4 시작
+      let sceneTimer3 = setTimeout(() => {
+        scene4.classList.add('active');
+        clearTimeout(sceneTimer3);
+      }, 9000);
+
+      // scene4 종료
+      let sceneTimer3End = setTimeout(() => {
+        let winScrT = window.scrollY;
+        let targetTop = document.querySelector('.main-visual').offsetHeight;
+        if (winScrT <= targetTop) {
+          window.scrollTo({
+            top: targetTop,
+            behavior: 'smooth',
+            delay: 1,
+          });
+        }
+        clearTimeout(sceneTimer3End);
+      }, 13000);
+    };
+
+    // scroll down
+    const scrollDown = () => {
+      let targetTop = document.querySelector('.main-visual').offsetHeight;
+      window.scrollTo({
+        top: targetTop,
+        behavior: 'smooth',
+        delay: 1,
+      });
+    };
+
+    // mobile일 때 scroll에 따른 header 변경
+    const moHeader = () => {
+      let header = document.querySelector('.header');
+      let targetTop = document.querySelector('.main-visual').offsetHeight;
+
+      const chkScroll = () => {
+        if (window.scrollY >= targetTop) {
+          header.classList.remove('scr');
+        } else {
+          header.classList.add('scr');
+        }
+      };
+
+      if (isMobile()) {
+        chkScroll();
+
+        window.addEventListener('scroll', () => {
+          chkScroll();
+        });
+      }
+    };
+
+    // mobile일 때 소개 영역 animation 설정
+    const setCompanyInfo = () => {
+      let parent = document.querySelector('.infoGBox');
+      let gBoxes = parent.querySelectorAll('.gBox');
+
+      if (isMobile()) {
+        gBoxes.forEach((gBox) => {
+          let boxClone = gBox.cloneNode(true);
+          parent.append(boxClone);
+        });
+
+        startCompAni();
+      }
+    };
+
+    // mobile일 때 소개 영역 animation 시작
+    const startCompAni = () => {
+      let aniAreaTop = document.querySelector('.main-visual').offsetHeight - 436;
+      let nextTop = aniAreaTop + document.querySelector('.main-visual').nextElementSibling.offsetHeight;
+
+      const ableCondition = () => {
+        clearInterval(companyInterval);
+
+        if (window.scrollY >= aniAreaTop && window.scrollY < nextTop) {
+          companyInfoAni();
+        }
+      };
+
+      ableCondition();
+
+      window.addEventListener('scroll', () => {
+        ableCondition();
+      });
+    };
+
+    // mobile일 때 소개 영역 animation
+    let companyInterval;
+    const companyInfoAni = () => {
+      let parent = document.querySelector('.infoGBox');
+
+      if (isMobile()) {
+        companyInterval = setInterval(() => {
+          let boxes = parent.querySelectorAll('.gBox');
+          let firstBox = boxes[0];
+          let lastBox = boxes[boxes.length - 1];
+          let cloneFirst = firstBox.cloneNode(true);
+
+          firstBox.remove();
+          parent.append(cloneFirst);
+        }, 2500);
+      }
+    };
+  </script>
 </html>

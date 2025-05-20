@@ -1,0 +1,384 @@
+@import '../mixins';
+@import '../base';
+#wrap {
+  img {
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  .pc {
+    display: none;
+  }
+
+  .motionBox {
+    div {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    * {
+      position: relative;
+      z-index: 2;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, rgba(1, 51, 184, 0) 30%, #0133b8 100%);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: rem(20);
+      bottom: rem(40);
+      width: rem(30);
+      height: rem(40);
+      z-index: 2;
+      background: url('../../img/mobile/portfolio/a002/ico_awards.png') no-repeat 50% 50% / 100% 100%;
+    }
+  }
+
+  // 상단 공통 영역 [s]
+  .motionBox {
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 0 rem(20) rem(95) rem(20);
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: rem(32);
+
+    dl {
+      color: #fff;
+
+      dt {
+        font-size: rem(13);
+        font-weight: 700;
+        line-height: 1.3;
+        text-transform: uppercase;
+
+        & ~ dt {
+          margin-top: rem(12);
+        }
+      }
+
+      dd {
+        font-size: rem(13);
+        line-height: 1.3;
+        text-transform: uppercase;
+        margin-top: rem(4);
+      }
+    }
+
+    h2 {
+      font-size: rem(36);
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+
+    button {
+      display: inline-block;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: rem(62);
+      height: rem(62);
+      margin-left: rem(-31);
+      font-size: 0;
+      line-height: 0;
+      background: url('../../img/mobile/portfolio/icon_scroll.svg') no-repeat 50% 50% / 100%;
+    }
+  }
+
+  .overview {
+    padding: rem(60) rem(20);
+
+    h2 {
+      margin-bottom: rem(20);
+      font-size: rem(16);
+      font-weight: 800;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+      color: #111;
+
+      br {
+        display: none;
+      }
+    }
+
+    strong {
+      display: block;
+      font-size: rem(30);
+      font-weight: 700;
+      line-height: 1.4;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: #111;
+
+      span {
+        display: block;
+      }
+    }
+
+    p {
+      margin-top: rem(32);
+      font-size: rem(16);
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+
+      & + p {
+        margin-top: rem(20);
+      }
+    }
+
+    div {
+      div {
+        display: flex;
+        margin-top: rem(32);
+        gap: rem(6);
+        flex-wrap: wrap;
+
+        span {
+          padding: rem(10) rem(16.5);
+          font-size: rem(16);
+          font-weight: 600;
+          line-height: 1;
+          letter-spacing: -0.03em;
+          color: #222;
+          border-radius: rem(999);
+          border: rem(1) solid #222;
+        }
+      }
+    }
+  }
+  // 상단 공통 영역 [e]
+
+  .sec01,
+  .sec02,
+  .sec03,
+  .sec04,
+  .sec05,
+  .sec06,
+  .sec07 {
+    margin-top: rem(100);
+    padding: 0 rem(20);
+  }
+
+  .sec01 {
+    display: flex;
+    margin-top: 0;
+    flex-direction: column;
+    gap: rem(8);
+
+    img {
+      border-radius: rem(16);
+    }
+
+    > div {
+      display: grid;
+      grid-template-columns: auto 62%;
+      gap: rem(8);
+
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .sec02 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+
+    img {
+      width: 71.64%;
+    }
+
+    .image02 {
+      margin-top: rem(78);
+    }
+    .image03 {
+      margin-top: rem(14);
+    }
+    .image04 {
+      margin-top: rem(100);
+    }
+  }
+
+  .sec03 {
+    display: flex;
+    flex-direction: column;
+    gap: rem(8);
+
+    img {
+      border-radius: rem(16);
+    }
+
+    > div {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: rem(8);
+    }
+  }
+
+  .sec04 {
+    h3 {
+      width: 100%;
+      font-size: rem(18);
+      font-weight: 700;
+      line-height: 1.5;
+      letter-spacing: -0.02em;
+      text-align: center;
+      color: #000;
+    }
+
+    div {
+      display: flex;
+      margin-top: rem(40);
+      padding: 0 rem(20.5);
+      gap: 0 rem(12);
+      justify-content: center;
+    }
+
+    img {
+      width: calc(100% / 3);
+    }
+  }
+
+  .sec05 {
+    div {
+      overflow: hidden;
+      display: grid;
+      position: relative;
+      padding: rem(40) rem(25) rem(100) rem(25);
+      border-radius: rem(16);
+      background-color: #f4f5f6;
+      flex-direction: column;
+      gap: rem(80);
+    }
+
+    h3 {
+      position: absolute;
+      top: rem(20);
+      left: rem(20);
+      width: 100%;
+      font-size: rem(18);
+      font-weight: 700;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+      color: #111;
+    }
+    img {
+      display: block;
+
+      &:nth-of-type(6) {
+        position: relative;
+        right: -25px;
+      }
+    }
+  }
+
+  .sec06 {
+    > div {
+      overflow: hidden;
+      position: relative;
+      padding-top: rem(41);
+      border-radius: rem(16);
+      background-color: #0043f5;
+      display: grid;
+      grid-template-columns: 39.32% 42.37% 18.32%;
+      gap: rem(12);
+    }
+
+    h3 {
+      position: absolute;
+      top: rem(12);
+      left: rem(12);
+      width: 100%;
+      font-size: rem(12);
+      font-weight: 700;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+      text-transform: capitalize;
+      color: #fff;
+    }
+  }
+
+  .workforce {
+    position: relative;
+    margin-top: rem(100);
+    padding: rem(80) rem(40) rem(260);
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: rem(80);
+      width: rem(166);
+      height: rem(101);
+      background: url('../../img/mobile/portfolio/a002/img_logo.svg') no-repeat 100% 100% / rem(166) rem(101);
+    }
+
+    dl {
+      dt {
+        font-size: rem(15);
+        font-weight: 700;
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+        color: #111;
+
+        & ~ dt {
+          margin-top: rem(32);
+        }
+      }
+
+      dd {
+        display: flex;
+        margin-top: rem(12);
+        font-size: rem(18);
+        line-height: 1.4;
+        letter-spacing: -0.01em;
+        color: #444;
+        flex-wrap: wrap;
+        gap: rem(6);
+
+        em {
+          position: relative;
+          font-style: normal;
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: rem(6);
+            height: rem(6);
+            border-radius: 50%;
+            background-color: #2294fd;
+          }
+        }
+      }
+    }
+  }
+}

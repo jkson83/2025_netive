@@ -8,7 +8,7 @@ function mainEffect() {
 
 		const LogoAction = gsap
 			.timeline()
-			.to('.baseText', {
+			.to('.firstAction .baseText', {
 				fontSize: 120,
 				delay: 0.5,
 			})
@@ -106,6 +106,7 @@ function mainEffect() {
 		}
 	}
 }
-
 const runMainEffect = mainEffect();
-runMainEffect(); // 실행됨
+
+// 페이지가 로드된 후 실행
+document.addEventListener('DOMContentLoaded', runMainEffect);

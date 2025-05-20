@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <script src="../resources/js/head.js"></script>
+  <script type="text/javascript">
+    initPage(1);
+    // pc/mobile에 따른 서브 css파일 설정
+    let cssSubFile;
+    let substr='';
+    if (isMobile()) {
+      cssSubFile = 'mo_recruit.css';
+    } else {
+      cssSubFile = 'recruit.css';
+    }
+    substr += `<link rel="stylesheet" href="../resources/scss/${cssSubFile}" type="text/css">`;    
+    document.write(substr);
+  </script>
+</head>
+<body>
+  <div id="wrap" class="wrap">
+    <header id="header" class="header subPage"></header>
+    <div id="container" class="container">
+      <div class="subWrap"> 
+        <div class="recWarp">
+          <h3 class="pageInfo">서로의 다름을 존중하고,<br>유연한 협업을 추구합니다.</h3>
+          <p>우리는 실험하고, 설계하고, 실행하며 성장합니다.새로운 도전 앞에서 망설이기보단 시도하는 팀,<br>변화에 적응하기보다 변화를 만드는 사람들과 함께하고 싶다면,지금 당신의 다음을 Netive에서 시작해보세요.
+            </p>
+          <img src="../resources/img/pc/recruit_visual.png" alt="채용정보이미지" class="imgPc">
+          <img src="../resources/img/mobile/recruit_visual.png" alt="채용정보이미지" class="imgMo">
+        </div>
+      </div>
+      <div class="subWrap bgBlack">         
+        <div class="recWarp">
+          <h3><span>NETIVE의</span> 가치를 실현하는 사람</h3>
+          <p><span>우리는 빠르게 변화하는 디지털 환경 속에서</span> 공감으로 시작하고 (empathy),<br>
+            정직한 협업으로 가능성을 확장하며 (honesty),<br>
+            <span>진정성 있는 태도로 한계를 넘어 함께 성장하는</span> (thoughtful) 사람과 같이 합니다.</p>
+          <div class="graphicBox">
+            <ul>
+              <li class="recTit">EMPATHY</li>
+              <li class="recTitsub">공감할 줄 아는 사람</li>
+              <li class="reccont">사람에 대한 공감으로 시작하여<br>전문성으로 완성할 줄 압니다.</li>
+            </ul>
+            <ul>
+              <li class="recTit">HONESTY</li>
+              <li class="recTitsub">정직하게 협업하는 사람</li>
+              <li class="reccont">보여주기 위한 결과보다,<br>과정의 진정성과 팀워크를 중시합니다.</li>
+            </ul>
+            <ul>
+              <li class="recTit">THOUGHTFUL</li>
+              <li class="recTitsub">진정성으로 성장하는 사람</li>
+              <li class="reccont">깊이 있는 시선과 방향 있는 태도로<br>지속 가능한 가치를 만들어 갑니다.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="subWrap">        
+        <div class="recWarp">
+          <h3>일과 삶의 균형을 존중하고,<br />지속 가능한 일상을 만듭니다.</h3>
+          <div class="slide">
+            <div class="slide-box">
+              <ul class="slide-inner">
+                <li class="slide-item">
+                  <p>감사의 마음을 <br>특별한 경험으로</p>
+                  <span>근속 5년 마다<br>상품권 또는 국내외  여행 지원</span>
+                </li>
+                <li class="slide-item">
+                  <p>일상 속 여유로<br>누리는 힐링 타임</p>
+                  <span>휴식공간 및 커피와 티 제공</span>
+                </li>
+                <li class="slide-item">
+                  <p>당신의 성장을 믿기에<br/>그 여정에 마음을 담아</p>
+                  <span>업무에 필요한 교육과 도서 지원</span>
+                </li>
+                <li class="slide-item">
+                  <p>기쁨과 슬픔의 순간<br>곁에서 함께</p>
+                  <span>각종 경조사비와 경조 휴가지원</span>
+                </li>
+                <li class="slide-item">
+                  <p>작은 선물에 담은<br>축하의 뜻</p>
+                  <span>매월 1일, 소정의 선물 제공</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="recWarp">
+          <h3>같은 방향을 꿈꾼다면,<br/> <span>Netive에서 그 시작을</span> 함께하세요.</h3>
+          <div class="boardWrap">
+            <div class="AccoBox">
+              <button type="button" title="펼치기" class="toggleLayout">
+                <span class="deptName"><strong>PM</strong>Project Manager</span>
+                <span class="deptCont">PM 그룹은 프로젝트의 시작부터 끝까지 전 과정을 조율하며, 비즈니스 목표와 사용자 경험을 중심에 두고 프로젝트를 리딩합니다.<br>기획부터 실행, 운영까지 전반적인 프로젝트를 책임지며 다양한 이해관계자와 협업해 성공적인 결과를 이끌어냅니다.</span>
+                <span class="toggleIcon"><em>펼치기</em></span>
+              </button>
+              <ul class="listStyle">
+                <li class="toggleCont">
+                  <section>
+                    <ul>
+                      <strong>Project Ownership</strong>
+                      <li>프로젝트 전반을 기획부터 실행, 운영까지 총괄하며 일정·자원·이슈를 체계적으로 관리합니다.</li>
+                      <li>목표 달성을 위한 전반적인 진행 흐름을 리딩하며 결과물의 완성도를 책임집니다.</li>
+                    </ul>
+                    <ul>
+                      <strong>Cross-team Collaboration</strong>
+                      <li>기획, 디자인, 개발 등 다양한 팀 사이의 커뮤니케이션을 중재하고 협업을 이끕니다.</li>
+                      <li>각 파트의 이해관계를 조율하며 프로젝트의 일관된 방향성을 유지합니다.</li>
+                    </ul>
+                    <ul>
+                      <strong>Domain-based Planning</strong>
+                      <li>사용자와 서비스에 대한 맥락을 이해하고, 관련 정책과 기술 흐름을 고려해 기획에 반영합니다.</li>
+                      <li>도메인 지식을 바탕으로 실현 가능하고 지속 가능한 프로젝트를 설계합니다.</li>
+                    </ul>
+                    <ul>
+                      <strong>Problem Solving</strong>
+                      <li>프로젝트 진행 중 발생하는 다양한 이슈를 빠르게 분석하고 실행 가능한 해결책을 도출합니다.</li>
+                      <li>데이터를 기반으로 문제의 본질을 파악하고, 효과적인 대응 전략을 수립합니다.</li>
+                    </ul>
+                  </section>
+                  <!-- 채용공고가 있을때만 노출 -->
+                  <p class="recruitSite">
+                    <button class="jobkorea"><em>잡코리아</em></button>
+                    <button class="wanted"><em>원티드</em></button>
+                    <button class="saramin"><em>사람인</em></button>
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="AccoBox">
+              <button type="button" title="펼치기" class="toggleLayout">
+                <span class="deptName"><strong>전략기획</strong>UX Planner</span>
+                <span class="deptCont">UX 전략기획 그룹은 사용자 경험을 바탕으로 비즈니스 목표와 전략을 연결합니다.<br>데이터를 기반으로 사용자 니즈를 분석하고, 서비스 개선을 위한 방향성과 기획을 설계합니다.</span>
+                <span class="toggleIcon"><em>펼치기</em></span>
+              </button>
+              <ul class="listStyle">
+                <li class="toggleCont">
+                  <section>
+                    <ul>
+                      <strong>User Research</strong>
+                      <li>사용자 행동, 니즈, 사용 맥락 등을 정성·정량 데이터로 분석해 인사이트를 도출합니다.</li>
+                      <li>분석 결과를 바탕으로 더 나은 경험을 위한 기획 방향을 설정합니다.</li>
+                    </ul>
+                    <ul>
+                      <strong>UX Strategy</strong>
+                      <li>서비스의 방향성과 구조를 설계하며, 사용자와 비즈니스 간의 연결 고리를 만들어냅니다.</li>
+                      <li>데이터를 바탕으로 논리적인 기획을 설계하고 문제를 구조적으로 해결합니다.</li>
+                    </ul>
+                    <ul>
+                      <strong>UX Planning</strong>
+                      <li>사용자의 니즈를 중심으로 전체 서비스의 흐름과 화면 구성을 기획합니다.</li>
+                      <li>직관적이고 편리한 경험을 설계하는 것이 주요 역할입니다.</li>
+                    </ul>
+                    <ul>
+                      <strong>Planning Communication</strong>
+                      <li>기획 의도를 명확하게 전달하고, 유관 부서와의 긴밀한 협업을 통해 실행력을 확보합니다.</li>
+                      <li>다양한 관점을 조율하며 효율적인 의사결정을 이끕니다.</li>
+                    </ul>
+                  </section>
+                  <!-- 채용공고가 있을때만 노출 -->
+                  <p class="recruitSite">
+                    <button class="jobkorea"><em>잡코리아</em></button>
+                    <button class="wanted"><em>원티드</em></button>
+                    <button class="saramin"><em>사람인</em></button>
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="AccoBox">
+              <button type="button" title="펼치기" class="toggleLayout">
+                <span class="deptName"><strong>디자인</strong>UI/UX Designer</span>
+                <span class="deptCont">디자인 그룹은 사용자 경험을 중심으로 다양한 프로젝트를 수행하며, 브랜드와 사용자 사이의 효과적인 연결을 디자인합니다. <br>새롭고 창의적인 솔루션으로 사용자에게 즐거움을 선사합니다.</span>
+                <span class="toggleIcon"><em>펼치기</em></span>
+              </button>
+              <ul class="listStyle">
+                <li class="toggleCont">
+                  <section>
+                    <ul>
+                      <strong>Design Thinking</strong>
+                      <li>사용자의 니즈와 문제를 공감하고 정의하며, 창의적인 아이디어를 통해 솔루션을 도출합니다.</li>
+                      <li>프로토타이핑과 반복적인 테스트를 통해 더 나은 사용자 경험을 설계합니다.</li>
+                    </ul>
+                    <ul>
+                      <strong>UI/UX Design</strong>
+                      <li>사용자 흐름에 맞춘 UI/UX를 설계하고, 브랜드와 기능을 연결하는 시각적 경험을 만듭니다.</li>
+                      <li>다양한 플랫폼 환경에 적합한 일관된 디자인을 구축합니다.</li>
+                    </ul>
+                    <ul>
+                      <strong>Design Collaboration</strong>
+                      <li>기획자와 개발자와 함께 논의하며 피드백을 바탕으로 디자인을 완성도 있게 다듬습니다.</li>
+                      <li>실현 가능한 디자인을 만들기 위한 조율력을 갖춥니다.</li>
+                    </ul>
+                    <ul>
+                      <strong>Creative Solving</strong>
+                      <li>제한된 조건 속에서도 창의적으로 문제를 풀고, 새로운 접근으로 사용자 경험을 개선합니다.</li>
+                      <li>반복적 실험을 통해 더 나은 디자인 솔루션을 제안합니다.</li>
+                    </ul>
+                  </section>
+                  <!-- 채용공고가 있을때만 노출 -->
+                  <p class="recruitSite">
+                    <!-- <button class="jokorea"><em>잡코리아</em></button>
+                    <button class="wanted"><em>원티드</em></button> -->
+                    <span>지금은 채용이 마감되었어요.</span>
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="AccoBox">
+              <button type="button" title="펼치기" class="toggleLayout">
+                <span class="deptName"><strong>UI 개발</strong>  Front-End Developer</span>
+                <span class="deptCont">UI개발 그룹은 사용자에게 직접적으로 전달되는 웹 인터페이스를 개발합니다.<br>최신 기술을 바탕으로 빠르고 안정적인 사용자 경험을 제공합니다.</span>
+                <span class="toggleIcon"><em>펼치기</em></span>
+              </button>
+              <ul class="listStyle">
+                <li class="toggleCont">
+                  <section>
+                    <ul>
+                      <strong>Frontend Dev.</strong>
+                      <li>Vue.js, React 등을 사용해 사용자와 직접 맞닿는 화면을 구현합니다.</li>
+                      <li>다양한 기기 환경에서 빠르고 안정적인 UI를 제공합니다.</li>
+                    </ul>
+                    <ul>
+                      <strong>Markup Coding</strong>
+                      <li>시맨틱한 HTML과 SCSS를 활용해 웹 표준에 맞는 UI 마크업을 구성합니다.</li>
+                      <li>반응형 설계 및 접근성을 고려한 구조를 구현합니다.</li>
+                    </ul>
+                    <ul>
+                      <strong>Version Control</strong>
+                      <li>Git, SVN 등 형상관리 툴을 사용해 안정적인 협업과 코드 운영을 지원합니다.</li>
+                      <li>브랜치 전략과 코드 리뷰 문화를 이해하고 실천합니다.</li>
+                    </ul>
+                    <ul>
+                      <strong>Web Standards</strong>
+                      <li>웹 접근성과 퍼포먼스를 고려한 UI 구현을 통해 사용자 신뢰를 확보합니다.</li>
+                      <li>일관된 품질 기준을 바탕으로 완성도 높은 화면을 구축합니다.</li>
+                    </ul>
+                  </section>
+                  <!-- 채용공고가 있을때만 노출 -->
+                  <p class="recruitSite">
+                    <!-- <button class="jokorea"><em>잡코리아</em></button>
+                    <button class="wanted"><em>원티드</em></button> -->
+                    <span>지금은 채용이 마감되었어요.</span>
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="AccoBox">
+              <button type="button" title="펼치기" class="toggleLayout">
+                <span class="deptName"><strong>기술개발</strong>Tech Developer</span>
+                <span class="deptCont">기술개발 그룹은 안정적이고 확장성 있는 시스템 설계를 기반으로 서비스의 핵심 기술을 개발합니다.<br>회사의 비즈니스 요구에 맞춘 기술적 해결책을 고민하고 구현합니다.</span>
+                <span class="toggleIcon"><em>펼치기</em></span>
+              </button>
+              <ul class="listStyle">
+                <li class="toggleCont">
+                  <section>
+                    <ul>
+                      <strong>Tech Learning</strong>
+                      <li>최신 기술과 도구를 적극적으로 탐색하고, 서비스에 적합한 솔루션을 제안합니다.</li>
+                      <li>변화에 유연하게 대응하며 기술 역량을 지속적으로 확장합니다.</li>
+                    </ul>
+                    <ul>
+                      <strong>Issue Response</strong>
+                      <li>운영 중 발생하는 이슈나 기술적 문제를 분석하고 근본적인 해결책을 구현합니다.</li>
+                      <li>안정적인 서비스 유지를 위한 실무적 해결력을 갖춥니다.</li>
+                    </ul>
+                    <ul>
+                      <strong>Collaborative Dev</strong>
+                      <li>다양한 직군과의 협업을 통해 기술적으로 조율된 결과물을 완성합니다.</li>
+                      <li>원활한 커뮤니케이션으로 개발 프로세스의 효율을 높입니다.</li>
+                    </ul>
+                    <ul>
+                      <strong>Dev Leadership</strong>
+                      <li>개발 과제를 주도적으로 추진하고, 전체 구조와 품질을 고려해 프로젝트를 이끕니다.</li>
+                      <li>적극적인 자세로 기술적 방향성을 제시합니다.</li>
+                    </ul>
+                  </section>
+                  <!-- 채용공고가 있을때만 노출 -->
+                  <p class="recruitSite">
+                    <button class="jobkorea"><em>잡코리아</em></button>
+                    <button class="wanted"><em>원티드</em></button>
+                    <button class="saramin"><em>사람인</em></button>
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="recWarp">
+          <h3>함께하기 위한 여정이에요.</h3>
+          <div class="stepBox stPc">
+            <dl>
+              <dt>1단계</dt>
+              <dd>서류접수</dd>
+            </dl>
+            <dl>
+              <dt>2단계</dt>
+              <dd>서류합격자<br>통보</dd>
+            </dl>
+            <dl>
+              <dt>3단계</dt>
+              <dd>실무 면접</dd>
+            </dl>
+            <dl>
+              <dt>4단계</dt>
+              <dd>결과통보</dd>
+            </dl>
+          </div>
+          <div class="stepBox stMo">
+            <dl>
+              <dt>1단계</dt>
+              <dd>서류접수</dd>
+            </dl>
+            <dl>
+              <dt>2단계</dt>
+              <dd>서류합격자<br>통보</dd>
+            </dl>
+            <dl>
+              <dt>4단계</dt>
+              <dd>결과통보</dd>
+            </dl>
+            <dl>
+              <dt>3단계</dt>
+              <dd>실무 면접</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <footer id="footer" class="footer">
+      <script src="../resources/js/footer.js"></script>
+      <script type="text/javascript">
+        initFooter(1);
+      </script>
+    </footer>
+  </div> 
+</body>
+
+<script type="text/javascript">
+  window.addEventListener('DOMContentLoaded', setHeader(1));
+  window.addEventListener('resize', () => {
+    changeSt();
+  });
+  window.addEventListener('load', () => {
+    changeSt();
+  });
+  function changeSt(){
+    let changePg =  document.querySelector('.subWrap.bgBlack');
+    let winWidth = window.outerWidth;
+    if (winWidth <= '1539'){
+      changePg.style.padding = '0px 73px';
+    }else{
+      changePg.style.padding = '0px 263px';
+    }
+  }
+</script>
+</html>

@@ -1,0 +1,180 @@
+@import '../mixins';
+@import '../base';
+#wrap {
+  .pc {
+    display: none;
+  }
+
+  // 상단 공통 영역 [s]
+  .motionBox {
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 0 rem(20) rem(95) rem(20);
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: rem(32);
+
+    dl {
+      color: #fff;
+
+      dt {
+        font-size: rem(13);
+        font-weight: 700;
+        line-height: 1.3;
+        text-transform: uppercase;
+
+        & ~ dt {
+          margin-top: rem(12);
+        }
+      }
+
+      dd {
+        font-size: rem(13);
+        line-height: 1.3;
+        text-transform: uppercase;
+        margin-top: rem(4);
+      }
+    }
+
+    h2 {
+      font-size: rem(36);
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+
+    button {
+      display: inline-block;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: rem(62);
+      height: rem(62);
+      margin-left: rem(-31);
+      font-size: 0;
+      line-height: 0;
+      background: url('../../img/mobile/portfolio/icon_scroll.svg') no-repeat 50% 50% / 100%;
+    }
+  }
+
+  .overview {
+    padding: rem(60) rem(20);
+
+    h2 {
+      margin-bottom: rem(20);
+      font-size: rem(16);
+      font-weight: 800;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+      color: #111;
+
+      br {
+        display: none;
+      }
+    }
+
+    strong {
+      display: block;
+      font-size: rem(30);
+      font-weight: 700;
+      line-height: 1.4;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: #111;
+
+      span {
+        display: block;
+      }
+    }
+
+    p {
+      margin-top: rem(32);
+      font-size: rem(16);
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+
+      & + p {
+        margin-top: rem(20);
+      }
+    }
+
+    div {
+      div {
+        display: flex;
+        margin-top: rem(32);
+        gap: rem(6);
+        flex-wrap: wrap;
+
+        span {
+          padding: rem(10) rem(16.5);
+          font-size: rem(16);
+          font-weight: 600;
+          line-height: 1;
+          letter-spacing: -0.03em;
+          color: #222;
+          border-radius: rem(999);
+          border: rem(1) solid #222;
+        }
+      }
+    }
+  }
+  // 상단 공통 영역 [e]
+
+  .motionBox {
+    background: #1d1d1b url('../../img/pc/portfolio/b003/top_img.png') no-repeat right top rem(86) / rem(211);
+  }
+
+  .container {
+    @for $i from 1 to 8 {
+      .sec0#{$i} {
+        text-align: center;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .sec01 {
+      margin: 0 rem(20) rem(100);
+    }
+
+    .sec02 {
+      margin: 0 rem(20) rem(100);
+    }
+
+    .sec03 {
+      margin-bottom: rem(100);
+    }
+
+    .sec04 {
+      margin-bottom: rem(100);
+    }
+
+    .sec05 {
+      margin-bottom: rem(100);
+    }
+
+    .sec06 {
+      margin-bottom: rem(100);
+    }
+
+    .sec07 {
+      margin: 0 rem(20) rem(100);
+
+      .sec07_01 {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: rem(9);
+
+        > p {
+          width: 48.9%;
+        }
+      }
+    }
+  }
+}

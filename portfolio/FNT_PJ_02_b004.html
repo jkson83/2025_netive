@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="../resources/js/head.js"></script>
+    <script type="text/javascript">
+      initPage(1);
+    </script>
+    <script>
+      // pc/mobile에 따른 서브 css파일 설정
+      let cssSubFile;
+      let portstr = '';
+      if (isMobile()) {
+        cssSubFile = 'FNT_PJ_02_b004_mo.css';
+      } else {
+        cssSubFile = 'FNT_PJ_02_b004.css';
+      }
+      portstr += `<link rel="stylesheet" href="../resources/scss/portfolio/${cssSubFile}" type="text/css">`;
+      document.write(portstr);
+    </script>
+  </head>
+
+  <body>
+    <div id="wrap" class="wrap">
+      <header id="headerPort" class="header"></header>
+
+      <div class="motionBox">
+        <dl>
+          <dt>Client</dt>
+          <dd>Amway korea</dd>
+          <dt>Since</dt>
+          <dd>November, 2014</dd>
+        </dl>
+        <h2>한국암웨이 <br />디지털 채널 운영</h2>
+
+        <button type="button" class="scroll-down" onclick="scrollDown()">
+          <span>아래로</span>
+        </button>
+      </div>
+
+      <div id="container" class="container">
+        <div class="overview">
+          <h2>Experience <br />Overview</h2>
+          <div>
+            <strong>
+              <span>암웨이의 혁신과 성장을 </span>
+              <span>함께 하는 파트너</span>
+            </strong>
+            <p>
+              네티브는 세계 및 국내 1위 직접판매 기업 Amway Korea의 운영업무를 11년간 진행하고 있으며, <br />
+              쇼핑부터 체계적인 비즈니스 정보를 제공하기 위해 고민하며 성장과 혁신을 거듭해 왔습니다.
+            </p>
+            <p>
+              서비스의 유지운영부터 고객의 마케팅 전략까지 오너십을 가지고 고도화를 진행하여<br />
+              높은 품질과 성과로 오랜시간 동안 동반 성장하는 관계를 이어오고 있습니다.
+            </p>
+            <div>
+              <span>Maintenance</span>
+              <span>UI / UX Design</span>
+              <span>Publishing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sec01">
+          <div class="sec01_01">
+            <p class="img_sec_01_01">
+              <img src="../resources/img/pc/portfolio/b004/img_sec_01_01.png" class="pc" alt="" />
+              <img src="../resources/img/mobile/portfolio/b004/img_sec_01_01.png" class="mo" alt="" />
+            </p>
+            <p class="img_sec_01_02">
+              <img src="../resources/img/pc/portfolio/b004/img_sec_01_02.png" class="pc" alt="" />
+              <img src="../resources/img/mobile/portfolio/b004/img_sec_01_02.png" class="mo" alt="" />
+            </p>
+          </div>
+        </div>
+
+        <div class="sec02">
+          <img src="../resources/img/pc/portfolio/b004/img_sec_02.png" class="pc" alt="" />
+          <img src="../resources/img/mobile/portfolio/b004/img_sec_02.png" class="mo" alt="" />
+        </div>
+
+        <div class="sec03">
+          <img src="../resources/img/pc/portfolio/b004/img_sec_03.png" class="pc" alt="" />
+          <img src="../resources/img/mobile/portfolio/b004/img_sec_03.png" class="mo" alt="" />
+        </div>
+
+        <div class="sec04">
+          <img src="../resources/img/pc/portfolio/b004/img_sec_04.png" class="pc" alt="" />
+          <img src="../resources/img/mobile/portfolio/b004/img_sec_04.png" class="mo" alt="" />
+        </div>
+      </div>
+
+      <footer id="footer" class="footer">
+        <script src="../resources/js/footer.js"></script>
+        <script type="text/javascript">
+          initFooter(1);
+        </script>
+      </footer>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', setHeader(2));
+
+    const scrollDown = () => {
+      let targetTop = document.querySelector('.motionBox').offsetHeight;
+      window.scrollTo({
+        top: targetTop,
+        behavior: 'smooth',
+        delay: 1,
+      });
+    };
+  </script>
+</html>

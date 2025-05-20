@@ -16,9 +16,18 @@ $ScrollBgHover: #BBB;
   &::-webkit-scrollbar-thumb:hover{background:$ScrollBgHover;opacity:.5;}
 }
 
-@mixin scrollX($width:rem(10)){
-	overflow-x:overlay;
+@mixin scrollX($width:rem(10), $background: transparent){
+	overflow-x:hidden;
   &::-webkit-scrollbar{width:$width;height:$width;}
   &::-webkit-scrollbar-thumb{background:$ScrollBg;border-radius:rem(10);}
   &::-webkit-scrollbar-thumb:hover{background:$ScrollBgHover;}
+}
+
+@mixin scrollContent($width:rem(10), $background: transparent){
+	overflow:auto;
+  &::-webkit-scrollbar{width:$width;height:$width;margin-right:rem(10);}
+  // &::-webkit-scrollbar-track{background-color:#FAFAFA;}
+  &::-webkit-scrollbar-track{background-color:$background;}
+  &::-webkit-scrollbar-thumb{background:$ScrollBg;border-radius:rem(10);padding-right:rem(10);}
+  &::-webkit-scrollbar-thumb:hover{background:$ScrollBgHover;opacity:.5;}
 }

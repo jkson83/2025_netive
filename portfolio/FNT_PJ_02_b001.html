@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="../resources/js/head.js"></script>    
+    <script type="text/javascript">
+      initPage(1);
+    </script>
+    <script>
+      // pc/mobile에 따른 서브 css파일 설정
+      let cssSubFile;
+      let portstr = '';
+      if (isMobile()) {
+        cssSubFile = 'FNT_PJ_02_b001_mo.css';
+      } else {
+        cssSubFile = 'FNT_PJ_02_b001.css';
+      }
+      portstr += `<link rel="stylesheet" href="../resources/scss/portfolio/${cssSubFile}" type="text/css">`;
+      document.write(portstr);
+    </script>
+  </head>
+
+  <body>
+    <div id="wrap" class="wrap">
+      <header id="headerPort" class="header"></header>
+
+      <div class="motionBox">
+        <dl>
+          <dt>Client</dt>
+          <dd>samsungcard shopping</dd>
+          <dt>Since</dt>
+          <dd>january, 2016</dd>
+        </dl>
+        <h2>삼성카드 통합 <br />쇼핑몰 운영</h2>
+
+        <button type="button" class="scroll-down" onclick="scrollDown()">
+          <span>아래로</span>
+        </button>
+      </div>
+
+      <div id="container" class="container">
+        <div class="overview">
+          <h2>Experience <br />Overview</h2>
+          <div>
+            <strong>
+              <span>Since 2016</span>
+              <span>디지털 역량을 바탕으로 한</span>
+              <span>장기적인 파트너십</span>
+            </strong>
+            <p>더 근사한 쇼핑 경험을 목표로 한 삼성카드 쇼핑 파트너로서의 여정은 2016년에 시작되었습니다.</p>
+            <p>
+              긴 시간동안 고객의 마음을 헤아리는 고객 중심의 전략 컨설팅 그리고 분기별 리포트 보고 등을 통해<br />
+              사용자의 기대에 부응하는 서비스의 기획과 디자인, 안정적인 운영을 수행해 오고 있습니다.
+            </p>
+            <p>
+              단순한 유지보수 업무를 넘어서 네티브의 기술력과 트렌드를 앞서가는 크리에이티브로<br />
+              쇼핑 플랫폼의 넥스트를 고민하면서 더 새로운 모습으로 진화하는 고도화 및 운영은<br />
+              계속됩니다.
+            </p>
+            <div>
+              <span>Maintenance</span>
+              <span>UI / UX Design</span>
+              <span>Publishing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sec01">
+          <p class="sec01_txt">
+            Samsung <br />
+            Card<br />
+            Shopping
+          </p>
+
+          <p class="card_img"><img src="../resources/img/pc/portfolio/b001/img_sec_01_card.png" alt="" /></p>
+        </div>
+
+        <div class="sec02">
+          <img src="../resources/img/pc/portfolio/b001/img_sec_02.png" alt="" />
+        </div>
+
+        <div class="sec03">
+          <img src="../resources/img/pc/portfolio/b001/img_sec_03.png" class="pc" alt="" />
+          <img src="../resources/img/mobile/portfolio/b001/img_sec_03.png" class="mo" alt="" />
+        </div>
+
+        <div class="sec04">
+          <p class="img_sec_04_01"><img src="../resources/img/pc/portfolio/b001/img_sec_04_01.png" alt="" /></p>
+          <p class="img_sec_04_02"><img src="../resources/img/pc/portfolio/b001/img_sec_04_02.png" alt="" /></p>
+        </div>
+
+        <div class="sec05">
+          <p class="img_sec_05_01"><img src="../resources/img/pc/portfolio/b001/img_sec_05_01.png" alt="" /></p>
+          <p class="img_sec_05_02"><img src="../resources/img/pc/portfolio/b001/img_sec_05_02.png" alt="" /></p>
+          <p class="img_sec_05_03"><img src="../resources/img/pc/portfolio/b001/img_sec_05_03.png" alt="" /></p>
+          <p class="img_sec_05_04"><img src="../resources/img/pc/portfolio/b001/img_sec_05_04.png" alt="" /></p>
+          <p class="img_sec_05_05"><img src="../resources/img/pc/portfolio/b001/img_sec_05_05.png" alt="" /></p>
+          <p class="img_sec_05_06"><img src="../resources/img/pc/portfolio/b001/img_sec_05_06.png" alt="" /></p>
+          <p class="img_sec_05_07"><img src="../resources/img/pc/portfolio/b001/img_sec_05_07.png" alt="" /></p>
+          <p class="img_sec_05_08"><img src="../resources/img/pc/portfolio/b001/img_sec_05_08.png" alt="" /></p>
+          <p class="img_sec_05_09"><img src="../resources/img/pc/portfolio/b001/img_sec_05_09.png" alt="" /></p>
+        </div>
+
+        <div class="sec06">
+          <p><img src="../resources/img/pc/portfolio/b001/img_sec_06_01.png" alt="" /></p>
+
+          <div class="sec06_01">
+            <p><img src="../resources/img/pc/portfolio/b001/img_sec_06_02.png" alt="" /></p>
+            <p><img src="../resources/img/pc/portfolio/b001/img_sec_06_03.png" alt="" /></p>
+          </div>
+        </div>
+
+        <div class="sec07">
+          <img src="../resources/img/pc/portfolio/b001/img_sec_07.png" class="pc" alt="" />
+          <img src="../resources/img/mobile/portfolio/b001/img_sec_07.png" class="mo" alt="" />
+        </div>
+
+        <div class="sec08">
+          <img src="../resources/img/pc/portfolio/b001/img_sec_08.png" alt="" />
+        </div>
+      </div>
+
+      <footer id="footer" class="footer">
+        <script src="../resources/js/footer.js"></script>
+        <script type="text/javascript">
+          initFooter(1);
+        </script>
+      </footer>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', setHeader(2));
+
+    const scrollDown = () => {
+      let targetTop = document.querySelector('.motionBox').offsetHeight;
+      window.scrollTo({
+        top: targetTop,
+        behavior: 'smooth',
+        delay: 1,
+      });
+    };
+  </script>
+</html>

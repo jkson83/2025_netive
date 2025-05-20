@@ -3,8 +3,7 @@ html {
 }
 
 body {
-  overflow: hidden;
-  overflow-y: overlay;
+  overflow: auto;
   margin: 0;
   padding: 0;
 }

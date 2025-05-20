@@ -55,29 +55,3 @@ button{
 	}
 }
 
-.btnBox{
-	text-align: center;
-	> button{
-		> span{
-			font-family: "Ins_SansM";
-			@include flexRow(center, center, nowrap, rem(16));
-			@include RoundSt(rem(24), rem(24), 900, #000, #fff);		
-			letter-spacing: rem(-0.3);
-			&.st1{
-				padding:rem(20) rem(40);
-			}
-			&.st2{
-				padding:rem(16) rem(32);
-			}
-			border: 2px solid #000;
-			&:hover{
-				background-color: #000;
-				color:#fff;
-			}
-		}
-		&.on > span{
-			background-color: #000;
-			color:#fff;
-		}
-	}
-}

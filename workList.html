@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, shrink-to-fit=no">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+  <title>NETIVE</title>
+  <script src="./resources/js/head.js"></script>
+  <!-- <link rel="stylesheet" href="./resources/scss/main.css"> -->
+  <style>
+  @font-face {
+    font-family: "Pretendard";
+    src: url("./resources//fonts/pretendard/Pretendard-Regular.woff") format("woff");
+    font-weight: 400;
+    font-display: swap;
+  }
+  #wrap {
+    font-family: "Pretendard";
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+    line-height: 25px;
+  }
+  #wrap .workList {
+  font-size: 50px;
+  line-height: 100px;
+  text-align:center;
+  }
+  #wrap table {
+    border: 0;
+    border-spacing: 0;
+  }
+
+  .tableStyle {
+    width: 100%;
+  }
+  .tableStyle thead {
+    background-color: darkcyan;
+    color: #fff;
+    font-weight: 400;
+  }
+  .tableStyle thead th {
+    padding: 10px 0;
+    text-align: center;
+    border-right:1px  solid  #9cd4d44a;
+  }
+  .tableStyle tbody tr:hover {
+    background-color: #fdf5ea;
+  }
+  .tableStyle tbody tr.cateLine > td {
+    border-top: 2px solid #000;
+  }
+  .tableStyle tbody td {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #dbdbdb;
+    border-right: 1px solid #dbdbdb;
+    font-size: 16px;
+  }
+  .tableStyle tbody td.fgray {
+    color: #777;
+  }
+  .tableStyle tbody td.fblue {
+    color: rgb(26, 11, 196);
+  }
+  .tableStyle tbody td > a {
+    color: brown;
+  }
+  .tableStyle tbody td > a:hover {
+    color: blue;
+  }
+  .tableStyle tbody td:nth-of-type(6),
+  .tableStyle tbody td:nth-of-type(10),
+  .tableStyle tbody td:nth-of-type(11) {
+    text-align: left;
+    padding-left: 15px;
+  }
+</style>
+</head>
+<body> 
+  <!-- 5/9 업데이트 반영 테스트 -->
+  <div id="wrap" class="wrap">
+    <h2 class="workList">WorkList</h2>
+    <table class="tableStyle">
+      <colgroup>
+        <col scope="col" width="50px">
+        <col scope="col" width="120px">
+        <col scope="col" width="130px">
+        <col scope="col" width="80px">
+        <col scope="col" width="180px">
+        <col scope="col" width="280px">
+        <col scope="col" width="150px">
+        <col scope="col" width="150px">
+        <col scope="col" width="100px">
+        <col scope="col" width="350px">
+        <col scope="col" width="*">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Depth 1</th>
+          <th>Depth 2</th>
+          <th>Depth 3</th>
+          <th>화면 ID</th>
+          <th>Subject</th>
+          <th>진행상황(pc)</th>
+          <th>진행상황(mobile)</th>
+          <th>Portfolio<br>화면담당자</th>
+          <th>구현화면</th>
+          <th>비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>홈</td>
+          <td></td>
+          <td></td>
+          <td>FNT_HO_01</td>
+          <td>메인</td>
+          <td class="fblue">퍼블완료</td>
+          <td class="fblue">퍼블완료</td>
+          <td></td>
+          <td><a href="./index.html" target="_blank">index.html</a></td>
+          <td>사재규 수석 진행중(5/7)<br>(5/16) 완료</td>
+        </tr>
+        <tr class="cateLine">
+          <td>2</td>
+          <td rowspan="">포트폴리오</td>
+          <td>목록</td>
+          <td></td>
+          <td>FNT_PJ_01</td>
+          <td>프로젝트 목록</td>
+          <td class="fblue">퍼블 완료</td>
+          <td class="fblue">퍼블 완료</td>
+          <td></td>
+          <td><a href="./contents/FNT_PJ_01.html" target="_blank">FNT_PJ_01.html</a></td>
+          <td>이미지 썸네일 구성 변경 디자인 대기 중(9/14)<br>수급된 디자인 반영 완료(5/15)</td>
+        </tr>
+        <tr class="cateLine">
+          <td>3</td>
+          <td rowspan=""></td>
+          <td>상세(구축타입-a)</td>
+          <td></td>
+          <td>FNT_PJ_02_a001</td>
+          <td>동양생명 마이엔젤 서비스 통합 구축</td>
+          <td class="fblue">퍼블완료</td>
+          <td class="fblue">퍼블완료</td>
+          <td>곽보라</td>
+          <td><a href="./portfolio/FNT_PJ_02_a001.html" target="_blank">FNT_PJ_02_a001.html</a></td>
+          <td>5/15 퍼블 작업시작</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td rowspan=""></td>
+          <td></td>
+          <td></td>
+          <td>FNT_PJ_02_a002</td>
+          <td>신한라이프 스퀘어 고도화 사업</td>
+          <td class="fblue">퍼블완료</td>
+          <td class="fblue">퍼블완료</td>
+          <td>장홍준</td>
+          <td><a href="./portfolio/FNT_PJ_02_a002.html" target="_blank">FNT_PJ_02_a002.html</a></td>
+          <td>5/15 퍼블 작업시작</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td rowspan=""></td>
+          <td></td>
+          <td></td>
+          <td>FNT_PJ_02_a003</td>
+          <td>KT닷컴 기기변경 프로세스 UX/UI 혁신</td>
+          <td class="fblue">퍼블완료</td>
+          <td class="fblue">퍼블완료</td>
+          <td>손진경</td>
+          <td><a href="./portfolio/FNT_PJ_02_a003.html" target="_blank">FNT_PJ_02_a003.html</a></td>
+          <td>
+            디자인 수급 대기중<br />
+            5/15 '안랩 30주년 기념 사이트 제작' → 'KT닷컴 기기변경 프로세스 UX/UI 혁신'으로 변경, 퍼블작업 예정<br>(5/19)완료
+          </td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td rowspan=""></td>
+          <td></td>
+          <td></td>
+          <td>FNT_PJ_02_a004</td>
+          <td>삼성웰스토리 W+ 2.1 구축</td>
+          <td class="fblue">퍼블완료</td>
+          <td class="fblue">퍼블완료</td>
+          <td>장홍준</td>
+          <td><a href="./portfolio/FNT_PJ_02_a004.html" target="_blank">FNT_PJ_02_a004.html</a></td>
+          <td>5/15 디자인 확인 및 퍼블 작업예정</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td rowspan=""></td>
+          <td></td>
+          <td></td>
+          <td>FNT_PJ_02_a005</td>
+          <td>한국신용정보원 MyPDS 고도화 사업</td>
+          <td class="fblue">퍼블완료</td>
+          <td class="fblue">퍼블완료</td>
+          <td>곽보라</td>
+          <td><a href="./portfolio/FNT_PJ_02_a005.html" target="_blank">FNT_PJ_02_a005.html</a></td>
+          <td>5/15 디자인 확인 및 퍼블 작업예정</td>
+        </tr>
+        <tr style="background-color:#e9ca7b;color:#999;">
+          <td>8</td>
+          <td rowspan=""></td>
+          <td></td>
+          <td></td>
+          <td>FNT_PJ_02_a006</td>
+          <td>키움투자자산운용 홈페이지 리뉴얼</td>
+          <td class="fgray">작업대기</td>
+          <td class="fgray">작업대기</td>
+          <td></td>
+          <td></td>
+          <td>
+            5/07 화면 추가<br />
+            5/13 제외 OPEN 후 추가 진행 예정
+          </td>
+        </tr>
+        <tr class="cateLine">
+          <td>9</td>
+          <td></td>
+          <td>상세(운영타입-b)</td>
+          <td></td>
+          <td>FNT_PJ_02_b001</td>
+          <td>삼성카드 쇼핑</td>
+          <td class="fblue">퍼블완료</td>
+          <td class="fblue">퍼블완료</td>
+          <td>신새롬</td>
+          <td><a href="./portfolio/FNT_PJ_02_b001.html" target="_blank">FNT_PJ_02_b001.html</a></td>
+          <td>5/15 퍼블 작업시작</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>FNT_PJ_02_b002</td>
+          <td>KB헬스 케어</td>
+          <td class="fblue">퍼블완료</td>
+          <td class="fblue">퍼블완료</td>
+          <td>신새롬</td>
+          <td><a href="./portfolio/FNT_PJ_02_b002.html" target="_blank">FNT_PJ_02_b002.html</a></td>
+          <td>5/15 퍼블 작업시작</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>FNT_PJ_02_b003</td>
+          <td>라이나</td>
+          <td class="fblue">퍼블완료</td>
+          <td class="fblue">퍼블완료</td>
+          <td>신새롬</td>
+          <td><a href="./portfolio/FNT_PJ_02_b003.html" target="_blank">FNT_PJ_02_b003.html</a></td>
+          <td>5/15 디자인 확인 및 퍼블 작업예정</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>FNT_PJ_02_b004</td>
+          <td>암웨이</td>
+          <td class="fblue">퍼블완료</td>
+          <td class="fblue">퍼블완료</td>
+          <td>신새롬</td>
+          <td><a href="./portfolio/FNT_PJ_02_b004.html" target="_blank">FNT_PJ_02_b004.html</a></td>
+          <td>5/15 디자인 확인 및 퍼블 작업예정</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>FNT_PJ_02_b005</td>
+          <td>AIG</td>
+          <td class="fblue">퍼블완료</td>
+          <td class="fblue">퍼블완료</td>
+          <td>신새롬</td>
+          <td><a href="./portfolio/FNT_PJ_02_b005.html" target="_blank">FNT_PJ_02_b005.html</a></td>
+          <td>디자인 수급 대기중</td>
+        </tr>
+        <tr style="background-color:#e9ca7b;color:#999;">
+          <td>14</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>FNT_PJ_02_b006</td>
+          <td>리스트 취합 후 기재 예정</td>
+          <td class="fgray">작업대기</td>
+          <td class="fgray">작업대기</td>
+          <td></td>
+          <td></td>
+          <td>
+            5/07 화면 추가<br />
+            5/14 제외 OPEN 후 추가 예정
+          </td>
+        </tr>
+        <tr style="background-color:#e9ca7b;color:#999;"  class="cateLine">
+          <td>15</td>
+          <td>About</td>
+          <td></td>
+          <td></td>
+          <td>FNT_AB_01</td>
+          <td>회사소개</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>미반영메뉴 처리(5/7)</td>
+          <td>5/07 삭제(Recurit와 병합)</td>
+        </tr>
+        <tr class="cateLine">
+          <td>16</td>
+          <td>Contact</td>
+          <td></td>
+          <td></td>
+          <td>FNT_CT_01</td>
+          <td>견적 문의</td>
+          <td class="fblue">퍼블완료</td>
+          <td class="fblue">퍼블완료</td>
+          <td></td>
+          <td><a href="./contents/FNT_CT_01.html" target="_blank">FNT_CT_01.html</a></td>
+          <td>검수 후 추가 작업확인 필요(5/7)<br>기획 구성 변경(중복체크 추가) 에 따른 디자인 수급 필요. 작업 대기중입니다.(5/14)</td>
+        </tr>
+        <tr class="cateLine">
+          <td>17</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>FNT_CT_01_popup</td>
+          <td>견적 문의_모달팝업</td>
+          <td class="fblue">퍼블완료</td>
+          <td class="fblue">퍼블완료</td>
+          <td></td>          
+          <td><a href="./contents/FNT_CT_01_popup.html" target="_blank">FNT_CT_01_popup.html</a></td>
+          <td>검수 후 추가 작업확인 필요(5/7)<br>기획 구성 변경(중복체크 추가) 에 따른 디자인 수급 필요. 작업 대기중입니다.(5/14)</td>
+        </tr>
+        <tr style="background-color:#e9ca7b;color:#999;">
+          <td>18</td>
+          <td></td>
+          <td>프로젝트문의</td>
+          <td></td>
+          <td>FNT_CT_02</td>
+          <td>프로젝트문의 등록</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>미반영메뉴 처리(5/7)</td>
+          <td>5/07 삭제(Contact 메인에서 바로 등록)</td>
+        </tr>
+        <tr style="background-color:#e9ca7b;color:#999;">
+          <td>19</td>
+          <td></td>
+          <td>채용문의</td>
+          <td></td>
+          <td>FNT_CT_03</td>
+          <td>채용문의 등록</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>미반영메뉴 처리(5/7)</td>
+          <td>5/07 삭제(Recurit와 병합)</td>
+        </tr>
+        <tr class="cateLine">
+          <td>20</td>
+          <td>Recruit</td>
+          <td></td>
+          <td></td>
+          <td>FNT_RT_01</td>
+          <td>인재상, Job discription</td>
+          <td class="fblue">퍼블 완료</td>
+          <td class="fblue">퍼블 완료</td>
+          <td></td>
+          <td><a href="./contents/FNT_RT_01.html" target="_blank">FNT_RT_01.html</a></td>
+          <td>검수 후 추가 작업확인 필요(5/7),<br>(5/16)사내복지 부분 자동 스와이프 구현예정(완료)<br>(5/20) 리스트 마크업 수정</td>
+        </tr>
+        <tr class="cateLine">
+          <td>21</td>
+          <td>News</td>
+          <td></td>
+          <td></td>
+          <td>FNT_NS_01</td>
+          <td>뉴스,게시판(목록/상세)</td>
+          <td class="fblue">퍼블 완료</td>
+          <td class="fblue">퍼블 완료</td>
+          <td></td>
+          <td><a href="./contents/FNT_NS_01.html" target="_blank">FNT_NS_01.html</a></td>
+          <td>검수 후 추가 작업확인 필요(5/7) <br>(5/20) 리스트 마크업 수정</td>
+        </tr>
+        <tr class="cateLine">
+          <td>22</td>
+          <td>Admin</td>
+          <td></td>
+          <td></td>
+          <td>EmailForm</td>
+          <td>관리자화면 공통 메일수신 양식</td>
+          <td class="fblue">퍼블 완료</td>
+          <td class="fblue">퍼블 완료</td>
+          <td></td>
+          <td></td>
+          <td>5/15 개발 전달완료</td>
+        </tr>
+      </tbody>
+    </table>
+  </div> 
+</body>
+</html>

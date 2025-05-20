@@ -83,7 +83,7 @@ $fontpath: '../fonts/pretendard/';
 	font-weight: 900;
 	font-display: swap;
 }
-
+//pc화면 텍스트
 @mixin HeadLogo {
 	font-family: "PoppinsEX", sans-serif;
   font-weight: 800;
@@ -108,6 +108,14 @@ $fontpath: '../fonts/pretendard/';
 	letter-spacing: rem(-1.4);
 }
 
+@mixin WorkTitle {
+	font-family: 'Pretendard';
+	font-size:rem(80);
+	font-weight:700;
+	line-height:rem(80);
+	letter-spacing: rem(-1.6);
+}
+
 @mixin boardTitle {
 	font-family: 'Pretendard';
 	font-size:rem(28);
@@ -115,6 +123,44 @@ $fontpath: '../fonts/pretendard/';
 	line-height:rem(39);
 	letter-spacing: rem(-1.2);
 	color:#000;
+}
+
+@mixin font14($Weight:'', $Fcolor:''){ 
+	font-family: 'Pretendard';
+	font-size:rem(14);
+	@if $Weight != ''{
+		font-weight:$Weight;
+	}
+	@else{
+		font-weight:400;
+	}	
+	@if $Fcolor != ''{
+		color:$Fcolor;
+	}
+	@else{
+		color:#000;
+	}	
+	line-height: rem(22);
+	letter-spacing: rem(-0.7);
+}
+
+@mixin font16($Weight:'', $Fcolor:''){ 
+	font-family: 'Pretendard';
+	font-size:rem(16);
+	@if $Weight != ''{
+		font-weight:$Weight;
+	}
+	@else{
+		font-weight:400;
+	}	
+	@if $Fcolor != ''{
+		color:$Fcolor;
+	}
+	@else{
+		color:#000;
+	}	
+	line-height: rem(22);
+	letter-spacing: rem(-0.7);
 }
 
 @mixin font18($Weight:'', $Fcolor:''){ 
@@ -142,6 +188,62 @@ $fontpath: '../fonts/pretendard/';
 	font-weight:700;
 	line-height:rem(89);
 	letter-spacing: rem(-1.9);
+	@if $Fcolor != ''{
+		color:$Fcolor;
+	}
+	@else{
+		color:#000;
+	}
+}
+
+//모바일화면 텍스트
+@mixin moHeadLogo {
+	font-family: "PoppinsEX", sans-serif;
+  font-weight: 800;
+	font-size:rem(18);
+  line-height: rem(18);
+	letter-spacing: rem(-0.3);
+}
+
+@mixin moPageTitle {
+	font-family: "Ins_SansM";
+	font-weight: 800;
+	font-size: rem(50);
+	line-height: rem(50);
+	letter-spacing: rem(0);
+}
+
+@mixin moTitleInfo {
+	font-family: 'Pretendard';
+	font-size:rem(16);
+	font-weight:700;
+	line-height:rem(22);
+	letter-spacing: rem(-0.4);
+}
+
+@mixin moWorkTitle {
+	font-family: 'Pretendard';
+	font-size:rem(80);
+	font-weight:700;
+	line-height:rem(80);
+	letter-spacing: rem(-1.6);
+}
+
+@mixin moboardTitle {
+	font-family: 'Pretendard';
+	font-size:rem(28);
+	font-weight:700;
+	line-height:rem(39);
+	letter-spacing: rem(-1.2);
+	color:#000;
+}
+
+@mixin mosubPageFont($Fcolor:'') {
+	font-family: 'Pretendard';
+	font-size:rem(28);
+	font-weight:700;
+	line-height:rem(39);
+	letter-spacing: rem(-0.3);
 	@if $Fcolor != ''{
 		color:$Fcolor;
 	}

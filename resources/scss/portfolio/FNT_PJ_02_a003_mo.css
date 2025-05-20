@@ -1,0 +1,538 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+table {
+  border: 0;
+  border-spacing: 0;
+}
+
+.tableStyle {
+  width: 100%;
+}
+.tableStyle thead {
+  background-color: darkcyan;
+  color: #fff;
+  font-weight: 400;
+}
+.tableStyle thead th {
+  padding: 1rem 0;
+  text-align: center;
+}
+.tableStyle tbody tr:hover {
+  background-color: #fdf5ea;
+}
+.tableStyle tbody tr.cateLine > td {
+  border-top: 2px solid #000;
+}
+.tableStyle tbody td {
+  text-align: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #dbdbdb;
+  border-right: 1px solid #dbdbdb;
+  font-size: 1.6rem;
+}
+.tableStyle tbody td.fgray {
+  color: #777;
+}
+.tableStyle tbody td.fblue {
+  color: rgb(26, 11, 196);
+}
+.tableStyle tbody td > a {
+  color: brown;
+}
+.tableStyle tbody td > a:hover {
+  color: blue;
+}
+.tableStyle tbody td:nth-of-type(6), .tableStyle tbody td:nth-of-type(9) {
+  text-align: left;
+  padding-left: 1.5rem;
+}
+
+/* --------------------------
+*네티브 로고 폰트
+*---------------------------*/
+.poppins-extrabold {
+  font-family: "PoppinsEX", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+/**
+ * font: Instrument Sans.custom
+ * ------------------------------------
+ */
+@font-face {
+  font-family: "Ins_SansR";
+  src: url("../fonts/InstrumentSans/InstrumentSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Ins_SansM";
+  src: url("../fonts/InstrumentSans/InstrumentSans-Medium.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Ins_SansSB";
+  src: url("../fonts/InstrumentSans/InstrumentSans-SemiBold.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+/**
+ * font: Pretendard.custom
+ * ------------------------------------
+ */
+@font-face {
+  font-family: "Pretendard";
+  src: url("../fonts/pretendard/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PretendardR";
+  src: url("../fonts/pretendard/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PretendardM";
+  src: url("../fonts/pretendard/Pretendard-Medium.woff") format("woff");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard semi";
+  src: url("../fonts/pretendard/Pretendard-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard Bold";
+  src: url("../fonts/pretendard/Pretendard-Bold.woff") format("woff");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard exBold";
+  src: url("../fonts/pretendard/Pretendard-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard Black";
+  src: url("../fonts/pretendard/Pretendard-Black.woff") format("woff");
+  font-weight: 900;
+  font-display: swap;
+}
+button {
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+input[type=text], textarea, select {
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  padding: 1.5rem 2.4rem;
+  font-family: "Pretendard";
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #222;
+  line-height: 2.5rem;
+  letter-spacing: -0.07rem;
+}
+input[type=text]::placeholder, textarea::placeholder, select::placeholder {
+  font-family: "Pretendard";
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #999;
+  line-height: 2.5rem;
+  letter-spacing: -0.07rem;
+}
+
+textarea {
+  display: block;
+  min-height: 17.4vh;
+  padding: 0rem;
+  border: 0;
+  overflow: auto;
+  resize: none;
+}
+textarea::-webkit-scrollbar {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 1rem;
+}
+textarea::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+textarea::-webkit-scrollbar-thumb {
+  background: #EBEBEB;
+  border-radius: 1rem;
+  padding-right: 1rem;
+}
+textarea::-webkit-scrollbar-thumb:hover {
+  background: #BBB;
+  opacity: 0.5;
+}
+textarea:focus {
+  outline: none;
+}
+
+.inputWrap:not(:first-of-type) {
+  margin-top: 6.4rem;
+}
+.inputWrap .selectBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  align-items: center !important;
+  flex-wrap: nowrap;
+  gap: 2rem;
+}
+.inputWrap .selectBox > select {
+  width: 100%;
+  background: url(../img/pc/ico_select_arrow.png) no-repeat right 1.6rem bottom 1.6rem;
+  background-size: 2.4rem 2.4rem;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.inputWrap > div.inputBox input[type=checkbox] {
+  opacity: 0;
+  position: absolute;
+  top: -999;
+  left: -999;
+}
+.inputWrap > div.inputBox input[type=checkbox] + label {
+  display: block;
+  position: static;
+  min-width: 12rem;
+  font-family: "Pretendard";
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #222;
+  line-height: 2.5rem;
+  letter-spacing: -0.07rem;
+  text-align: center;
+  padding: 1.2rem 2rem;
+  border: 1px solid #222;
+  border-radius: 99.9rem;
+  cursor: pointer;
+}
+.inputWrap > div.inputBox input[type=checkbox]:checked + label {
+  background-color: #222;
+  color: #fff;
+  border-color: #222;
+}
+.inputWrap > div.inputBox input[type=checkbox]:focus + label {
+  outline: solid 1px #111;
+  border-radius: 99.9rem;
+}
+.inputWrap .agreeChk {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  align-items: center !important;
+  flex-wrap: noWrap;
+  gap: 1.2rem;
+  margin-top: 3.2rem;
+}
+.inputWrap .agreeChk input[type=checkbox] {
+  width: 0.1rem;
+  height: 0.1rem;
+}
+.inputWrap .agreeChk input[type=checkbox] + label {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid #000;
+  border-radius: 0.6rem;
+  background-color: #fff;
+  cursor: pointer;
+}
+.inputWrap .agreeChk input[type=checkbox]:checked + label {
+  background-color: #222;
+  cursor: pointer;
+}
+.inputWrap .agreeChk input[type=checkbox]:checked + label:before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url("../img/pc/icon_chk.svg") left top;
+  background-size: contain;
+}
+.inputWrap .agreeChk > span {
+  margin-left: 1.2rem;
+  font-family: "Pretendard";
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #444;
+  line-height: 2.5rem;
+  letter-spacing: -0.07rem;
+}
+.inputWrap.moBox > div.inputBox input[type=checkbox] + label {
+  min-width: 7rem;
+  font-family: "Pretendard";
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #222;
+  line-height: 2.2rem;
+  letter-spacing: -0.07rem;
+  text-align: center;
+  padding: 0.9rem 1.5rem;
+}
+.inputWrap.moBox > div.inputBox input[type=checkbox]:checked + label {
+  background-color: #222;
+  color: #fff;
+  border-color: #222;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+}
+body ul,
+body li,
+body nav,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body div,
+body p,
+body a,
+body span,
+body dl,
+body dd,
+body dt {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body a {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+}
+
+#wrap {
+  display: block;
+}
+#wrap img {
+  overflow: hidden;
+  max-width: 100%;
+}
+#wrap .pc {
+  display: none;
+}
+#wrap .motionBox {
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 54rem;
+  padding: 0 2rem 9.5rem 2rem;
+  justify-content: flex-end;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+#wrap .motionBox dl {
+  color: #fff;
+}
+#wrap .motionBox dl dt {
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+#wrap .motionBox dl dt ~ dt {
+  margin-top: 1.2rem;
+}
+#wrap .motionBox dl dd {
+  font-size: 1.3rem;
+  line-height: 1.3;
+  text-transform: uppercase;
+  margin-top: 0.4rem;
+}
+#wrap .motionBox h2 {
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+#wrap .motionBox button {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 6.2rem;
+  height: 6.2rem;
+  margin-left: -3.1rem;
+  font-size: 0;
+  line-height: 0;
+  background: url("../../img/mobile/portfolio/icon_scroll.svg") no-repeat 50% 50%/100%;
+}
+#wrap .overview {
+  padding: 6rem 2rem;
+}
+#wrap .overview h2 {
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: #111;
+}
+#wrap .overview h2 br {
+  display: none;
+}
+#wrap .overview strong {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #111;
+}
+#wrap .overview strong span {
+  display: block;
+}
+#wrap .overview p {
+  margin-top: 3.2rem;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+#wrap .overview p + p {
+  margin-top: 2rem;
+}
+#wrap .overview div div {
+  display: flex;
+  margin-top: 3.2rem;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+#wrap .overview div div span {
+  padding: 1rem 1.65rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #222;
+  border-radius: 99.9rem;
+  border: 0.1rem solid #222;
+}
+#wrap .motionBox {
+  position: relative;
+  background: transparent url("/resources/img/mobile/portfolio/a003/bg_main.png") no-repeat left top/100% 100%;
+}
+#wrap .container .sec01 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #201D1D;
+  margin-top: 19.5rem;
+  padding-bottom: 6rem;
+  text-align: right;
+}
+#wrap .container .sec01 .tit {
+  padding: 18.7rem 0rem 8rem 3.7rem;
+  font-family: "PretendardM";
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 6rem;
+  color: #FFF;
+  text-align: left;
+}
+#wrap .container .sec01 > img.lineImg {
+  position: absolute;
+  max-width: 33.6rem;
+  top: -19.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#wrap .container .sec01 > img.rightImg {
+  min-width: 70rem;
+  margin-left: -6rem;
+}
+#wrap .container .sec02 .sec02_Cont {
+  position: relative;
+  padding-top: 38.8rem;
+  background: url("../../img/mobile/portfolio/a003/sec2_bg_img.png") no-repeat center top/contain;
+  z-index: -1;
+}
+#wrap .container .sec03 {
+  z-index: 10;
+  margin-top: -9.5rem;
+}
+#wrap .workforce {
+  position: relative;
+  padding: 8rem 4rem 16rem;
+}
+#wrap .workforce::after {
+  content: "";
+  position: absolute;
+  right: 1.5rem;
+  bottom: 0;
+  width: 13.1rem;
+  height: 10.8rem;
+  background: url("../../img/mobile/portfolio/a003/img_logo.png") no-repeat 100% 100%/contain;
+}
+#wrap .workforce dl dt {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #111;
+}
+#wrap .workforce dl dt ~ dt {
+  margin-top: 4rem;
+}
+#wrap .workforce dl dd {
+  display: flex;
+  flex: row;
+  flex-wrap: wrap;
+  margin-top: 1.6rem;
+  font-size: 1.8rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #444;
+  gap: 0.6rem;
+}
+#wrap .workforce dl dd em {
+  position: relative;
+  font-style: normal;
+}
+#wrap .workforce dl dd em::after {
+  content: "";
+  position: absolute;
+  top: -0.3rem;
+  right: -0.3rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background-color: #2294fd;
+}/*# sourceMappingURL=FNT_PJ_02_a003_mo.css.map */

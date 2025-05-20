@@ -1,0 +1,38 @@
+@import "./mixins";
+@import "./base";
+
+.guideWrap{
+  margin:rem(40) rem(273);
+  font-size:rem(24);
+  > h2{
+    text-align: center;
+    font-size:rem(48);  
+  }
+  > div{
+    margin-top:rem(60);
+    > ul li:first-of-type{
+      font-weight: 700;
+      margin-bottom: rem(15);
+      text-decoration: underline;
+    }
+  }
+}
+
+.title{
+  @include WorkTitle;
+}
+.titleInfo{
+  @include TitleInfo;
+}
+
+.font14{
+  @include font14(700, #000);
+}
+
+.font16{
+  @include font16(700, #000);
+}
+
+.font18{
+  @include font18(700, #000);
+}

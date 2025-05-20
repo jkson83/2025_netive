@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // 접속 환경 체크
 function isMobile() {
   const userAgent = navigator.userAgent.toLowerCase();
@@ -9,47 +8,6 @@ function isMobile() {
 function handleHeaderSticky() {
   const changeElement1 = document.querySelector('.sec1,.motionBox')?.scrollHeight || 0;
   const changeOffset = changeElement1 - 100;
-=======
-//상단 헤더메뉴이벤트트
-function header_Sticky() {
-	// const wrapElement = document.querySelector('.wrap');
-	// const containerElement = document.querySelector('.container');
-	// const headerElement = document.querySelector('.header');
-	const changeElement1 = document.querySelector('.sec1').scrollHeight;
-	const changeElement2 = document.querySelector('.sec2').scrollHeight;
-	const changeOffset = changeElement1 + changeElement2 - 100;
-	// .wrap 또는 .container가 없을 경우 오류 방지
-
-	// const totalHeight = wrapElement.scrollHeight; // 전체 컨텐츠 길이
-	// const contHeight = containerElement.scrollHeight; // 컨텐츠 영역 길이
-	// const changeOffset = totalHeight - contHeight; // 기준 높이값
-	//console.log(changeOffset);
-
-	// 현재 스크롤 위치 체크
-	if (window.scrollY >= changeOffset) {
-		gsap.to('.header, .logo, .btnSt', {
-			backgroundColor: 'transparent',
-			color: '#111',
-			duration: 0.5, // 애니메이션 지속 시간 추가
-		});
-		//console.log('헤더 색 변경됨');
-	} else {
-		gsap.to('.header, .logo, .btnSt', {
-			backgroundColor: 'transparent',
-			color: '#fff',
-			duration: 0.5,
-		});
-		//console.log('헤더 원래 색 유지');
-	}
-	//console.log(window.scrollY);
-}
-//아코디언 메뉴 이벤트
-function OpenEvent() {
-	const obj = document.querySelectorAll('.toggleLayout');
-	//const contBox = document.querySelectorAll('.toggleCont');
-	const Pbox = document.querySelectorAll('.toggleLayout > dl');
-	if (!obj) return;
->>>>>>> e5cbe18fa9040ab4c19fb8ce6c8ac3c97b4e4502
 
   const isScrolled = window.scrollY >= changeOffset;
   const headerElements = isMobile() ? document.querySelectorAll('.header, .logo') : document.querySelectorAll('.header, .logo, .btnSt');
@@ -67,19 +25,6 @@ function OpenEvent() {
     },
   });
 }
-//접속 환경체크
-function isMobile() {
-  const userAgent = navigator.userAgent.toLowerCase();
-  return /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/.test(userAgent);
-}
-
-if (isMobile()) {
-  console.log("모바일 환경입니다.");
-} else {
-  console.log("PC 환경입니다.");
-}
-
-isMobile();
 
 // 모바일 메뉴 열기/닫기
 function handleMenuToggle() {
@@ -87,7 +32,6 @@ function handleMenuToggle() {
   const closeBtn = document.querySelector('.btn_close');
   const naviBox = document.querySelector('.nav');
 
-<<<<<<< HEAD
   if (!menuBtn || !closeBtn || !naviBox) return;
 
   menuBtn.addEventListener('click', () => naviBox.classList.add('open'));
@@ -242,15 +186,3 @@ function init() {
 
 // 페이지 로드 시 초기화
 document.addEventListener('DOMContentLoaded', init);
-=======
-// 페이지 로드 후 실행 및 스크롤 이벤트 등록
-document.addEventListener('DOMContentLoaded', function () {
-	const changeElement = document.querySelector('.sec1');
-	if (!changeElement) {
-		return;
-	} else {
-		header_Sticky(); // 초기 실행
-		window.addEventListener('scroll', header_Sticky); // 스크롤 이벤트 등록
-	}
-});
->>>>>>> e5cbe18fa9040ab4c19fb8ce6c8ac3c97b4e4502

@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <title>Recruit | NETIVE</title>
   <script src="../resources/js/head.js"></script>
   <script type="text/javascript">
     initPage(1);
@@ -13,7 +14,7 @@
     } else {
       cssSubFile = 'recruit.css';
     }
-    substr += `<link rel="stylesheet" href="../resources/scss/${cssSubFile}" type="text/css">`;    
+    substr += `<link rel="stylesheet" href="../resources/scss/${cssSubFile}" type="text/css">`;
     document.write(substr);
   </script>
 </head>
@@ -21,21 +22,23 @@
   <div id="wrap" class="wrap">
     <header id="header" class="header subPage"></header>
     <div id="container" class="container">
-      <div class="subWrap"> 
+      <div class="subWrap">
+        <div class="topbox"><!--컨텐츠 시작--></div>
         <div class="recWarp">
-          <h3 class="pageInfo">서로의 다름을 존중하고,<br>유연한 협업을 추구합니다.</h3>
-          <p>우리는 실험하고, 설계하고, 실행하며 성장합니다.새로운 도전 앞에서 망설이기보단 시도하는 팀,<br>변화에 적응하기보다 변화를 만드는 사람들과 함께하고 싶다면,지금 당신의 다음을 Netive에서 시작해보세요.
+          <h3 class="pageInfo" data-scroll-effect>서로의 다름을 존중하고,<br>유연한 협업을 추구합니다.</h3>
+          <p data-scroll-effect>우리는 실험하고, 설계하고, 실행하며 성장합니다.<br>새로운 도전 앞에서 망설이기보다는 시도하고,<br class="mo"> 변화에 적응하기보다 변화를 만드는 사람들과  함께하고 싶다면,<br class="pc"> 지금 당신의 ‘다음’을 네티브에서 시작해보세요.
             </p>
-          <img src="../resources/img/pc/recruit_visual.png" alt="채용정보이미지" class="imgPc">
-          <img src="../resources/img/mobile/recruit_visual.png" alt="채용정보이미지" class="imgMo">
+          <div class="imgBox" data-scroll-effect>
+            <img src="../resources/img/pc/recruit_visual.png" alt="채용정보이미지" class="imgPc">
+            <img src="../resources/img/mobile/recruit_visual.png" alt="채용정보이미지" class="imgMo">
+          </div>
         </div>
       </div>
-      <div class="subWrap bgBlack">         
+      <div class="subWrap bgBlack">
         <div class="recWarp">
-          <h3><span>NETIVE의</span> 가치를 실현하는 사람</h3>
-          <p><span>우리는 빠르게 변화하는 디지털 환경 속에서</span> 공감으로 시작하고 (empathy),<br>
-            정직한 협업으로 가능성을 확장하며 (honesty),<br>
-            <span>진정성 있는 태도로 한계를 넘어 함께 성장하는</span> (thoughtful) 사람과 같이 합니다.</p>
+          <h3><span>NETIVE의 가치를</span> 만든다는 것.</h3>
+          <p class="pc-only">우리는 빠르게 변화하는 디지털 환경 속에서 공감(empathy)으로 시작해, 정직한 협업(honesty)으로 가능성을 넓히고,<br>진정성 있는 태도(thoughtful)로 한계를 넘어 함께 성장하는 것을 지향합니다.</p>
+          <p class="mo-only">우리는 빠르게 변화하는 디지털 환경 속에서 공감<br>(empathy)으로 시작해, 정직한 협업(honesty)으로<br> 가능성을 넓히고, 진정성 있는 태도(thoughtful)로<br> 한계를 넘어 함께 성장하는 것을 지향합니다.</p>
           <div class="graphicBox">
             <ul>
               <li class="recTit">EMPATHY</li>
@@ -55,40 +58,40 @@
           </div>
         </div>
       </div>
-      <div class="subWrap">        
+      <div class="subWrap">
         <div class="recWarp">
           <h3>일과 삶의 균형을 존중하고,<br />지속 가능한 일상을 만듭니다.</h3>
-          <div class="slide">
-            <div class="slide-box">
-              <ul class="slide-inner">
-                <li class="slide-item">
-                  <p>감사의 마음을 <br>특별한 경험으로</p>
-                  <span>근속 5년 마다<br>상품권 또는 국내외  여행 지원</span>
-                </li>
-                <li class="slide-item">
-                  <p>일상 속 여유로<br>누리는 힐링 타임</p>
-                  <span>휴식공간 및 커피와 티 제공</span>
-                </li>
-                <li class="slide-item">
-                  <p>당신의 성장을 믿기에<br/>그 여정에 마음을 담아</p>
-                  <span>업무에 필요한 교육과 도서 지원</span>
-                </li>
-                <li class="slide-item">
-                  <p>기쁨과 슬픔의 순간<br>곁에서 함께</p>
-                  <span>각종 경조사비와 경조 휴가지원</span>
-                </li>
-                <li class="slide-item">
-                  <p>작은 선물에 담은<br>축하의 뜻</p>
-                  <span>매월 1일, 소정의 선물 제공</span>
-                </li>
-              </ul>
-            </div>
+        </div>
+        <div class="slide">
+          <div class="slide-box">
+            <ul class="slide-inner">
+              <li class="slide-item">
+                <p>감사의 마음을 <br>특별한 경험으로</p>
+                <span>근속 5년 마다<br>상품권 또는 국내외  여행 지원</span>
+              </li>
+              <li class="slide-item">
+                <p>일상 속 여유로<br>누리는 힐링 타임</p>
+                <span>휴식공간 및 커피와 티 제공</span>
+              </li>
+              <li class="slide-item">
+                <p>당신의 성장을 믿기에<br/>그 여정에 마음을 담아</p>
+                <span>업무에 필요한 교육과 도서 지원</span>
+              </li>
+              <li class="slide-item">
+                <p>기쁨과 슬픔의 순간<br>곁에서 함께</p>
+                <span>각종 경조사비와 경조 휴가지원</span>
+              </li>
+              <li class="slide-item">
+                <p>작은 선물에 담은<br>축하의 뜻</p>
+                <span>소정의 생일선물 제공</span>
+              </li>
+            </ul>
           </div>
         </div>
         <div class="recWarp">
-          <h3>같은 방향을 꿈꾼다면,<br/> <span>Netive에서 그 시작을</span> 함께하세요.</h3>
+          <h3>같은 방향을 꿈꾼다면,<br/> <span>NETIVE에서 그 시작을</span> 함께하세요.</h3>
           <div class="boardWrap">
-            <div class="AccoBox">
+            <div class="AccoBox colSt">
               <button type="button" title="펼치기" class="toggleLayout">
                 <span class="deptName"><strong>PM</strong>Project Manager</span>
                 <span class="deptCont">PM 그룹은 프로젝트의 시작부터 끝까지 전 과정을 조율하며, 비즈니스 목표와 사용자 경험을 중심에 두고 프로젝트를 리딩합니다.<br>기획부터 실행, 운영까지 전반적인 프로젝트를 책임지며 다양한 이해관계자와 협업해 성공적인 결과를 이끌어냅니다.</span>
@@ -127,7 +130,7 @@
                 </li>
               </ul>
             </div>
-            <div class="AccoBox">
+            <div class="AccoBox colSt">
               <button type="button" title="펼치기" class="toggleLayout">
                 <span class="deptName"><strong>전략기획</strong>UX Planner</span>
                 <span class="deptCont">UX 전략기획 그룹은 사용자 경험을 바탕으로 비즈니스 목표와 전략을 연결합니다.<br>데이터를 기반으로 사용자 니즈를 분석하고, 서비스 개선을 위한 방향성과 기획을 설계합니다.</span>
@@ -166,7 +169,7 @@
                 </li>
               </ul>
             </div>
-            <div class="AccoBox">
+            <div class="AccoBox colSt">
               <button type="button" title="펼치기" class="toggleLayout">
                 <span class="deptName"><strong>디자인</strong>UI/UX Designer</span>
                 <span class="deptCont">디자인 그룹은 사용자 경험을 중심으로 다양한 프로젝트를 수행하며, 브랜드와 사용자 사이의 효과적인 연결을 디자인합니다. <br>새롭고 창의적인 솔루션으로 사용자에게 즐거움을 선사합니다.</span>
@@ -205,9 +208,9 @@
                 </li>
               </ul>
             </div>
-            <div class="AccoBox">
+            <div class="AccoBox colSt">
               <button type="button" title="펼치기" class="toggleLayout">
-                <span class="deptName"><strong>UI 개발</strong>  Front-End Developer</span>
+                <span class="deptName"><strong>UI 개발</strong>Front-End Developer</span>
                 <span class="deptCont">UI개발 그룹은 사용자에게 직접적으로 전달되는 웹 인터페이스를 개발합니다.<br>최신 기술을 바탕으로 빠르고 안정적인 사용자 경험을 제공합니다.</span>
                 <span class="toggleIcon"><em>펼치기</em></span>
               </button>
@@ -244,7 +247,7 @@
                 </li>
               </ul>
             </div>
-            <div class="AccoBox">
+            <div class="AccoBox colSt">
               <button type="button" title="펼치기" class="toggleLayout">
                 <span class="deptName"><strong>기술개발</strong>Tech Developer</span>
                 <span class="deptCont">기술개발 그룹은 안정적이고 확장성 있는 시스템 설계를 기반으로 서비스의 핵심 기술을 개발합니다.<br>회사의 비즈니스 요구에 맞춘 기술적 해결책을 고민하고 구현합니다.</span>
@@ -310,17 +313,20 @@
               <dt>1단계</dt>
               <dd>서류접수</dd>
             </dl>
+            <span></span>
             <dl>
               <dt>2단계</dt>
               <dd>서류합격자<br>통보</dd>
             </dl>
-            <dl>
-              <dt>4단계</dt>
-              <dd>결과통보</dd>
-            </dl>
+            <span></span>
             <dl>
               <dt>3단계</dt>
               <dd>실무 면접</dd>
+            </dl>
+            <span></span>
+            <dl>
+              <dt>4단계</dt>
+              <dd>결과통보</dd>
             </dl>
           </div>
         </div>
@@ -333,16 +339,20 @@
         initFooter(1);
       </script>
     </footer>
-  </div> 
+  </div>
 </body>
 
 <script type="text/javascript">
   window.addEventListener('DOMContentLoaded', setHeader(1));
   window.addEventListener('resize', () => {
-    changeSt();
+    //changeSt();
+    //slidePlayPoint();
   });
   window.addEventListener('load', () => {
-    changeSt();
+    //changeSt();
+    // if (!isMobile()){
+    //   slidePlayPoint();
+    // }
   });
   function changeSt(){
     let changePg =  document.querySelector('.subWrap.bgBlack');
@@ -352,6 +362,12 @@
     }else{
       changePg.style.padding = '0px 263px';
     }
+  }
+  function slidePlayPoint(){
+    let startPoint = document.querySelector('.recWarp');
+    let slideStart = document.querySelector('.slide');
+    let rect = startPoint.getBoundingClientRect();
+    slideStart.style.marginLeft = rect.left + 'px';
   }
 </script>
 </html>

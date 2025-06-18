@@ -78,6 +78,12 @@ table {
   font-weight: 400;
   font-display: swap;
 }
+@font-face {
+  font-family: "Ins_SansB";
+  src: url("../fonts/InstrumentSans/InstrumentSans-Bold.woff2") format("woff2");
+  font-weight: 800;
+  font-display: swap;
+}
 /**
  * font: Pretendard.custom
  * ------------------------------------
@@ -131,32 +137,33 @@ button {
   cursor: pointer;
 }
 
-input[type=text], textarea, select {
+input[type=text], input[type=tel], textarea, select {
   width: 100%;
   border: 2px solid #ccc;
   border-radius: 12px;
   padding: 1.5rem 2.4rem;
-  font-family: "Pretendard";
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 500;
-  color: #222;
-  line-height: 2.5rem;
+  font-family: "Pretendard";
+  color: #111;
+  line-height: 2.2rem;
   letter-spacing: -0.07rem;
 }
-input[type=text]::placeholder, textarea::placeholder, select::placeholder {
-  font-family: "Pretendard";
-  font-size: 1.8rem;
+input[type=text]::placeholder, input[type=tel]::placeholder, textarea::placeholder, select::placeholder {
+  font-size: 1.6rem;
   font-weight: 500;
+  font-family: "Pretendard";
   color: #999;
-  line-height: 2.5rem;
+  line-height: 2.2rem;
   letter-spacing: -0.07rem;
 }
 
 textarea {
   display: block;
-  min-height: 17.4vh;
+  min-height: 20rem;
   padding: 0rem;
   border: 0;
+  border-radius: 0;
   overflow: auto;
   resize: none;
 }
@@ -210,94 +217,50 @@ textarea:focus {
 .inputWrap > div.inputBox input[type=checkbox] + label {
   display: block;
   position: static;
-  min-width: 12rem;
-  font-family: "Pretendard";
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: #222;
-  line-height: 2.5rem;
-  letter-spacing: -0.07rem;
+  font-family: "Pretendard semi";
+  font-size: 2rem;
+  line-height: 100%;
   text-align: center;
-  padding: 1.2rem 2rem;
+  padding: 1.6rem 2.4rem;
   border: 1px solid #222;
   border-radius: 99.9rem;
   cursor: pointer;
 }
 .inputWrap > div.inputBox input[type=checkbox]:checked + label {
-  background-color: #222;
+  background-color: #111;
   color: #fff;
-  border-color: #222;
+  border-color: #111;
 }
 .inputWrap > div.inputBox input[type=checkbox]:focus + label {
   outline: solid 1px #111;
   border-radius: 99.9rem;
 }
-.inputWrap .agreeChk {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  align-items: center !important;
-  flex-wrap: noWrap;
-  gap: 1.2rem;
-  margin-top: 3.2rem;
-}
-.inputWrap .agreeChk input[type=checkbox] {
-  width: 0.1rem;
-  height: 0.1rem;
-}
-.inputWrap .agreeChk input[type=checkbox] + label {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 2.4rem;
-  height: 2.4rem;
-  border: 1px solid #000;
-  border-radius: 0.6rem;
-  background-color: #fff;
-  cursor: pointer;
-}
-.inputWrap .agreeChk input[type=checkbox]:checked + label {
-  background-color: #222;
-  cursor: pointer;
-}
-.inputWrap .agreeChk input[type=checkbox]:checked + label:before {
-  display: block;
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 2.4rem;
-  height: 2.4rem;
-  background: url("../img/pc/icon_chk.svg") left top;
-  background-size: contain;
-}
-.inputWrap .agreeChk > span {
-  margin-left: 1.2rem;
-  font-family: "Pretendard";
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: #444;
-  line-height: 2.5rem;
-  letter-spacing: -0.07rem;
-}
-.inputWrap.moBox > div.inputBox input[type=checkbox] + label {
-  min-width: 7rem;
-  font-family: "Pretendard";
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: #222;
-  line-height: 2.2rem;
-  letter-spacing: -0.07rem;
-  text-align: center;
-  padding: 0.9rem 1.5rem;
-}
-.inputWrap.moBox > div.inputBox input[type=checkbox]:checked + label {
-  background-color: #222;
-  color: #fff;
-  border-color: #222;
+@media screen and (max-width: 1024px) {
+  .inputWrap textarea {
+    min-height: 24rem;
+    border-radius: 0;
+  }
+  .inputWrap input[type=text], .inputWrap input[type=tel], .inputWrap select {
+    border: 1px solid #ccc;
+    padding: 1.8rem 2rem;
+  }
+  .inputWrap.moBox > div.inputBox input[type=checkbox] + label {
+    min-width: 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    font-family: "Pretendard semi";
+    color: #111;
+    line-height: 2.2rem;
+    letter-spacing: -0.07rem;
+    text-align: center;
+    padding: 1.2rem 1.6rem;
+    line-height: 1;
+  }
+  .inputWrap.moBox > div.inputBox input[type=checkbox]:checked + label {
+    background-color: #111;
+    color: #fff;
+    border-color: #111;
+  }
 }
 
 html {
@@ -336,71 +299,129 @@ body a {
   color: #333;
 }
 
-#wrap .pc {
-  display: none;
+.pc {
+  display: none !important;
 }
-#wrap img {
+
+img {
+  vertical-align: top;
+}
+
+.historyBack {
+  display: inline-block;
+  position: absolute;
+  width: 2.4rem;
+  height: 2.4rem;
+  top: 1.6rem;
+  left: 2rem;
+}
+.historyBack > button::before {
+  display: block;
+  content: "";
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url("../../img/pc/portfolio/icon_backW.svg") no-repeat left top/contain;
+}
+.historyBack > button > em {
+  position: absolute;
+  display: inline-block;
+  font-size: 1px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  visibility: hidden;
   overflow: hidden;
-  max-width: 100%;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
 }
-#wrap .motionBox {
-  background: #000 url("/resources/img/mobile/portfolio/a001/bg_main.png") no-repeat top center/cover;
+.historyBack.chgImg > button::before {
+  background: url("../../img/pc/portfolio/icon_backB.svg") no-repeat left top/contain;
 }
-#wrap .motionBox {
+
+.motionBox {
   overflow: hidden;
   display: flex;
   position: relative;
   width: 100%;
-  height: 54rem;
+  height: 100vh;
   padding: 0 2rem 9.5rem 2rem;
+  background-attachment: fixed !important;
   justify-content: flex-end;
   flex-direction: column;
   gap: 3.2rem;
 }
-#wrap .motionBox dl {
-  color: #fff;
+.motionBox::before {
+  content: "";
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: visualAni 1.2s ease-out forwards;
+  animation-delay: 0.2s;
+  flex: none;
 }
-#wrap .motionBox dl dt {
+.motionBox dl {
+  color: #fff;
+  transition-delay: 0.4s;
+  letter-spacing: 0;
+}
+.motionBox dl dt {
+  font-family: "Pretendard Bold";
   font-size: 1.3rem;
   font-weight: 700;
   line-height: 1.3;
   text-transform: uppercase;
 }
-#wrap .motionBox dl dt ~ dt {
+.motionBox dl dt ~ dt {
   margin-top: 1.2rem;
 }
-#wrap .motionBox dl dd {
+.motionBox dl dd {
+  font-family: "PretendardR";
   font-size: 1.3rem;
+  font-weight: 400;
   line-height: 1.3;
   text-transform: uppercase;
   margin-top: 0.4rem;
 }
-#wrap .motionBox h2 {
+.motionBox h2 {
+  font-family: "Pretendard Bold";
   font-size: 3.6rem;
   font-weight: 700;
   line-height: 1.3;
   letter-spacing: -0.02em;
   color: #fff;
 }
-#wrap .motionBox h2 > span {
-  display: block;
+.motionBox h2.active {
+  transition-delay: 0.5s;
 }
-#wrap .motionBox button {
+.motionBox button {
   display: inline-block;
-  position: absolute;
+  position: absolute !important;
   left: 50%;
   bottom: 0;
-  width: 6.2rem;
-  height: 6.2rem;
-  margin-left: -3.1rem;
+  width: 5.6rem;
+  height: 5.6rem;
+  margin-left: -2.8rem;
   font-size: 0;
   line-height: 0;
-  background: url("../../img/mobile/portfolio/icon_scroll.svg") no-repeat 50% 50%/100%;
+  background: url("../../img/mobile/portfolio/icon_scroll.svg") no-repeat 50% 0.8rem/2.4rem 2.4rem;
+  animation: scrollAni 1.3s ease-out forwards infinite;
+  animation-delay: 0.3s;
 }
-#wrap .overview {
+.motionBox button.scrollBlack {
+  background: url("../../img/mobile/portfolio/icon_scrollB.svg") no-repeat 50% 0.8rem/2.4rem 2.4rem;
+}
+
+.overview {
   padding: 6rem 2rem;
 }
-#wrap .overview h2 {
+.overview h2 {
+  font-family: "Pretendard exBold";
   margin-bottom: 2rem;
   font-size: 1.6rem;
   font-weight: 800;
@@ -408,10 +429,11 @@ body a {
   letter-spacing: -0.02em;
   color: #111;
 }
-#wrap .overview h2 br {
+.overview h2 br {
   display: none;
 }
-#wrap .overview strong {
+.overview strong {
+  font-family: "Pretendard Bold";
   display: block;
   font-size: 3rem;
   font-weight: 700;
@@ -420,33 +442,177 @@ body a {
   text-transform: uppercase;
   color: #111;
 }
-#wrap .overview strong span {
+.overview strong span {
   display: block;
 }
-#wrap .overview p {
+.overview strong.active {
+  transition-delay: 0.3s;
+}
+.overview p {
   margin-top: 3.2rem;
   font-size: 1.6rem;
+  color: #444;
   line-height: 1.4;
   letter-spacing: -0.01em;
 }
-#wrap .overview p + p {
+.overview p.active {
+  transition-delay: 0.6s;
+}
+.overview p + p {
   margin-top: 2rem;
 }
-#wrap .overview div div {
+.overview p + p.active {
+  transition-delay: 0.9s;
+}
+.overview div div {
   display: flex;
   margin-top: 3.2rem;
   gap: 0.6rem;
   flex-wrap: wrap;
 }
-#wrap .overview div div span {
+.overview div div.active {
+  transition-delay: 1.2s;
+}
+.overview div div span {
+  font-family: "Pretendard semi";
   padding: 1rem 1.65rem;
   font-size: 1.6rem;
   font-weight: 600;
   line-height: 1;
-  letter-spacing: -0.03em;
-  color: #222;
+  color: #111;
   border-radius: 99.9rem;
-  border: 0.1rem solid #222;
+  border: 0.1rem solid #111;
+  letter-spacing: 0;
+}
+.overview * {
+  word-break: keep-all;
+}
+
+[data-scroll-event] {
+  opacity: 0;
+}
+[data-scroll-event].leftInteraction.active {
+  animation: slideLeft 0.3s ease-out forwards;
+}
+[data-scroll-event].rightInteraction.active {
+  animation: slideRight 0.3s ease-out forwards;
+}
+[data-scroll-event].upInteraction.active {
+  animation: slideUp 0.5s ease-out forwards;
+}
+[data-scroll-event].zoomInteraction {
+  transform: scale(0.8);
+}
+[data-scroll-event].zoomInteraction.active {
+  animation: zoom 0.5s ease-out forwards;
+}
+[data-scroll-event].fadeInteraction.active {
+  animation: fade 1s ease-out forwards;
+}
+
+@keyframes visualAni {
+  from {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes zoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes scrollAni {
+  0% {
+    opacity: 0.5;
+    background-position: 50% 0.8rem;
+  }
+  50% {
+    opacity: 1;
+    background-position: 50% 2.4rem;
+  }
+  100% {
+    opacity: 0.5;
+    background-position: 50% 0.8rem;
+  }
+}
+#wrap img {
+  overflow: hidden;
+  vertical-align: top;
+  max-width: 100%;
+}
+#wrap .motionBox::before {
+  background-image: url("../../img/mobile/portfolio/a001/bg_main.png");
+  background-position: right bottom;
+}
+#wrap .motionBox > h2 > span {
+  display: block;
+}
+@media (orientation: landscape) {
+  #wrap .motionBox::before {
+    background-image: url("../../img/pc/portfolio/a001/bg_main.png");
+    background-position: right bottom;
+  }
+}
+#wrap .container .section01,
+#wrap .container .section02,
+#wrap .container .section03,
+#wrap .container .section04,
+#wrap .container .section05,
+#wrap .container .section06,
+#wrap .container .section07,
+#wrap .container .section08,
+#wrap .container .section09,
+#wrap .container .section10,
+#wrap .container .section11,
+#wrap .container .cont_footer {
+  overflow: hidden;
 }
 #wrap .container .section01 {
   background-color: #fff;
@@ -456,23 +622,30 @@ body a {
   text-align: center;
   margin-bottom: 3.2rem;
 }
+#wrap .container .section01 .imgBox img {
+  width: 100%;
+}
+#wrap .container .section01 .imgBox.active {
+  transition-delay: 1s;
+}
 #wrap .container .section01 .tit {
   margin-bottom: 1.2rem;
 }
 #wrap .container .section01 .tit p {
   color: #111;
   font-size: 2rem;
-  font-weight: 800;
+  font-family: "Pretendard exBold";
   line-height: 140%;
   letter-spacing: -0.06rem;
 }
-#wrap .container .section01 > p {
+#wrap .container .section01 > div > p {
   color: #444;
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 150%;
   letter-spacing: -0.03rem;
   margin-bottom: 6.4rem;
+  word-break: keep-all;
 }
 #wrap .container .section02 {
   background-color: #fff;
@@ -482,46 +655,47 @@ body a {
   text-align: center;
   margin-bottom: 3.2rem;
 }
+#wrap .container .section02 .imgBox img {
+  width: 100%;
+}
 #wrap .container .section02 .tit {
   margin-bottom: 1.2rem;
 }
 #wrap .container .section02 .tit > p {
   color: #111;
   font-size: 2rem;
-  font-weight: 800;
+  font-family: "Pretendard exBold";
   line-height: 140%;
   letter-spacing: -0.06rem;
 }
-#wrap .container .section02 [class^=box] > p {
+#wrap .container .section02 [class^=box] > div > p {
   color: #444;
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 150%;
   letter-spacing: -0.03rem;
+  word-break: keep-all;
 }
 #wrap .container .section02 .box01 {
   margin-bottom: 6.4rem;
 }
 #wrap .container .section03 {
+  display: flex;
   background-color: #fff;
-  padding: 8rem 2rem 8rem 0;
-}
-#wrap .container .section03 .tit {
-  margin-left: 10rem;
+  padding: 8rem 4rem 8rem 0;
+  justify-content: flex-end;
 }
 #wrap .container .section03 .tit p {
   color: #121316;
   text-align: left;
   font-size: 2.6rem;
-  font-style: normal;
-  font-weight: 700;
+  font-family: "Pretendard Bold";
   line-height: 130%;
   letter-spacing: -0.052rem;
 }
 #wrap .container .section03 .tit p strong {
   color: #007ef4;
   font-size: 2.6rem;
-  font-style: normal;
   font-weight: 700;
   line-height: 130%;
   letter-spacing: -0.052rem;
@@ -533,7 +707,7 @@ body a {
 #wrap .container .section04 > .box {
   border-radius: 16px;
   background: #0075e9;
-  padding: 4rem;
+  padding: 4rem 4rem 8rem;
 }
 #wrap .container .section04 > .box > .txt {
   color: #fff;
@@ -549,6 +723,7 @@ body a {
 }
 #wrap .container .section04 > .box .secTit01 {
   color: #fff;
+  font-family: "Pretendard Bold";
   font-size: 1.8rem;
   font-weight: 700;
   line-height: 140%;
@@ -580,10 +755,12 @@ body a {
   margin-top: -2.2rem;
 }
 #wrap .container .section04 > .box .circle-list > li .tit {
+  font-family: "Pretendard exBold";
   color: #fff;
   text-align: center;
   font-size: 1.8rem;
   font-weight: 800;
+  letter-spacing: -0.036rem;
 }
 #wrap .container .section04 > .box .circle-list > li .txt {
   color: #fff;
@@ -592,13 +769,15 @@ body a {
   font-weight: 500;
   line-height: 150%;
   letter-spacing: -0.024rem;
+  margin-top: 0.8rem;
+  opacity: 0.6;
 }
 #wrap .container .section04 > .box .circle-list:after {
   content: "";
   display: block;
   width: 2.3rem;
   height: 2.7rem;
-  background: url("/resources/img/mobile/portfolio/a001/ico_arrow.svg") no-repeat 0 0/100%;
+  background: url("../../img/mobile/portfolio/a001/ico_arrow.svg") no-repeat 0 0/100%;
   margin: 0 auto;
 }
 #wrap .container .section04 > .box .circle-last {
@@ -613,25 +792,74 @@ body a {
   background: #fff;
   color: #0075e9;
   text-align: center;
+  font-family: "Pretendard Bold";
   font-size: 2.2rem;
   font-weight: 700;
   line-height: 120%;
 }
+#wrap .container .section04.active .circle-list::after {
+  opacity: 0;
+  animation: slideDown 0.5s ease-in-out forwards;
+  animation-delay: 1.5s;
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 #wrap .container .section05 {
   height: 61.6rem;
   position: relative;
-  background: #fff url("/resources/img/mobile/portfolio/a001/bg_cont03.png") no-repeat center top/contain;
+}
+#wrap .container .section05 .effectBox {
+  position: relative;
+  width: auto;
+  height: 40.3rem;
+  margin: 0 auto;
+  background: url("../../img/mobile/portfolio/a001/sec05_bg_circle.png") no-repeat center center/cover;
+}
+#wrap .container .section05 .effectBox .effectImg {
+  position: absolute;
+  widtH: 100%;
+  height: 100%;
+  text-align: center;
+}
+#wrap .container .section05 .effectBox .effectImg > img {
+  display: block;
+}
+#wrap .container .section05 .effectBox .effectImg > img.item-line {
+  width: 53.6rem;
+  scale: 1.4;
+  margin-top: 5rem;
+}
+#wrap .container .section05 .effectBox .effectImg > img.item-line.active {
+  animation-delay: 0.5s;
+}
+#wrap .container .section05 .effectBox .effectImg > img.item-phone {
+  position: absolute;
+  width: calc(100% - 3rem);
+  top: 6.9rem;
+  left: 1.7rem;
+}
+#wrap .container .section05 .effectBox .effectImg > img.item-phone.active {
+  animation-delay: 0.7s;
 }
 #wrap .container .section05 .txtBox {
   position: absolute;
-  left: 0;
+  right: 0;
   bottom: 0;
-  padding: 0 4rem;
+  left: 0;
+  padding: 0 1.6rem 0 4rem;
 }
 #wrap .container .section05 .txtBox .inner .img-app {
   text-align: right;
   margin-bottom: -4rem;
-  margin-right: -2rem;
+  margin-right: 0rem;
 }
 #wrap .container .section05 .txtBox .inner > .tit {
   margin-bottom: 1.2rem;
@@ -639,7 +867,7 @@ body a {
 #wrap .container .section05 .txtBox .inner > .tit p {
   color: #111;
   font-size: 2.2rem;
-  font-weight: 800;
+  font-family: "Pretendard exBold";
   line-height: 140%;
   letter-spacing: -0.066rem;
 }
@@ -649,11 +877,33 @@ body a {
   font-weight: 500;
   line-height: 150%;
   letter-spacing: -0.03rem;
+  word-break: keep-all;
 }
 #wrap .container .section06 {
   background-color: #fff;
   padding: 8rem 2rem;
   text-align: center;
+}
+#wrap .container .section06 img {
+  width: 100%;
+}
+#wrap .container .section06 .bottom_box > div {
+  margin-top: 0.8rem;
+}
+#wrap .container .section06 .bottom_box .colorBox > img {
+  width: 100%;
+}
+#wrap .container .section06 .bottom_box .colorBox > img:not(:first-of-type) {
+  margin-top: -2rem;
+}
+#wrap .container .section06 .bottom_box .colorBox > img.active:nth-of-type(1) {
+  animation-delay: 0.2s;
+}
+#wrap .container .section06 .bottom_box .colorBox > img.active:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+#wrap .container .section06 .bottom_box .colorBox > img.active:nth-of-type(3) {
+  animation-delay: 0.6s;
 }
 #wrap .container .section07 {
   background-color: #fff;
@@ -664,6 +914,7 @@ body a {
   margin-top: 8rem;
 }
 #wrap .container .section07 > .inner .tit {
+  font-family: "Pretendard Bold";
   margin-bottom: 4rem;
   color: #111;
   font-size: 1.8rem;
@@ -671,19 +922,58 @@ body a {
   line-height: 140%;
   letter-spacing: -0.036rem;
 }
+#wrap .container .section07 > .inner img {
+  width: 100%;
+}
 #wrap .container .section08 {
   background-color: #fff;
-  padding: 0 2rem 8rem;
+  padding: 0 2rem 6rem;
   text-align: center;
 }
-#wrap .container .section08 .inner .imgBox img {
-  border-radius: 40px;
+#wrap .container .section08 .inner .box-left {
+  margin-bottom: 0.8rem;
+}
+#wrap .container .section08 .inner .box-left .imgBox img {
+  width: 100%;
+  border-radius: 16px;
+}
+#wrap .container .section08 .inner .box-right .box-motion {
+  margin-bottom: 0.8rem;
+}
+#wrap .container .section08 .inner .box-right .box-motion ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.2rem;
+  height: 18rem;
+  border-radius: 16px;
+  background: #f5f8fb;
+  padding: 0 4rem;
+}
+#wrap .container .section08 .inner .box-right .box-motion ul li {
+  width: 5.8rem;
+}
+#wrap .container .section08 .inner .box-right .inner-box {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+}
+#wrap .container .section08 .inner .box-right .inner-box .imgBox {
+  width: 50%;
+}
+#wrap .container .section08 .inner .box-right .inner-box img {
+  width: 100%;
+}
+#wrap .container .section09 img {
+  width: 100%;
 }
 #wrap .container .section10 {
-  padding: 5rem 0;
-  background: #fff url("/resources/img/mobile/portfolio/a001/bg_cont08.png") no-repeat center center/contain;
-  height: 36rem;
   position: relative;
+}
+#wrap .container .section10 .bg-circle {
+  background: #fff url("../../img/mobile/portfolio/a001/bg_cont08.png") no-repeat center center/contain;
+  height: 36rem;
 }
 #wrap .container .section10 .tit {
   position: absolute;
@@ -692,6 +982,7 @@ body a {
   width: 100%;
 }
 #wrap .container .section10 .tit p {
+  font-family: "Pretendard Bold";
   color: #121316;
   text-align: left;
   font-size: 2.6rem;
@@ -708,13 +999,19 @@ body a {
   line-height: 130%;
   letter-spacing: -0.052rem;
 }
+#wrap .container .section10 .tit.active {
+  transition-delay: 0.5s;
+}
 #wrap .container .section10 .ico01 {
   position: absolute;
   right: 3.9rem;
   top: 3.4rem;
-  width: 3.3rem;
-  height: 3.6rem;
-  background: url("/resources/img/pc/portfolio/a001/ico_01.png") no-repeat 0 0/100%;
+  width: 4.8rem;
+  height: 4.8rem;
+  background: url("../../img/pc/portfolio/a001/ico_01.png") no-repeat 0 0/100%;
+}
+#wrap .container .section10 .ico01.active {
+  transition-delay: 0.2s;
 }
 #wrap .container .section10 .ico02 {
   position: absolute;
@@ -722,7 +1019,10 @@ body a {
   bottom: -0.5rem;
   width: 7.4rem;
   height: 7.2rem;
-  background: url("/resources/img/pc/portfolio/a001/ico_02.png") no-repeat 0 0/100%;
+  background: url("../../img/pc/portfolio/a001/ico_02.png") no-repeat 0 0/100%;
+}
+#wrap .container .section10 .ico02.active {
+  animation-delay: 0.5s;
 }
 #wrap .container .section11 {
   padding: 0 1.2rem;
@@ -733,6 +1033,7 @@ body a {
   padding: 3.2rem 2.4rem;
 }
 #wrap .container .section11 > .inner h2 {
+  font-family: "Pretendard Bold";
   color: #111;
   font-size: 1.6rem;
   font-weight: 700;
@@ -746,15 +1047,26 @@ body a {
   position: relative;
 }
 #wrap .container .section11 > .inner .cont_item:nth-child(2) {
-  width: 10rem;
+  width: 33.3%;
   position: absolute;
-  right: -0.1rem;
-  top: 9rem;
+  left: 75.37%;
+  top: 8.8rem;
 }
 #wrap .container .section11 > .inner .cont_list {
   padding-top: 8rem;
 }
+@media (max-width: 360px) {
+  #wrap .container .section11 > .inner .cont_list {
+    padding-top: 15rem;
+  }
+}
+@media (max-width: 360px) {
+  #wrap .container .section11 > .inner .cont_list {
+    padding-top: 15rem;
+  }
+}
 #wrap .container .section11 > .inner .cont_list ul {
+  border: 1px solid 0;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -766,20 +1078,26 @@ body a {
   top: -8.8rem;
 }
 #wrap .container .section11 > .inner .cont_list ul li:nth-child(3) {
-  padding-top: 11rem;
+  padding: 19.8rem 0 0 0;
+  margin-right: -2.4rem;
 }
 #wrap .container .cont_footer {
-  padding: 8rem 4rem 26rem 4rem;
+  overflow: visible;
+  padding: 7rem 0rem 23.4rem 4rem;
   position: relative;
-  background: url("/resources/img/mobile/portfolio/a001/img_cont_footer.png") no-repeat right -2rem top 8rem/contain;
+  background: url("../../img/mobile/portfolio/a001/img_cont_footer.png") no-repeat right 7rem/33rem auto;
 }
 #wrap .container .cont_footer .tf_member {
   padding-top: 28rem;
+}
+#wrap .container .cont_footer .tf_member dl {
+  overflow: visible;
 }
 #wrap .container .cont_footer .tf_member dl:not(:first-of-type) {
   margin-top: 3.2rem;
 }
 #wrap .container .cont_footer .tf_member dl dt {
+  font-family: "Pretendard Bold";
   color: #111;
   font-size: 1.5rem;
   font-weight: 700;
@@ -800,19 +1118,10 @@ body a {
 #wrap .container .cont_footer .tf_member dl dd > em {
   font-style: normal;
 }
-#wrap .container .cont_footer .tf_member dl dd > em:after {
-  content: "";
-  display: inline-block;
-  width: 0.6rem;
-  height: 0.6rem;
-  background-color: #2294fd;
-  border-radius: 50%;
-  vertical-align: top;
-}
 #wrap .container .cont_footer .footer_logo {
   position: absolute;
   right: 0;
   bottom: 8rem;
-  width: 35.8rem;
-  padding-left: 4rem;
+  width: 100%;
+  max-width: 31.8rem;
 }/*# sourceMappingURL=FNT_PJ_02_a001_mo.css.map */

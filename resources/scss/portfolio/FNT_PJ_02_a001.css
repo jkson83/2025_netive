@@ -78,6 +78,12 @@ table {
   font-weight: 400;
   font-display: swap;
 }
+@font-face {
+  font-family: "Ins_SansB";
+  src: url("../fonts/InstrumentSans/InstrumentSans-Bold.woff2") format("woff2");
+  font-weight: 800;
+  font-display: swap;
+}
 /**
  * font: Pretendard.custom
  * ------------------------------------
@@ -131,32 +137,33 @@ button {
   cursor: pointer;
 }
 
-input[type=text], textarea, select {
+input[type=text], input[type=tel], textarea, select {
   width: 100%;
   border: 2px solid #ccc;
   border-radius: 12px;
   padding: 1.5rem 2.4rem;
-  font-family: "Pretendard";
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 500;
-  color: #222;
-  line-height: 2.5rem;
+  font-family: "Pretendard";
+  color: #111;
+  line-height: 2.2rem;
   letter-spacing: -0.07rem;
 }
-input[type=text]::placeholder, textarea::placeholder, select::placeholder {
-  font-family: "Pretendard";
-  font-size: 1.8rem;
+input[type=text]::placeholder, input[type=tel]::placeholder, textarea::placeholder, select::placeholder {
+  font-size: 1.6rem;
   font-weight: 500;
+  font-family: "Pretendard";
   color: #999;
-  line-height: 2.5rem;
+  line-height: 2.2rem;
   letter-spacing: -0.07rem;
 }
 
 textarea {
   display: block;
-  min-height: 17.4vh;
+  min-height: 20rem;
   padding: 0rem;
   border: 0;
+  border-radius: 0;
   overflow: auto;
   resize: none;
 }
@@ -210,94 +217,50 @@ textarea:focus {
 .inputWrap > div.inputBox input[type=checkbox] + label {
   display: block;
   position: static;
-  min-width: 12rem;
-  font-family: "Pretendard";
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: #222;
-  line-height: 2.5rem;
-  letter-spacing: -0.07rem;
+  font-family: "Pretendard semi";
+  font-size: 2rem;
+  line-height: 100%;
   text-align: center;
-  padding: 1.2rem 2rem;
+  padding: 1.6rem 2.4rem;
   border: 1px solid #222;
   border-radius: 99.9rem;
   cursor: pointer;
 }
 .inputWrap > div.inputBox input[type=checkbox]:checked + label {
-  background-color: #222;
+  background-color: #111;
   color: #fff;
-  border-color: #222;
+  border-color: #111;
 }
 .inputWrap > div.inputBox input[type=checkbox]:focus + label {
   outline: solid 1px #111;
   border-radius: 99.9rem;
 }
-.inputWrap .agreeChk {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  align-items: center !important;
-  flex-wrap: noWrap;
-  gap: 1.2rem;
-  margin-top: 3.2rem;
-}
-.inputWrap .agreeChk input[type=checkbox] {
-  width: 0.1rem;
-  height: 0.1rem;
-}
-.inputWrap .agreeChk input[type=checkbox] + label {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 2.4rem;
-  height: 2.4rem;
-  border: 1px solid #000;
-  border-radius: 0.6rem;
-  background-color: #fff;
-  cursor: pointer;
-}
-.inputWrap .agreeChk input[type=checkbox]:checked + label {
-  background-color: #222;
-  cursor: pointer;
-}
-.inputWrap .agreeChk input[type=checkbox]:checked + label:before {
-  display: block;
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 2.4rem;
-  height: 2.4rem;
-  background: url("../img/pc/icon_chk.svg") left top;
-  background-size: contain;
-}
-.inputWrap .agreeChk > span {
-  margin-left: 1.2rem;
-  font-family: "Pretendard";
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: #444;
-  line-height: 2.5rem;
-  letter-spacing: -0.07rem;
-}
-.inputWrap.moBox > div.inputBox input[type=checkbox] + label {
-  min-width: 7rem;
-  font-family: "Pretendard";
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: #222;
-  line-height: 2.2rem;
-  letter-spacing: -0.07rem;
-  text-align: center;
-  padding: 0.9rem 1.5rem;
-}
-.inputWrap.moBox > div.inputBox input[type=checkbox]:checked + label {
-  background-color: #222;
-  color: #fff;
-  border-color: #222;
+@media screen and (max-width: 1024px) {
+  .inputWrap textarea {
+    min-height: 24rem;
+    border-radius: 0;
+  }
+  .inputWrap input[type=text], .inputWrap input[type=tel], .inputWrap select {
+    border: 1px solid #ccc;
+    padding: 1.8rem 2rem;
+  }
+  .inputWrap.moBox > div.inputBox input[type=checkbox] + label {
+    min-width: 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    font-family: "Pretendard semi";
+    color: #111;
+    line-height: 2.2rem;
+    letter-spacing: -0.07rem;
+    text-align: center;
+    padding: 1.2rem 1.6rem;
+    line-height: 1;
+  }
+  .inputWrap.moBox > div.inputBox input[type=checkbox]:checked + label {
+    background-color: #111;
+    color: #fff;
+    border-color: #111;
+  }
 }
 
 html {
@@ -339,73 +302,114 @@ body a {
 #wrap {
   display: block;
 }
-#wrap img {
+
+.mo {
+  display: none !important;
+}
+
+img {
+  vertical-align: top;
+}
+
+.historyBack {
+  display: inline-block;
+  position: absolute;
+  width: 3.2rem;
+  height: 3.2rem;
+  top: 50%;
+  left: 3rem;
+  transform: translateY(-50%);
+}
+.historyBack > button::before {
+  display: block;
+  content: "";
+  width: 3.2rem;
+  height: 3.2rem;
+  background: url("../../img/pc/portfolio/icon_backW.svg") no-repeat left top/contain;
+}
+.historyBack > button > em {
+  position: absolute;
+  display: inline-block;
+  font-size: 1px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  visibility: hidden;
   overflow: hidden;
-  max-width: 100%;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
 }
-#wrap .mo {
-  display: none;
+.historyBack.chgImg > button::before {
+  background: url("../../img/pc/portfolio/icon_backB.svg") no-repeat left top/contain;
 }
-#wrap .scroll-motion.active {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-#wrap .motionBox {
+
+.motionBox {
   overflow: hidden;
   display: flex;
   position: relative;
   width: 100%;
   height: 100vh;
   padding: 12rem 8rem;
-  background-attachment: fixed !important;
   justify-content: flex-end;
+  background-attachment: fixed !important;
   flex-direction: column;
-  gap: 7.6rem;
+  gap: 7.2rem;
 }
-#wrap .motionBox * {
-  position: relative;
-  z-index: 1;
-}
-#wrap .motionBox dl {
-  color: #fff;
+.motionBox::before {
+  content: "";
   opacity: 0;
-  transform: translateY(10rem);
-  transition-property: opacity, transform;
-  transition-duration: 1s;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0.5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: visualAni 1.2s ease-out forwards;
+  animation-delay: 0.2s;
+  flex: none;
 }
-#wrap .motionBox dl dt {
+@media screen and (max-width: 1500px) {
+  .motionBox::before {
+    width: 100%;
+  }
+}
+.motionBox dl {
+  color: #fff;
+  letter-spacing: 0;
+  transition-delay: 0.4s;
+}
+.motionBox dl dt {
+  font-family: "Pretendard Bold";
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.3;
   text-transform: uppercase;
 }
-#wrap .motionBox dl dt ~ dt {
+.motionBox dl dt ~ dt {
   margin-top: 2.4rem;
 }
-#wrap .motionBox dl dd {
+.motionBox dl dd {
   font-size: 1.8rem;
   line-height: 1.3;
   text-transform: uppercase;
   margin-top: 0.8rem;
 }
-#wrap .motionBox h2 {
+.motionBox h2 {
+  font-family: "Pretendard Bold";
   font-size: 8rem;
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.3;
   letter-spacing: -0.02em;
   color: #fff;
-  opacity: 0;
-  transform: translateY(10rem);
-  transition-property: opacity, transform;
-  transition-duration: 1s;
-  transition-timing-function: ease-in-out;
+}
+.motionBox h2.active {
   transition-delay: 0.5s;
 }
-#wrap .motionBox button {
+.motionBox button {
   display: inline-block;
-  position: absolute;
+  position: absolute !important;
   left: 50%;
   bottom: 0;
   width: 7.2rem;
@@ -413,69 +417,197 @@ body a {
   margin-left: -3.6rem;
   font-size: 0;
   line-height: 0;
-  background: url("../../img/pc/portfolio/icon_scroll.svg") no-repeat 50% calc(50% + 1.2rem)/100%;
+  background: url("../../img/pc/portfolio/icon_scroll.svg") no-repeat 50% 1.2rem/2.8rem 2.8rem;
+  animation: scrollAni 1.3s ease-out forwards infinite;
+  animation-delay: 0.3s;
 }
-#wrap .overview {
+.motionBox button.scrollBlack {
+  background: url("../../img/pc/portfolio/icon_scrollB.svg") no-repeat 50% 1.2rem/2.8rem 2.8rem;
+}
+
+.overview {
   display: flex;
-  max-width: 137.8rem;
+  max-width: 145.4rem;
   margin: 0 auto;
   padding: 16rem 3.8rem;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 0 25.8rem;
 }
-#wrap .overview h2 {
+.overview h2 {
+  font-family: "Pretendard exBold";
+  width: 21rem;
   margin-bottom: 6.4rem;
   font-size: 2.8rem;
   font-weight: 800;
   line-height: 1.3;
-  letter-spacing: 0;
+  letter-spacing: -0.02rem;
   color: #111;
 }
-#wrap .overview strong {
+.overview strong {
+  font-family: "Pretendard Bold";
   display: block;
   font-size: 6.4rem;
   font-weight: 700;
   line-height: 1.4;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.2rem;
   color: #111;
 }
-#wrap .overview strong span {
+.overview strong span {
   display: block;
 }
-#wrap .overview p {
+.overview p {
   margin-top: 6.4rem;
   font-size: 2.4rem;
   line-height: 1.5;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.048rem;
+  color: #444;
 }
-#wrap .overview p + p {
+.overview p.active {
+  transition-delay: 0.3s;
+}
+.overview p + p {
   margin-top: 2rem;
 }
-#wrap .overview div div {
-  display: flex;
-  margin-top: 12.8rem;
-  gap: 0.8rem;
+.overview p + p.active {
+  transition-delay: 0.6s;
 }
-#wrap .overview div div span {
+.overview div div {
+  display: flex;
+  margin-top: 8rem;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+.overview div div.active {
+  transition-delay: 0.9s;
+}
+.overview div div span {
+  font-family: "Pretendard semi";
   padding: 1.2rem 2rem;
   font-size: 2.4rem;
   font-weight: 600;
   line-height: 1;
-  letter-spacing: -0.03em;
-  color: #222;
+  color: #111;
   border-radius: 99.9rem;
-  border: 0.1rem solid #222;
+  border: 0.1rem solid #111;
+  letter-spacing: 0;
+}
+.overview * {
+  word-break: keep-all;
+}
+
+[data-scroll-event] {
+  opacity: 0;
+}
+[data-scroll-event].leftInteraction {
+  transform: translateX(-10rem);
+}
+[data-scroll-event].leftInteraction.active {
+  animation: slideLeft 0.5s ease-out forwards;
+}
+[data-scroll-event].rightInteraction {
+  transform: translateX(10rem);
+}
+[data-scroll-event].rightInteraction.active {
+  animation: slideRight 0.5s ease-out forwards;
+}
+[data-scroll-event].upInteraction {
+  transform: translateY(10rem);
+}
+[data-scroll-event].upInteraction.active {
+  animation: slideUp 0.5s ease-out forwards;
+}
+[data-scroll-event].zoomInteraction {
+  transform: scale(0.8);
+}
+[data-scroll-event].zoomInteraction.active {
+  animation: zoom 0.5s ease-out forwards;
+}
+[data-scroll-event].fadeInteraction.active {
+  animation: fade 1s ease-out forwards;
+}
+
+@keyframes visualAni {
+  from {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes zoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes scrollAni {
+  0% {
+    opacity: 0.5;
+    background-position: 50% 1.2rem;
+  }
+  50% {
+    opacity: 1;
+    background-position: 50% 3.2rem;
+  }
+  100% {
+    opacity: 0.5;
+    background-position: 50% 1.2rem;
+  }
+}
+#wrap img {
+  overflow: hidden;
+  max-width: 100%;
 }
 #wrap .motionBox {
-  background: #000 url("/resources/img/pc/portfolio/a001/bg_main.png") no-repeat 50% 100%/auto auto;
+  font-family: "Pretendard";
 }
 #wrap .motionBox::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  width: 100%;
-  height: calc(100% + 1rem);
+  background-image: url("../../img/pc/portfolio/a001/bg_main_1.png");
+  background-position: right center;
 }
 #wrap .container .section01,
 #wrap .container .section02,
@@ -489,15 +621,23 @@ body a {
 #wrap .container .section10,
 #wrap .container .section11,
 #wrap .container .cont_footer {
+  overflow: hidden;
   max-width: 192rem;
   margin: 0 auto;
+  font-family: "Pretendard";
 }
 #wrap .container .section01 {
   background-color: #fff;
   padding: 0 8rem 8rem 8rem;
+  border-radius: 4rem;
 }
 #wrap .container .section01 .imgBox {
   margin-bottom: 5.6rem;
+  border-radius: 4rem;
+}
+#wrap .container .section01 .imgBox.active {
+  transition-delay: 0.7s;
+  border-radius: 4rem;
 }
 #wrap .container .section01 .tit {
   margin-bottom: 1.6rem;
@@ -505,7 +645,7 @@ body a {
 #wrap .container .section01 .tit p {
   color: #111;
   font-size: 3.2rem;
-  font-weight: 800;
+  font-family: "Pretendard exBold";
   line-height: 140%;
   letter-spacing: -0.096rem;
 }
@@ -532,7 +672,7 @@ body a {
 #wrap .container .section02 [class^=box] .tit p {
   color: #111;
   font-size: 3.2rem;
-  font-weight: 800;
+  font-family: "Pretendard exBold";
   line-height: 140%;
   letter-spacing: -0.096rem;
 }
@@ -548,24 +688,23 @@ body a {
 }
 #wrap .container .section03 {
   background-color: #fff;
-  padding: 16rem 0;
+  padding: 8rem 0;
 }
 #wrap .container .section03 .tit {
-  margin: 8rem 16.8rem 8rem 0;
+  margin: 0 16.8rem 0 0;
 }
 #wrap .container .section03 .tit p {
   color: #121316;
   text-align: right;
   font-size: 9.6rem;
-  font-style: normal;
   font-weight: 700;
   line-height: 130%;
+  font-family: "Pretendard Bold";
   letter-spacing: -0.192rem;
 }
 #wrap .container .section03 .tit p strong {
   color: #007ef4;
   font-size: 9.6rem;
-  font-style: normal;
   font-weight: 700;
   line-height: 130%;
   letter-spacing: -0.192rem;
@@ -588,6 +727,7 @@ body a {
   letter-spacing: -0.096rem;
 }
 #wrap .container .section04 > .box .secTit01 {
+  font-family: "Pretendard Bold";
   color: #fff;
   font-size: 4rem;
   font-weight: 700;
@@ -619,6 +759,7 @@ body a {
   margin-left: -2rem;
 }
 #wrap .container .section04 > .box .circle-list > li .tit {
+  font-family: "Pretendard exBold";
   color: #fff;
   text-align: center;
   font-size: 2.8rem;
@@ -632,6 +773,16 @@ body a {
   font-weight: 500;
   line-height: 150%;
   letter-spacing: -0.036rem;
+  opacity: 0.6;
+}
+#wrap .container .section04 > .box .circle-list > li:nth-last-of-type(1).active {
+  animation-delay: 1s;
+}
+#wrap .container .section04 > .box .circle-list > li:nth-last-of-type(2).active {
+  animation-delay: 0.6s;
+}
+#wrap .container .section04 > .box .circle-list > li:nth-last-of-type(3).active {
+  animation-delay: 0.2s;
 }
 #wrap .container .section04 > .box .circle-list:after {
   content: "";
@@ -641,7 +792,7 @@ body a {
   position: absolute;
   right: -6.4rem;
   top: calc(50% - 2.2rem);
-  background: url("/resources/img/pc/portfolio/a001/ico_arrow.svg") no-repeat 0 0/100%;
+  background: url("../../img/pc/portfolio/a001/ico_arrow.svg") no-repeat 0 0/100%;
 }
 #wrap .container .section04 > .box .circle-last {
   display: flex;
@@ -654,21 +805,62 @@ body a {
   background: #fff;
   color: #0075e9;
   text-align: center;
+  font-family: "Pretendard Bold";
   font-size: 4.4rem;
   font-weight: 700;
   line-height: 120%;
+  animation-delay: 1.7s;
+}
+#wrap .container .section04.active .circle-list::after {
+  opacity: 0;
+  animation: slideRight 0.5s ease-in-out forwards;
+  animation-delay: 1.5s;
 }
 #wrap .container .section05 {
   padding: 8rem 16rem;
   height: 120rem;
   position: relative;
   box-sizing: content-box;
-  background: #fff url("/resources/img/pc/portfolio/a001/bg_cont03.png") no-repeat 50% 50%/auto auto;
+}
+#wrap .container .section05 .effectBox {
+  position: relative;
+  width: 154.6rem;
+  height: 100%;
+  margin: 0 auto;
+  background: url("../../img/pc/portfolio/a001/sec05_bg_circle.png") no-repeat center center/contain;
+}
+#wrap .container .section05 .effectBox .effectImg {
+  position: absolute;
+  widtH: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+#wrap .container .section05 .effectBox .effectImg > img {
+  display: block;
+}
+#wrap .container .section05 .effectBox .effectImg > img.item-line {
+  height: 102.2rem;
+}
+#wrap .container .section05 .effectBox .effectImg > img.item-line.active {
+  animation-delay: 0.5s;
+}
+#wrap .container .section05 .effectBox .effectImg > img.item-phone {
+  position: absolute;
+  width: 99.2rem;
+  height: 73.7rem;
+  top: 17.7rem;
+  left: 27.5rem;
+}
+#wrap .container .section05 .effectBox .effectImg > img.item-phone.active {
+  animation-delay: 1s;
 }
 #wrap .container .section05 .txtBox {
   position: absolute;
-  right: 16rem;
-  bottom: 0.6rem;
+  right: 17rem;
+  bottom: 0;
 }
 #wrap .container .section05 .txtBox .inner .img-app {
   margin-left: 16.5rem;
@@ -678,6 +870,7 @@ body a {
   margin-bottom: 1.6rem;
 }
 #wrap .container .section05 .txtBox .inner > .tit p {
+  font-family: "Pretendard exBold";
   color: #111;
   font-size: 3.2rem;
   font-weight: 800;
@@ -687,7 +880,6 @@ body a {
 #wrap .container .section05 .txtBox .inner > p {
   color: #444;
   font-size: 1.8rem;
-  font-weight: 500;
   line-height: 150%;
   letter-spacing: -0.036rem;
 }
@@ -702,6 +894,31 @@ body a {
   display: flex;
   gap: 2.4rem;
 }
+#wrap .container .section06 .bottom_box .imgBox {
+  flex-grow: 1;
+}
+#wrap .container .section06 .bottom_box .imgBox > img {
+  display: block;
+}
+#wrap .container .section06 .bottom_box .colorBox {
+  flex-grow: 2;
+  width: 68rem;
+}
+#wrap .container .section06 .bottom_box .colorBox > img:not(:first-of-type) {
+  margin-top: -5.6rem;
+}
+#wrap .container .section06 .bottom_box .colorBox > img:not(:first-of-type).active:nth-of-type(1) {
+  animation-delay: 0.2s;
+}
+#wrap .container .section06 .bottom_box .colorBox > img:not(:first-of-type).active:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+#wrap .container .section06 .bottom_box .colorBox > img:not(:first-of-type).active:nth-of-type(3) {
+  animation-delay: 0.6s;
+}
+#wrap .container .section06 .bottom_box.active .colorBox {
+  transition-delay: 0.3s;
+}
 #wrap .container .section07 {
   background-color: #fff;
   padding: 8rem;
@@ -711,6 +928,7 @@ body a {
   margin-top: 16rem;
 }
 #wrap .container .section07 > .inner .tit {
+  font-family: "Pretendard Bold";
   margin-bottom: 8rem;
   color: #111;
   font-size: 4rem;
@@ -728,15 +946,60 @@ body a {
   gap: 2.4rem;
   margin-bottom: 8rem;
 }
-#wrap .container .section08 .inner .imgBox img {
+#wrap .container .section08 .inner .box-left .imgBox img {
   border-radius: 40px;
+}
+#wrap .container .section08 .inner .box-right {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 2.4rem;
+}
+#wrap .container .section08 .inner .box-right .box-motion ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  height: 55.8rem;
+  border-radius: 40px;
+  background: #f5f8fb;
+  padding: 0 6rem;
+}
+#wrap .container .section08 .inner .box-right .box-motion ul li {
+  width: 20rem;
+}
+#wrap .container .section08 .inner .box-right .box-motion.active {
+  transition-delay: 0.3s;
+}
+#wrap .container .section08 .inner .box-right .inner-box {
+  display: flex;
+  justify-content: center;
+  gap: 2.4rem;
+}
+#wrap .container .section09 {
+  max-width: 100%;
+  overflow: hidden;
+}
+#wrap .container .section09 .inner {
+  background: url("../../img/pc/portfolio/a001/img_cont07.png") no-repeat center top/cover;
+  padding-bottom: 72.9166666667%;
+  opacity: 0;
+  scale: 1.3;
+}
+#wrap .container .section09 .inner.active {
+  opacity: 1;
+  scale: 1;
 }
 #wrap .container .section10 {
   padding: 14.7rem 0;
   box-sizing: content-box;
-  background: #fff url("/resources/img/pc/portfolio/a001/bg_cont08.png") no-repeat 50% 50%/auto auto;
   height: 120rem;
   position: relative;
+}
+#wrap .container .section10 .bg-circle {
+  width: 100%;
+  height: 120rem;
+  background: #fff url("../../img/pc/portfolio/a001/bg_cont08.png") no-repeat center top/contain;
 }
 #wrap .container .section10 .tit {
   position: absolute;
@@ -745,6 +1008,7 @@ body a {
   transform: translate(-25%, -50%);
 }
 #wrap .container .section10 .tit p {
+  font-family: "Pretendard Bold";
   color: #121316;
   text-align: left;
   font-size: 9.6rem;
@@ -760,13 +1024,19 @@ body a {
   line-height: 130%;
   letter-spacing: -0.192rem;
 }
+#wrap .container .section10 .tit.active {
+  transition-delay: 0.5s;
+}
 #wrap .container .section10 .ico01 {
   position: absolute;
   right: 16rem;
   top: 21.4rem;
   width: 16rem;
   height: 16rem;
-  background: url("/resources/img/pc/portfolio/a001/ico_01.png") no-repeat 0 0/100%;
+  background: url("../../img/pc/portfolio/a001/ico_01.png") no-repeat 0 0/100%;
+}
+#wrap .container .section10 .ico01.active {
+  transition-delay: 0.2s;
 }
 #wrap .container .section10 .ico02 {
   position: absolute;
@@ -774,7 +1044,10 @@ body a {
   bottom: -2.2rem;
   width: 33.3rem;
   height: 32.5rem;
-  background: url("/resources/img/pc/portfolio/a001/ico_02.png") no-repeat 0 0/100%;
+  background: url("../../img/pc/portfolio/a001/ico_02.png") no-repeat 0 0/100%;
+}
+#wrap .container .section10 .ico02.active {
+  animation-delay: 0.5s;
 }
 #wrap .container .section11 {
   padding: 0 4rem 20rem;
@@ -785,6 +1058,7 @@ body a {
   padding: 8rem 8rem 16rem 8rem;
 }
 #wrap .container .section11 > .inner h2 {
+  font-family: "Pretendard Bold";
   color: #111;
   font-size: 4rem;
   font-weight: 700;
@@ -798,6 +1072,9 @@ body a {
 }
 #wrap .container .section11 > .inner .cont_item:nth-child(2) {
   padding-top: 39.2rem;
+}
+#wrap .container .section11 > .inner .cont_item:nth-child(2).active {
+  transition-delay: 0.5s;
 }
 #wrap .container .section11 > .inner .cont_list ul {
   display: flex;
@@ -814,17 +1091,23 @@ body a {
   padding-top: 20rem;
 }
 #wrap .container .cont_footer {
-  background: #fff url("/resources/img/pc/portfolio/a001/img_cont_footer.png") no-repeat top right/auto auto;
+  max-width: 100%;
+  overflow: visible;
+  background: #fff url("../../img/pc/portfolio/a001/img_cont_footer.png") no-repeat top right/auto auto;
 }
 #wrap .container .cont_footer .tf_member {
   padding: 92rem 27.4rem 24rem 27.4rem;
   gap: 10rem;
   position: relative;
 }
+#wrap .container .cont_footer .tf_member dl {
+  overflow: visible;
+}
 #wrap .container .cont_footer .tf_member dl:not(:first-of-type) {
   margin-top: 5.6rem;
 }
 #wrap .container .cont_footer .tf_member dl dt {
+  font-family: "Pretendard Bold";
   color: #111;
   font-size: 1.8rem;
   font-weight: 700;
@@ -833,6 +1116,7 @@ body a {
   margin-bottom: 1.6rem;
 }
 #wrap .container .cont_footer .tf_member dl dd {
+  font-family: "PretendardR";
   color: #444;
   font-size: 2.8rem;
   font-weight: 400;
@@ -841,15 +1125,6 @@ body a {
 }
 #wrap .container .cont_footer .tf_member dl dd > em {
   font-style: normal;
-}
-#wrap .container .cont_footer .tf_member dl dd > em:after {
-  content: "";
-  display: inline-block;
-  width: 0.8rem;
-  height: 0.8rem;
-  background-color: #2294fd;
-  border-radius: 50%;
-  vertical-align: top;
 }
 #wrap .container .cont_footer .footer_logo {
   position: absolute;

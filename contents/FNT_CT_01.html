@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <title>Contact | NETIVE</title>
   <script src="../resources/js/head.js"></script>
   <script type="text/javascript">
     initPage(1);
@@ -13,22 +14,22 @@
     <div id="container" class="container">
       <div class="subWrap">
         <div class="ContWrap">
-          <div class="pageHeader">
+          <div class="pageHeader" data-scroll-effect>
             <h2>CONTACT</h2>
             <p class="pageInfo">네티브와 함께하고 싶은 프로젝트를 알려주세요.</p>
-          </div> 
+          </div>
           <div class="formWrap">
             <div class="inputWrap">
               <p>연락을 받으실 담당자의 정보를 알려주세요.</p>
               <div class="inputBox">
-                <input type="text" placeholder="회사명/이름">
+                <input type="text" placeholder="회사명/이름" id="cmpnyNm">
                 <input type="text" placeholder="이메일">
-                <input type="text" placeholder="휴대폰번호">
+                <input type="tel" placeholder="휴대폰번호">
               </div>
             </div>
             <div class="inputWrap moBox">
               <p>프로젝트 유형을 선택해주세요.</p>
-              <div class="inputBox">
+              <div class="inputBox chkBox">
                 <input type="checkbox" name="projectType" id = "a1"/>
                 <label for="a1">신규구축</label>
                 <input type="checkbox" name="projectType" id = "a2"/>
@@ -45,7 +46,7 @@
             </div>
             <div class="inputWrap moBox">
               <p>제작 유형을 선택해주세요.</p>
-              <div class="inputBox">
+              <div class="inputBox chkBox">
                 <input type="checkbox" name="buildType" id = "c1"/>
                 <label for="c1">웹사이트</label>
                 <input type="checkbox" name="buildType" id = "c2"/>
@@ -112,7 +113,7 @@
                       <p>2.개인정보의 보유 및 이용기간</p>
                       <span>홈페이지 문의 접수 또는 상담 시 수집된 개인정보에 대해서 목적이 달성된 후 내부 방침 및 기타 관련 법령에 의한 정보보호 사유에 따라(보유 및 이용기간 참조) 일정 기간 저장된 후 파기되어집니다. 이용자의 요청이 있는 경우 즉시 파기합니다.</span>
                       <ul>
-                        <li>                      
+                        <li>
                           - 개인정보 보유 및 이용기간: 3년
                         </li>
                       </ul>
@@ -130,15 +131,15 @@
                       <span>네티브(주)는 고객의 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 아래와 같이 개인정보관리책임자를 지정하고 있습니다.</span>
                       <ul>
                           <li>- 개인정보관리책임자</li>
-                          <li>성명 : 담당자명</li>
-                          <li>전화번호 : 내선이 있는 경우 내선번호 (대표번호: 02-324-3447)</li>
-                          <li>이메일 : 담당자 이메일 (대표메일: adsharp@netive.co.kr)</li>
+                          <li>성명 : 정성민</li>
+                          <li>전화번호 : 02-324-3447</li>
+                          <li>이메일 : sm.jeong@netive.co.kr</li>
                       </ul>
                     </li>
                   </ul>
                   <p>귀하께서는 네티브(주)의 서비스를 이용하시며 발생하는 모든 개인정보보호 관련 민원을 개인정보관리책임자에게 신고하실 수 있습니다. 회사는 이용자들의 신고사항에 대해 신속하게 충분한 답변을 드릴 것입니다.</p>
-                  <span>공고일자 : 2025년 04월 00일</span><br/>
-                  <span>시행일자 : 2025년 04월 00일</span>
+                  <span>공고일자 : 2025년 05월 30일</span><br/>
+                  <span>시행일자 : 2025년 05월 30일</span>
                 </div>
               </div>
               <p class="normal agreeChk">
@@ -148,7 +149,12 @@
             </div>
           </div>
           <div class="btnBox">
-            <button type="button" class="btnB"><span class="st1">프로젝트 문의하기</span></button>
+            <button type="button" class="btnB" onclick="modal.open(event, 'modal-1', () => {
+                // modal open 는 UI_common.js 에서 처리
+                // 콜백에서 이후 action 처리하면 됨(예시)
+                formCheck();
+              }
+            )"><span class="st3">프로젝트 문의하기</span></button>
           </div>
         </div>
       </div>
@@ -173,11 +179,11 @@
             <p>
               <span>서울시 마포구 월드컵북로63</span>
               <span class="textB">(성산동, 서레빌딩 2층)</span>
-              <a href="#" alt="맵으로 보기" class="viewMap"><span>맵으로 보기</span></a>
+              <a href="https://naver.me/5uIRYdHi" target="_blank" class="viewMap" title="새창"><span>맵으로 보기</span></a>
             </p>
             <dl>
               <dt>홍대입구역 2번 출구 </dt>
-              <dd>1번 출구 에서 진진 후 라인 프렌즈에서 우회전 하여 직진. 거리 796M, 도보 약 15분 거리</dd>
+              <dd>1번 출구 에서 직진 후 라인 프렌즈에서 우회전 하여 직진. 거리 796M, 도보 약 15분 거리</dd>
             </dl>
             <dl>
               <dt>홍대입구역 1번 출구</dt>
@@ -193,11 +199,46 @@
         initFooter(1);
       </script>
     </footer>
-  </div> 
+  </div>
+
+
+  <!-- modal -->
+  <div class="modal-popup" data-modal="modal-1" style="display: none;">
+    <p class="modal-popup-textBox">
+      <span data-message></span>
+      <button type="button" class="modal-popup-btn" onclick="modal.close(
+        () => {
+          // modal close 는 UI_common.js 에서 처리
+          // 콜백에서 이후 action 처리하면 됨
+          returnFocus(); // 포커스 보내기
+        }
+      )"><span class="btnOk">확인</span></button>
+    </p>
+  </div>
+
 </body>
 
 <script type="text/javascript">
   window.addEventListener('DOMContentLoaded', setHeader(1));
-  
+
+  const formCheck = () => { // sample
+    let message = '';
+    const messageArea = document.querySelector('[data-message]')
+    const cmpnyNm = document.querySelector('#cmpnyNm');
+    if(cmpnyNm.value === '') {
+      message = '담당자의 회사명/이름을 확인해 주세요.';
+    } else {
+      message = '문의가 완료되었습니다.';
+    }
+    messageArea.textContent = message;
+  }
+
+  const returnFocus = () => { // sample
+    const cmpnyNm = document.querySelector('#cmpnyNm');
+    if(cmpnyNm.value === '') {
+      document.querySelector('#cmpnyNm').focus();
+    }
+  }
+
 </script>
 </html>

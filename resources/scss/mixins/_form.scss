@@ -3,22 +3,23 @@
 //=======================================================
 // Mixins: form
 //=======================================================
-input[type="text"], textarea, select{
+input[type="text"],input[type="tel"], textarea, select{
   width:100%;
   border: 2px solid #ccc;
   border-radius: 12px;
   padding:rem(15) rem(24);
-  @include font18(500, #222);
+  @include font16(500, #111);
   &::placeholder{
-    @include font18(500, #999);
+    @include font16(500, #999);
   }
 }
 
 textarea{
   display: block;
-  min-height: 17.40vh;
+  min-height: rem(200);
   padding:rem(0);
   border:0;
+  border-radius: 0;
   @include scrollContent;
   resize:none;
   &:focus{
@@ -43,7 +44,7 @@ textarea{
   }
   //견적문의 체크박스 디자인
   > div.inputBox{
-    & input[type="checkbox"]{  
+    & input[type="checkbox"]{
       opacity:0;
       position: absolute;
       top:-999;
@@ -51,18 +52,20 @@ textarea{
       & + label{
         display: block;
         position:static;
-        min-width:rem(120); 
-        @include font18(500, #222);
+        //min-width:rem(120);
+        font-family: 'Pretendard semi';
+        font-size:rem(20);
+        line-height:100%;
         text-align: center;
-        padding:rem(12) rem(20);
+        padding:rem(16) rem(24);
         border:1px solid #222;
         border-radius:rem(999);
         cursor: pointer;
       }
       &:checked + label{
-        background-color: #222;
+        background-color: #111;
         color:#fff;
-        border-color: #222;
+        border-color: #111;
       }
       &:focus + label{
         outline: solid 1px #111;
@@ -70,65 +73,31 @@ textarea{
       }
     }
   }
-
-  & .agreeChk{
-      position: relative;
-      @include flexRow(flex-start, center, noWrap, rem(12));
-      margin-top:rem(32);
-      input[type="checkbox"]{  
-      width:rem(1);
-      height:rem(1);
-      & + label{
-        display: block;
-        position:absolute;
-        top:0;
-        left:0;
-        width:rem(24);
-        height:rem(24);
-        border:1px solid #000;
-        border-radius:rem(6);
-        background-color: #fff;
-        cursor: pointer;
-      }
-      &:checked{
-        //background-color: #000;
-        //color:#fff;
-      }
-      &:checked + label{
-        background-color: #222;
-        cursor: pointer;
-        //position: relative;
-        &:before{
-          display: block;
-          position: absolute;
-          content:'';
-          top:0;
-          left:0;
-          width:rem(24);
-          height:rem(24);
-          background:url('../img/pc/icon_chk.svg') left top;
-          background-size:contain;
-        }
-      }
+  //모바일 사이즈 체크박스스타일
+  @media screen and (max-width:1024px){
+    textarea{
+      min-height: rem(240);
+      border-radius: 0;
     }
-    > span{
-      margin-left:rem(12);
-      @include font18(500, #444);
+    input[type="text"],input[type="tel"], select{
+      border:1px solid #ccc;
+      padding:rem(18) rem(20);
     }
-  }
-  &.moBox{
-    > div.inputBox{
-      & input[type="checkbox"]{
-        & + label{
-          min-width:rem(70); 
-          @include font16(500, #222);
-          text-align: center;
-          padding:rem(9) rem(15);
-        }
-        &:checked + label{
-          background-color: #222;
-          color:#fff;
-          border-color: #222;
+    &.moBox{
+      > div.inputBox{
+        & input[type="checkbox"]{
+          & + label{
+            min-width:0;
+            @include font16(600, #111);
+            text-align: center;
+            padding:rem(12) rem(16);
+            line-height: 1;
+          }
+          &:checked + label{
+            background-color: #111;
+            color:#fff;
+            border-color: #111;
+          }
         }
       }
     }

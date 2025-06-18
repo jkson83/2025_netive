@@ -2,21 +2,10 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
+    <title>Porfolio | NETIVE</title>
     <script src="../resources/js/head.js"></script>
     <script type="text/javascript">
       initPage(1);
-    </script>
-    <script>
-      // pc/mobile에 따른 서브 css파일 설정
-      let cssSubFile;
-      let substr = '';
-      if (isMobile()) {
-        cssSubFile = 'mo_recruit.css';
-      } else {
-        cssSubFile = 'recruit.css';
-      }
-      substr += `<link rel="stylesheet" href="../resources/scss/${cssSubFile}" type="text/css">`;
-      document.write(substr);
     </script>
   </head>
   <body>
@@ -24,43 +13,49 @@
       <header id="header" class="header subPage"></header>
       <div id="container" class="container">
         <div class="subWrap expensionW">
-          <div class="pageHeader">
+          <div class="pageHeader" data-scroll-effect>
             <h2>PORTFOLIO</h2>
           </div>
           <div class="boardWrap noBorder">
             <div class="workBox">
-              <p class="proImg">
+              <p class="proImg" data-scroll-effect>
                 <a href="../portfolio/FNT_PJ_02_a001.html" title="수호천사동양생명 페이지 이동">
-                  <img src="../resources/img/pc/port_img1.png" alt="수호천사동양생명 이미지" class="pcImg" />
-                  <img src="../resources/img/mobile/port_img1.png" alt="수호천사동양생명 이미지" class="moImg" />
+                  <img src="../resources/img/pc/port_img1.png" alt="수호천사동양생명 이미지" class="pcImg" data-scroll-image>
+                  <img src="../resources/img/mobile/port_img1.png" alt="수호천사동양생명 이미지" class="moImg" data-scroll-image>
                 </a>
                 <span class="proName">수호천사동양생명</span>
               </p>
             </div>
             <div class="workBox">
-              <p class="proImg">
-                <a href="../portfolio/FNT_PJ_02_a002.html" title="신한 쏠 라이프 페이지 이동">
-                  <img src="../resources/img/pc/port_img2.png" alt="신한 쏠 라이프 이미지" class="pcImg" />
-                  <img src="../resources/img/mobile/port_img2.png" alt="신한 쏠 라이프 이미지" class="moImg" />
+              <p class="proImg" data-scroll-effect>
+                <a href="../portfolio/FNT_PJ_02_a002.html" title="신한 쏠 라이프 페이지 이동" class="videoBox">
+                  <!-- <img src="../resources/img/pc/port_img2.png" alt="신한 쏠 라이프 이미지" class="pcImg" />
+                  <img src="../resources/img/mobile/port_img2.png" alt="신한 쏠 라이프 이미지" class="moImg" /> -->
+                  <video autoplay muted loop playsinline class="pc-only">
+                    <source src="../resources/video//shinhan0523/PC_Portfolio1600.mp4" type="video/mp4" />
+                  </video>
+                  <video autoplay muted loop playsinline class="mo-only">
+                    <source src="../resources/video/shinhan0523/MO_Portfolio6722x.mp4" type="video/mp4" />
+                  </video>
                 </a>
                 <span class="proName">신한 쏠 라이프</span>
               </p>
             </div>
             <div class="halfBox">
               <div class="workBox">
-                <p class="proImg">
+                <p class="proImg" data-scroll-effect>
                   <a href="../portfolio/FNT_PJ_02_a003.html" title="KT 빠른기변 프로세스 페이지 이동">
-                    <img src="../resources/img/pc/port_img3.png" alt="KT 빠른기변 프로세스 이미지" class="pcImg" />
-                    <img src="../resources/img/mobile/port_img3.png" alt="KT 빠른기변 프로세스 이미지" class="moImg" />
+                    <img src="../resources/img/pc/port_img3.png" alt="KT 빠른기변 프로세스 이미지" class="pcImg" data-scroll-image>
+                    <img src="../resources/img/mobile/port_img3.png" alt="KT 빠른기변 프로세스 이미지" class="moImg" data-scroll-image>
                   </a>
                   <span class="proName">KT 빠른기변 프로세스</span>
                 </p>
               </div>
-              <div class="workBox">
+              <div class="workBox" data-scroll-effect>
                 <p class="proImg">
                   <a href="../portfolio/FNT_PJ_02_a004.html" title="삼성웰스토리 페이지 이동">
-                    <img src="../resources/img/pc/port_img4.png" alt="삼성웰스토리 이미지" class="pcImg" />
-                    <img src="../resources/img/mobile/port_img4.png" alt="삼성웰스토리 이미지" class="moImg" />
+                    <img src="../resources/img/pc/port_img4.png" alt="삼성웰스토리 이미지" class="pcImg">
+                    <img src="../resources/img/mobile/port_img4.png" alt="삼성웰스토리 이미지" class="moImg">
                   </a>
                   <span class="proName">삼성웰스토리</span>
                 </p>
@@ -68,19 +63,19 @@
             </div>
             <div class="halfBox">
               <div class="workBox">
-                <p class="proImg">
+                <p class="proImg" data-scroll-effect>
                   <a href="../portfolio/FNT_PJ_02_a005.html" title="마이데이터 포켓 페이지 이동">
-                    <img src="../resources/img/pc/port_img5.png" alt="마이데이터 포켓 이미지" class="pcImg" />
-                    <img src="../resources/img/mobile/port_img5.png" alt="마이데이터 포켓 이미지" class="moImg" />
+                    <img src="../resources/img/pc/port_img5.png" alt="마이데이터 포켓 이미지" class="pcImg" data-scroll-image>
+                    <img src="../resources/img/mobile/port_img5.png" alt="마이데이터 포켓 이미지" class="moImg" data-scroll-image>
                   </a>
                   <span class="proName">마이데이터 포켓</span>
                 </p>
               </div>
               <div class="workBox">
-                <p class="proImg">
-                  <a href="../portfolio/FNT_PJ_02_b002.html" title="KB헬스케어 페이지 이동">
-                    <img src="../resources/img/pc/port_img6.png" alt="KB헬스케어 운영 이미지" class="pcImg" />
-                    <img src="../resources/img/mobile/port_img6.png" alt="KB헬스케어 운영 이미지" class="moImg" />
+                <p class="proImg" data-scroll-effect>
+                  <a href="../portfolio/FNT_PJ_02_b002.html" title="KB헬스케어 페이지 이동" >
+                    <img src="../resources/img/pc/port_img6.png" alt="KB헬스케어 운영 이미지" class="pcImg">
+                    <img src="../resources/img/mobile/port_img6.png" alt="KB헬스케어 운영 이미지" class="moImg">
                   </a>
                   <span class="proName">KB헬스케어 운영</span>
                 </p>
@@ -88,27 +83,47 @@
             </div>
             <div class="halfBox">
               <div class="workBox">
-                <p class="proImg">
-                  <a href="../portfolio/FNT_PJ_02_b001.html" title="삼성카드 쇼핑몰 페이지 이동">
-                    <img src="../resources/img/pc/port_img7.png" alt="삼성카드 쇼핑몰 운영 이미지" class="pcImg" />
-                    <img src="../resources/img/mobile/port_img7.png" alt="삼성카드 쇼핑몰 운영 이미지" class="moImg" />
+                <p class="proImg" data-scroll-effect>
+                  <a href="../portfolio/FNT_PJ_02_b001.html" title="삼성카드 쇼핑몰 페이지 이동" class="samsungCard">
+                    <img src="../resources/img/pc/port_img7.png" alt="삼성카드 쇼핑몰 운영" class="pcImg">
+                    <img src="../resources/img/mobile/port_img7.png" alt="삼성카드 쇼핑몰 운영" class="moImg">
+                    <img src="../resources/img/pc/active_card1.gif" alt="움직이는 카드" class="activeCard">
                   </a>
                   <span class="proName">삼성카드 쇼핑몰 운영</span>
                 </p>
               </div>
               <div class="workBox">
-                <p class="proImg">
+                <p class="proImg" data-scroll-effect>
                   <a href="../portfolio/FNT_PJ_02_b004.html" title="암웨이 코리아 페이지 이동">
-                    <img src="../resources/img/pc/port_img8.png" alt="암웨이 코리아 운영 이미지" class="pcImg" />
-                    <img src="../resources/img/mobile/port_img8.png" alt="암웨이 코리아 운영 이미지" class="moImg" />
+                    <img src="../resources/img/pc/port_img8.png" alt="암웨이 코리아 운영 이미지" class="pcImg" data-scroll-image>
+                    <img src="../resources/img/mobile/port_img8.png" alt="암웨이 코리아 운영 이미지" class="moImg" data-scroll-image>
                   </a>
                   <span class="proName">암웨이 코리아 운영</span>
                 </p>
               </div>
             </div>
+            <div class="halfBox">
+              <div class="workBox">
+                <p class="proImg" data-scroll-effect>
+                  <a href="../portfolio/FNT_PJ_02_b003.html" title="라이나생명 디지털채널 페이지 이동" class="samsungCard">
+                    <img src="../resources/img/pc/port_img9.png" alt="라이나생명 디지털채널 운영" class="pcImg">
+                    <img src="../resources/img/mobile/port_img9.png" alt="라이나생명 디지털채널 운영" class="moImg">
+                  </a>
+                  <span class="proName">라이나생명 디지털채널 운영</span>
+                </p>
+              </div>
+              <div class="workBox">
+                <p class="proImg" data-scroll-effect>
+                  <a href="../portfolio/FNT_PJ_02_b005.html" title="AIG손해보험 디지털채널 페이지 이동">
+                    <img src="../resources/img/pc/port_img10.png" alt="AIG손해보험 디지털채널 운영" class="pcImg" data-scroll-image>
+                    <img src="../resources/img/mobile/port_img10.png" alt="AIG손해보험 디지털채널 운영" class="moImg" data-scroll-image>
+                  </a>
+                  <span class="proName">AIG손해보험 디지털채널 운영</span>
+                </p>
+              </div>
+            </div>
           </div>
-
-          <div class="btnBox">
+          <div class="btnBox Addmg16">
             <button type="button"><span class="st1">VIEW MORE</span></button>
           </div>
           <div class="boardWrap dataList">
@@ -158,7 +173,7 @@
               <li>한화시스템㈜</li>
             </ul>
           </div>
-          <div class="btnBox">
+          <div class="btnBox Addmg24">
             <button type="button"><span class="st1">VIEW MORE</span></button>
           </div>
         </div>
@@ -175,5 +190,25 @@
 
   <script type="text/javascript">
     window.addEventListener('DOMContentLoaded', setHeader(1));
+    window.addEventListener('resize', () => {
+      videoHeight();
+    });
+    window.addEventListener('load', () => {
+      videoHeight();
+    });
+    //동영상파일 height 지정하기
+    function videoHeight(){
+      let vBoxHiehgt = document.querySelector('.videoBox');
+      let vheight = document.getElementsByTagName('video');
+
+      let fixHeight = document.querySelector('.workBox p a');
+      let rect = fixHeight.getBoundingClientRect();
+      if (vheight.length > 0) {
+        for (let i = 0; i < vheight.length; i++) {
+          vBoxHiehgt.style.height = rect.height + 'px';
+          vheight[i].style.height = rect.height + 'px';
+        }
+      }
+    };
   </script>
 </html>

@@ -2,9 +2,59 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
+    <title>NETIVE</title>
     <script type="text/javascript" src="./resources/js/head.js"></script>
     <script type="text/javascript">
       initPage(0);
+    </script>
+    <!-- SEO : 회사 정보 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "네티브",
+      "url": "https://netive.co.kr",
+    }
+    </script>
+
+    <!-- SEO : 페이지 위치 정보 (Breadcrumbs) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://netive.co.kr"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "PORTFOLIO",
+          "item": "https://netive.co.kr/portfolio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "CONTACT",
+          "item": "https://netive.co.kr/contact"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "RECRUIT",
+          "item": "https://netive.co.kr/recruit"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "NEWS",
+          "item": "https://netive.co.kr/news"
+        }
+      ]
+    }
     </script>
   </head>
   <body>
@@ -16,7 +66,7 @@
       <div id="container" class="container">
         <section class="main-visual sec1">
           <div class="scene1">
-            <p>NETIVE</p>
+            <p><img src="./resources/img/pc/index_logo.png" alt="NETIVE"></p>
           </div>
 
           <div class="scene2">
@@ -30,33 +80,49 @@
               <span class="article7"></span>
             </div>
             <div class="text-field">
-              <p><span>Think new,</span></p>
-              <p><span>move creatively,</span></p>
-              <p><span>lead with initiative.</span></p>
+              <div class="pc-only">
+                <p><span>THINK NEW,</span></p>
+                <p><span>MOVE CREATIVELY,</span></p>
+                <p><span>LEAD WITH INITIATIVE.</span></p>
+              </div>
+              <div class="mo-only">
+                <p><span>THINK NEW,</span></p>
+                <p><span>MOVE</span></p>
+                <p><span>CREATIVELY,</span></p>
+                <p><span>LEAD WITH</span></p>
+                <p><span>INITIATIVE.</span></p>
+              </div>
             </div>
           </div>
 
           <div class="scene3">
             <div class="text-field">
               <div class="pc-only">
-                <p class="ani">우리는 유연한 감각과 날카로운 시선으로</p>
-                <p class="ani">다음 경험을 만들어 냅니다.</p>
+                <p><span>우리는 유연한 감각과</span></p>
+                <p><span>날카로운 시선으로</span></p>
+                <p><span>다음 경험을 만들어 냅니다.</span></p>
               </div>
-
               <div class="mo-only">
-                <p class="ani">우리는</p>
-                <p class="ani">유연한 감각과</p>
-                <p class="ani">날카로운 시선으로</p>
-                <p class="ani">다음 경험을</p>
-                <p class="ani">만들어 냅니다.</p>
+                <p><span>우리는</span></p>
+                <p><span>유연한 감각과</span></p>
+                <p><span>날카로운 시선으로</span></p>
+                <p><span>다음 경험을</span></p>
+                <p><span>만들어 냅니다.</span></p>
               </div>
             </div>
           </div>
 
           <div class="scene4">
             <div class="text-field">
-              <p>NETIVE,</p>
-              <p class="ani">Creating what’s NEXT.</p>
+              <div class="pc-only">
+                <p><span>NETIVE,</span></p>
+                <p><span>CREATING WHAT’S NEXT.</span></p>
+              </div>
+              <div class="mo-only">
+                <p><span>NETIVE,</span></p>
+                <p><span>CREATING</span></p>
+                <p><span>WHAT’S NEXT.</span></p>
+              </div>
             </div>
           </div>
 
@@ -66,10 +132,13 @@
         </section>
 
         <section id="sec3" class="sec sec3">
-          <div class="infoGBox">
+          <div class="infoGBox" data-scroll-effect>
             <div class="gBox gBox1">
               <span class="since">SINCE</span>
-              <span>2002</span>
+              <span data-counter data-start="2025" data-end="2002" data-duration="2">2025</span>
+              <video autoplay muted loop playsinline class="gboxActive">
+                <source src="./resources/video/main_gbox1.mp4" type="video/mp4" />
+              </video>
             </div>
             <div class="gBox gBox2">
               <dl>
@@ -84,21 +153,21 @@
               </dl>
             </div>
           </div>
-          <div class="textBox">
+          <div class="textBox" data-scroll-effect>
             <dl>
               <dt>
                 WE CREATE<br class="mo-br" />
                 WHAT’S NEXT.<br />
-                STRATEGY, EXPERIENCE, AND DESIGN SHAPING<br />
-                THE NEXT EXPERIENCE.
+                STRATEGY, EXPERIENCE, AND DESIGN—<BR />
+                SHAPING THE NEXT EXPERIENCE.
               </dt>
               <dd>
                 <p>
                   <span>RECRUIT</span>
-                  <a href="./contents/recruit.html" class="textlink"><span>채용 내용 확인하기</span></a>
+                  <a href="./contents/FNT_RT_01.html" class="textlink"><span>채용 정보 확인하기</span></a>
                 </p>
                 <p class="brief">
-                  <a href="#" class="textlink"><span>COMPANY BRIEF</span></a>
+                  <a href="#" title="회사소개서 다운로드" class="textlink"><span>COMPANY BRIEF</span></a>
                 </p>
               </dd>
             </dl>
@@ -106,51 +175,47 @@
         </section>
 
         <section id="sec4" class="sec sec4">
-          <h2>PORTFOLIO</h2>
+          <h2 data-scroll-effect>PORTFOLIO</h2>
           <div class="imglistbox">
-            <!-- <img src="./resources/img/pc/portpolio_main.png" alt="포트폴리오소개이미지" class="infoImg">
-          <p>
-            <span class="textEn">NETIVE DRIVES<br>THE FUTURE OF BUSINESSES<br>WITH DIGITAL SOLUTIONS. </span>
-            <span class="textKo">축적된 경험과 깊이 있는 고민으로<br>더 넓은 가능성을 탐색하고 혁신적인 흐름을 만들어갑니다.</span>
-          </p> -->
             <div class="galleyBox">
-              <a href="./portfolio/FNT_PJ_02_a001.html" class="port-img" title="수호천사동양생명 페이지이동">
-                <img src="./resources/img/pc/main_port_img1.png" class="pc-only" alt="수호천사동양생명 페이지화면" />
-                <img src="./resources/img/mobile/main_port_img1.png" class="mo-only" alt="수호천사동양생명 페이지화면" />
+              <a href="./portfolio/FNT_PJ_02_a001.html" class="port-img" title="수호천사동양생명 페이지이동" data-scroll-effect>
+                <img src="./resources/img/pc/main_port_img1.png" class="pc-only" alt="수호천사동양생명 페이지화면" data-scroll-image />
+                <img src="./resources/img/mobile/main_port_img1.png" class="mo-only" alt="수호천사동양생명 페이지화면" data-scroll-image />
                 <span class="title">수호천사 동양생명</span>
               </a>
-              <a href="./portfolio/FNT_PJ_02_a002.html" class="port-img shadow" title="신한 쏠 라이프 페이지이동">
-                <!-- <img src="./resources/img/pc/main_port_img2.png" class="pc-only" alt="신한 쏠 라이프 페이지화면" />
-                <img src="./resources/img/mobile/main_port_img2.png" class="mo-only" alt="신한 쏠 라이프 페이지화면" /> -->
-                <video autoplay muted loop>
-                  <source src="./resources/video/Shinhan_Life.mp4" type="video/mp4" />
+              <a href="./portfolio/FNT_PJ_02_a002.html" class="port-img shadow" title="신한 쏠 라이프 페이지이동" data-scroll-effect>
+                <video autoplay muted loop playsinline class="pc-only">
+                  <source src="./resources/video/shinhan0523/PC_Main1422.mp4" type="video/mp4" />
+                </video>
+                <video autoplay muted loop playsinline class="mo-only">
+                  <source src="./resources/video/shinhan0523/MO_Main10053x.mp4" type="video/mp4" />
                 </video>
                 <span class="title">신한 쏠 라이프</span>
               </a>
-              <a href="./portfolio/FNT_PJ_02_a003.html" class="port-img shadow" title="KT 빠른기변 프로세스 페이지이동">
-                <img src="./resources/img/pc/main_port_img3.png" class="pc-only" alt="KT 빠른기변 프로세스 페이지화면" />
-                <img src="./resources/img/mobile/main_port_img3.png" class="mo-only" alt="KT 빠른기변 프로세스 페이지화면" />
+              <a href="./portfolio/FNT_PJ_02_a003.html" class="port-img shadow" title="KT 빠른기변 프로세스 페이지이동" data-scroll-effect>
+                <img src="./resources/img/pc/main_port_img3.png" class="pc-only" alt="KT 빠른기변 프로세스 페이지화면" data-scroll-image />
+                <img src="./resources/img/mobile/main_port_img3.png" class="mo-only" alt="KT 빠른기변 프로세스 페이지화면" data-scroll-image />
                 <span class="title">KT 빠른기변 프로세스</span>
               </a>
-              <a href="./portfolio/FNT_PJ_02_a004.html" class="port-img shadow" title="삼성웰스토리 페이지이동">
+              <a href="./portfolio/FNT_PJ_02_a004.html" class="port-img shadow" title="삼성웰스토리 페이지이동" data-scroll-effect>
                 <img src="./resources/img/pc/main_port_img4.png" class="pc-only" alt="삼성웰스토리 페이지화면" />
                 <img src="./resources/img/mobile/main_port_img4.png" class="mo-only" alt="삼성웰스토리 페이지화면" />
                 <span class="title">삼성웰스토리</span>
               </a>
             </div>
           </div>
-          <div class="btnBox">
-            <a href="./contents/workList.html"><span class="st1">VIEW DETAILS</span></a>
+          <div class="btnBox" data-scroll-effect>
+            <a href="./contents/FNT_PJ_01.html"><span class="st1">VIEW DETAILS</span></a>
           </div>
         </section>
         <section id="sec5" class="sec sec5">
-          <h2>
+          <h2 data-scroll-effect>
             Start to Journey<br />with<br class="mo-br" />
             NETIVE
           </h2>
-          <ul>
+          <ul data-scroll-effect>
             <li>
-              <a href="./contents/contact.html" alt="프로젝트 문의">
+              <a href="./contents/FNT_CT_01.html" alt="프로젝트 문의">
                 <div>
                   <span>프로젝트 문의</span>
                   <h3>CONTACT</h3>
@@ -158,9 +223,9 @@
               </a>
             </li>
             <li class="style_R">
-              <a href="./contents/recruit.html" alt="채용문의">
+              <a href="./contents/FNT_RT_01.html" alt="채용문의">
                 <div>
-                  <span>채용정보 확인</span>
+                  <span>채용 정보 확인</span>
                   <h3>RECRUIT</h3>
                 </div>
               </a>
@@ -168,9 +233,8 @@
           </ul>
         </section>
       </div>
-
       <!-- footer -->
-      <footer id="footer" class="footer">
+      <footer id="footer" class="footer" data-scroll-effect>
         <script type="text/javascript" src="./resources/js/footer.js"></script>
         <script type="text/javascript">
           initFooter(0);
@@ -180,13 +244,20 @@
   </body>
 
   <script type="text/javascript">
+    // document.write(window.innerWidth);
     window.addEventListener('DOMContentLoaded', setHeader(0));
 
     window.onload = () => {
       animateVisual();
       moHeader();
       setCompanyInfo();
+      videoHeight();
     };
+
+    window.addEventListener('resize', () => {
+      videoHeight()
+    });
+
 
     // visual animation
     const animateVisual = () => {
@@ -196,66 +267,58 @@
       let scene3 = document.querySelector('.scene3');
       let scene4 = document.querySelector('.scene4');
 
+      // scene1 시작
       scene1.classList.add('active');
 
-      // 세 번째 영역 문구 쪼개기
-      const textAnimation = (_target) => {
-        let target = document.querySelector(`.${_target}`);
-        let textField = target.querySelector('.text-field');
-        let wordGroups = textField.querySelectorAll('p.ani');
-
-        wordGroups.forEach((word) => {
-          let texts = word.innerText;
-          let textLength = texts.length;
-          let textSpan = '';
-
-          for (let i = 0; i <= textLength; i++) {
-            let text = texts.substring(i, i + 1).replace(/\s/g, '&nbsp;');
-            textSpan += `<span>${texts.substring(i, i + 1)}</span>`;
-          }
-
-          word.innerHTML = textSpan;
-        });
-      };
-
-      textAnimation('scene3');
-      textAnimation('scene4');
+      // scene1 종료
+      let sceneTime0End = setTimeout(() => {
+        scene1.classList.add('hidden');
+        clearTimeout(sceneTime0End);
+      }, 2000);
 
       // header(GNB) animation
       let headerTimer = setTimeout(() => {
         header.classList.remove('hidden');
         clearTimeout(headerTimer);
-      }, 1800);
+      }, 2500);
 
       // scene2 시작
       let sceneTimer1 = setTimeout(() => {
         scene2.classList.add('active');
-        clearTimeout(sceneTimer1);
-      }, 2000);
 
-      // scene2 종료
+        setTimeout(() => {
+          const articles = scene2.querySelectorAll('span[class^=article]');
+          articles.forEach((ele) => {
+            ele.classList.add('active');
+          });
+        }, 1800);
+
+        clearTimeout(sceneTimer1);
+      }, 3500);
+
+      // // scene2 종료
       let sceneTime1End = setTimeout(() => {
         scene2.classList.add('hidden');
         clearTimeout(sceneTime1End);
-      }, 5000);
+      }, 8000);
 
       // scene3 시작
       let sceneTimer2 = setTimeout(() => {
         scene3.classList.add('active');
         clearTimeout(sceneTimer2);
-      }, 5500);
+      }, 8300);
 
       // scene3 종료
       let sceneTime2End = setTimeout(() => {
         scene3.classList.add('hidden');
         clearTimeout(sceneTime2End);
-      }, 8500);
+      }, 12000);
 
       // scene4 시작
       let sceneTimer3 = setTimeout(() => {
         scene4.classList.add('active');
         clearTimeout(sceneTimer3);
-      }, 9000);
+      }, 12300);
 
       // scene4 종료
       let sceneTimer3End = setTimeout(() => {
@@ -269,7 +332,7 @@
           });
         }
         clearTimeout(sceneTimer3End);
-      }, 13000);
+      }, 16000);
     };
 
     // scroll down
@@ -306,17 +369,27 @@
 
     // mobile일 때 소개 영역 animation 설정
     const setCompanyInfo = () => {
+
       let parent = document.querySelector('.infoGBox');
       let gBoxes = parent.querySelectorAll('.gBox');
 
-      if (isMobile()) {
-        gBoxes.forEach((gBox) => {
-          let boxClone = gBox.cloneNode(true);
-          parent.append(boxClone);
+      if (isMobile()) { // 20250526 - 조건 수정정
+        const itemWidth = gBoxes[0].offsetWidth;
+        gBoxes.forEach((ele) => {
+          ele.style.height = itemWidth + 'px'
         });
-
-        startCompAni();
+        return;
       }
+
+      // 20250526 - 주석
+      // if (isMobile()) {
+      //   gBoxes.forEach((gBox) => {
+      //     let boxClone = gBox.cloneNode(true);
+      //     parent.append(boxClone);
+      //   });
+
+      //   startCompAni();
+      // }
     };
 
     // mobile일 때 소개 영역 animation 시작
@@ -354,6 +427,18 @@
           firstBox.remove();
           parent.append(cloneFirst);
         }, 2500);
+      }
+    };
+
+    //동영상파일 height 지정하기
+    function videoHeight(){
+      let vheight = document.getElementsByTagName('video');
+      let fixHeight = document.querySelector('.galleyBox a');
+      let rect = fixHeight.getBoundingClientRect();
+      if (vheight.length > 0) {
+        for (let i = 0; i < vheight.length; i++) {
+          vheight[i].style.height = rect.height + 'px';
+        }
       }
     };
   </script>

@@ -78,6 +78,12 @@ table {
   font-weight: 400;
   font-display: swap;
 }
+@font-face {
+  font-family: "Ins_SansB";
+  src: url("../fonts/InstrumentSans/InstrumentSans-Bold.woff2") format("woff2");
+  font-weight: 800;
+  font-display: swap;
+}
 /**
  * font: Pretendard.custom
  * ------------------------------------
@@ -131,32 +137,33 @@ button {
   cursor: pointer;
 }
 
-input[type=text], textarea, select {
+input[type=text], input[type=tel], textarea, select {
   width: 100%;
   border: 2px solid #ccc;
   border-radius: 12px;
   padding: 1.5rem 2.4rem;
-  font-family: "Pretendard";
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 500;
-  color: #222;
-  line-height: 2.5rem;
+  font-family: "Pretendard";
+  color: #111;
+  line-height: 2.2rem;
   letter-spacing: -0.07rem;
 }
-input[type=text]::placeholder, textarea::placeholder, select::placeholder {
-  font-family: "Pretendard";
-  font-size: 1.8rem;
+input[type=text]::placeholder, input[type=tel]::placeholder, textarea::placeholder, select::placeholder {
+  font-size: 1.6rem;
   font-weight: 500;
+  font-family: "Pretendard";
   color: #999;
-  line-height: 2.5rem;
+  line-height: 2.2rem;
   letter-spacing: -0.07rem;
 }
 
 textarea {
   display: block;
-  min-height: 17.4vh;
+  min-height: 20rem;
   padding: 0rem;
   border: 0;
+  border-radius: 0;
   overflow: auto;
   resize: none;
 }
@@ -210,94 +217,50 @@ textarea:focus {
 .inputWrap > div.inputBox input[type=checkbox] + label {
   display: block;
   position: static;
-  min-width: 12rem;
-  font-family: "Pretendard";
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: #222;
-  line-height: 2.5rem;
-  letter-spacing: -0.07rem;
+  font-family: "Pretendard semi";
+  font-size: 2rem;
+  line-height: 100%;
   text-align: center;
-  padding: 1.2rem 2rem;
+  padding: 1.6rem 2.4rem;
   border: 1px solid #222;
   border-radius: 99.9rem;
   cursor: pointer;
 }
 .inputWrap > div.inputBox input[type=checkbox]:checked + label {
-  background-color: #222;
+  background-color: #111;
   color: #fff;
-  border-color: #222;
+  border-color: #111;
 }
 .inputWrap > div.inputBox input[type=checkbox]:focus + label {
   outline: solid 1px #111;
   border-radius: 99.9rem;
 }
-.inputWrap .agreeChk {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  align-items: center !important;
-  flex-wrap: noWrap;
-  gap: 1.2rem;
-  margin-top: 3.2rem;
-}
-.inputWrap .agreeChk input[type=checkbox] {
-  width: 0.1rem;
-  height: 0.1rem;
-}
-.inputWrap .agreeChk input[type=checkbox] + label {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 2.4rem;
-  height: 2.4rem;
-  border: 1px solid #000;
-  border-radius: 0.6rem;
-  background-color: #fff;
-  cursor: pointer;
-}
-.inputWrap .agreeChk input[type=checkbox]:checked + label {
-  background-color: #222;
-  cursor: pointer;
-}
-.inputWrap .agreeChk input[type=checkbox]:checked + label:before {
-  display: block;
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 2.4rem;
-  height: 2.4rem;
-  background: url("../img/pc/icon_chk.svg") left top;
-  background-size: contain;
-}
-.inputWrap .agreeChk > span {
-  margin-left: 1.2rem;
-  font-family: "Pretendard";
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: #444;
-  line-height: 2.5rem;
-  letter-spacing: -0.07rem;
-}
-.inputWrap.moBox > div.inputBox input[type=checkbox] + label {
-  min-width: 7rem;
-  font-family: "Pretendard";
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: #222;
-  line-height: 2.2rem;
-  letter-spacing: -0.07rem;
-  text-align: center;
-  padding: 0.9rem 1.5rem;
-}
-.inputWrap.moBox > div.inputBox input[type=checkbox]:checked + label {
-  background-color: #222;
-  color: #fff;
-  border-color: #222;
+@media screen and (max-width: 1024px) {
+  .inputWrap textarea {
+    min-height: 24rem;
+    border-radius: 0;
+  }
+  .inputWrap input[type=text], .inputWrap input[type=tel], .inputWrap select {
+    border: 1px solid #ccc;
+    padding: 1.8rem 2rem;
+  }
+  .inputWrap.moBox > div.inputBox input[type=checkbox] + label {
+    min-width: 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    font-family: "Pretendard semi";
+    color: #111;
+    line-height: 2.2rem;
+    letter-spacing: -0.07rem;
+    text-align: center;
+    padding: 1.2rem 1.6rem;
+    line-height: 1;
+  }
+  .inputWrap.moBox > div.inputBox input[type=checkbox]:checked + label {
+    background-color: #111;
+    color: #fff;
+    border-color: #111;
+  }
 }
 
 html {
@@ -336,53 +299,117 @@ body a {
   color: #333;
 }
 
-#wrap .mo {
-  display: none;
+#wrap {
+  display: block;
 }
-#wrap .motionBox {
+
+.mo {
+  display: none !important;
+}
+
+img {
+  vertical-align: top;
+}
+
+.historyBack {
+  display: inline-block;
+  position: absolute;
+  width: 3.2rem;
+  height: 3.2rem;
+  top: 50%;
+  left: 3rem;
+  transform: translateY(-50%);
+}
+.historyBack > button::before {
+  display: block;
+  content: "";
+  width: 3.2rem;
+  height: 3.2rem;
+  background: url("../../img/pc/portfolio/icon_backW.svg") no-repeat left top/contain;
+}
+.historyBack > button > em {
+  position: absolute;
+  display: inline-block;
+  font-size: 1px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  visibility: hidden;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
+.historyBack.chgImg > button::before {
+  background: url("../../img/pc/portfolio/icon_backB.svg") no-repeat left top/contain;
+}
+
+.motionBox {
   overflow: hidden;
   display: flex;
   position: relative;
   width: 100%;
   height: 100vh;
   padding: 12rem 8rem;
-  background-attachment: fixed !important;
   justify-content: flex-end;
+  background-attachment: fixed !important;
   flex-direction: column;
-  gap: 7.6rem;
+  gap: 7.2rem;
 }
-#wrap .motionBox * {
-  position: relative;
-  z-index: 1;
+.motionBox::before {
+  content: "";
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: visualAni 1.2s ease-out forwards;
+  animation-delay: 0.2s;
+  flex: none;
 }
-#wrap .motionBox dl {
+@media screen and (max-width: 1500px) {
+  .motionBox::before {
+    width: 100%;
+  }
+}
+.motionBox dl {
   color: #fff;
+  letter-spacing: 0;
+  transition-delay: 0.4s;
 }
-#wrap .motionBox dl dt {
+.motionBox dl dt {
+  font-family: "Pretendard Bold";
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.3;
   text-transform: uppercase;
 }
-#wrap .motionBox dl dt ~ dt {
+.motionBox dl dt ~ dt {
   margin-top: 2.4rem;
 }
-#wrap .motionBox dl dd {
+.motionBox dl dd {
   font-size: 1.8rem;
   line-height: 1.3;
   text-transform: uppercase;
   margin-top: 0.8rem;
 }
-#wrap .motionBox h2 {
+.motionBox h2 {
+  font-family: "Pretendard Bold";
   font-size: 8rem;
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.3;
   letter-spacing: -0.02em;
   color: #fff;
 }
-#wrap .motionBox button {
+.motionBox h2.active {
+  transition-delay: 0.5s;
+}
+.motionBox button {
   display: inline-block;
-  position: absolute;
+  position: absolute !important;
   left: 50%;
   bottom: 0;
   width: 7.2rem;
@@ -390,60 +417,194 @@ body a {
   margin-left: -3.6rem;
   font-size: 0;
   line-height: 0;
-  background: url("../../img/pc/portfolio/icon_scroll.svg") no-repeat 50% calc(50% + 1.2rem)/100%;
+  background: url("../../img/pc/portfolio/icon_scroll.svg") no-repeat 50% 1.2rem/2.8rem 2.8rem;
+  animation: scrollAni 1.3s ease-out forwards infinite;
+  animation-delay: 0.3s;
 }
-#wrap .overview {
+.motionBox button.scrollBlack {
+  background: url("../../img/pc/portfolio/icon_scrollB.svg") no-repeat 50% 1.2rem/2.8rem 2.8rem;
+}
+
+.overview {
   display: flex;
-  max-width: 137.8rem;
+  max-width: 145.4rem;
   margin: 0 auto;
   padding: 16rem 3.8rem;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 0 25.8rem;
 }
-#wrap .overview h2 {
+.overview h2 {
+  font-family: "Pretendard exBold";
+  width: 21rem;
   margin-bottom: 6.4rem;
   font-size: 2.8rem;
   font-weight: 800;
   line-height: 1.3;
-  letter-spacing: 0;
+  letter-spacing: -0.02rem;
   color: #111;
 }
-#wrap .overview strong {
+.overview strong {
+  font-family: "Pretendard Bold";
   display: block;
   font-size: 6.4rem;
   font-weight: 700;
   line-height: 1.4;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.2rem;
   color: #111;
 }
-#wrap .overview strong span {
+.overview strong span {
   display: block;
 }
-#wrap .overview p {
+.overview p {
   margin-top: 6.4rem;
   font-size: 2.4rem;
   line-height: 1.5;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.048rem;
+  color: #444;
 }
-#wrap .overview p + p {
+.overview p.active {
+  transition-delay: 0.3s;
+}
+.overview p + p {
   margin-top: 2rem;
 }
-#wrap .overview div div {
-  display: flex;
-  margin-top: 12.8rem;
-  gap: 0.8rem;
+.overview p + p.active {
+  transition-delay: 0.6s;
 }
-#wrap .overview div div span {
+.overview div div {
+  display: flex;
+  margin-top: 8rem;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+.overview div div.active {
+  transition-delay: 0.9s;
+}
+.overview div div span {
+  font-family: "Pretendard semi";
   padding: 1.2rem 2rem;
   font-size: 2.4rem;
   font-weight: 600;
   line-height: 1;
-  letter-spacing: -0.03em;
-  color: #222;
+  color: #111;
   border-radius: 99.9rem;
-  border: 0.1rem solid #222;
+  border: 0.1rem solid #111;
+  letter-spacing: 0;
 }
-#wrap .motionBox {
-  background: url("../../img/pc/portfolio/b004/bg_main.png") no-repeat center center/cover;
+.overview * {
+  word-break: keep-all;
+}
+
+[data-scroll-event] {
+  opacity: 0;
+}
+[data-scroll-event].leftInteraction {
+  transform: translateX(-10rem);
+}
+[data-scroll-event].leftInteraction.active {
+  animation: slideLeft 0.5s ease-out forwards;
+}
+[data-scroll-event].rightInteraction {
+  transform: translateX(10rem);
+}
+[data-scroll-event].rightInteraction.active {
+  animation: slideRight 0.5s ease-out forwards;
+}
+[data-scroll-event].upInteraction {
+  transform: translateY(10rem);
+}
+[data-scroll-event].upInteraction.active {
+  animation: slideUp 0.5s ease-out forwards;
+}
+[data-scroll-event].zoomInteraction {
+  transform: scale(0.8);
+}
+[data-scroll-event].zoomInteraction.active {
+  animation: zoom 0.5s ease-out forwards;
+}
+[data-scroll-event].fadeInteraction.active {
+  animation: fade 1s ease-out forwards;
+}
+
+@keyframes visualAni {
+  from {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes zoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes scrollAni {
+  0% {
+    opacity: 0.5;
+    background-position: 50% 1.2rem;
+  }
+  50% {
+    opacity: 1;
+    background-position: 50% 3.2rem;
+  }
+  100% {
+    opacity: 0.5;
+    background-position: 50% 1.2rem;
+  }
+}
+#wrap .motionBox::before {
+  background-image: url("../../img/pc/portfolio/b004/bg_main.png");
+  background-position: right center;
+}
+#wrap .motionBox dl,
+#wrap .motionBox h2 {
+  color: #111;
 }
 #wrap .container .sec01 {
   text-align: center;
@@ -469,19 +630,144 @@ body a {
 #wrap .container .sec01 .sec01_01 {
   display: flex;
   justify-content: space-between;
+  gap: 2.4rem;
 }
 #wrap .container .sec01 .sec01_01 .img_sec_01_01 {
-  width: 61.87%;
+  overflow: hidden;
+  width: 62.82%;
+  border-radius: 1.6rem;
+}
+#wrap .container .sec01 .sec01_01 .img_sec_01_01 img {
+  width: 100%;
 }
 #wrap .container .sec01 .sec01_01 .img_sec_01_02 {
-  width: 36.82%;
+  overflow: hidden;
+  width: 37.17%;
+  border-radius: 1.6rem;
+  animation-delay: 0.3s;
+}
+#wrap .container .sec01 .sec01_01 .img_sec_01_02 img {
+  width: 100%;
 }
 #wrap .container .sec02 {
   margin-bottom: 20rem;
 }
+#wrap .container .sec02 .pc {
+  display: flex;
+  flex-direction: column;
+}
+#wrap .container .sec02 .slider {
+  overflow: hidden;
+}
+#wrap .container .sec02 .slider-track {
+  display: flex;
+  width: max-width;
+  height: 22rem;
+  gap: 1.2rem;
+}
+#wrap .container .sec02 .slider-track div {
+  display: flex;
+  position: relative;
+  width: 22rem;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+}
 #wrap .container .sec03 {
-  margin: 0 4rem 20rem;
+  max-width: 192rem;
+  margin: 0 auto 20rem;
+  height: 108rem;
+  background-color: #f8f7f5;
+}
+#wrap .container .sec03 .pc {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+#wrap .container .sec03 .pc img {
+  position: absolute;
+  width: 36.2rem;
+}
+#wrap .container .sec03 .pc img:nth-child(1) {
+  animation-delay: 0.2s;
+}
+#wrap .container .sec03 .pc img:nth-child(2) {
+  animation-delay: 0.4s;
+}
+#wrap .container .sec03 .pc img:nth-child(3) {
+  animation-delay: 0.6s;
+}
+#wrap .container .sec03 .pc img:nth-child(4) {
+  animation-delay: 0.8s;
+}
+#wrap .container .sec03 .pc img:nth-child(5) {
+  animation-delay: 1s;
+}
+#wrap .container .sec03 .pc img:nth-child(1) {
+  top: 0;
+  margin-left: -68.6rem;
+}
+#wrap .container .sec03 .pc img:nth-child(2) {
+  top: 15rem;
+  margin-left: -19.1rem;
+  width: 38.3rem;
+}
+#wrap .container .sec03 .pc img:nth-child(3) {
+  top: 6.5rem;
+  margin-left: 45.5rem;
+}
+#wrap .container .sec03 .pc img:nth-child(4) {
+  top: 67.2rem;
+  margin-left: -83.9rem;
+}
+#wrap .container .sec03 .pc img:nth-child(5) {
+  top: 75.2rem;
+  margin-left: 32.3rem;
 }
 #wrap .container .sec04 {
+  position: relative;
   margin: 0 4rem;
+}
+#wrap .container .sec04::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 84rem;
+  border-radius: 1.6rem;
+  background-color: #179f4b;
+}
+#wrap .container .sec04 > div {
+  position: relative;
+  height: 318rem;
+}
+#wrap .container .sec04 > div div {
+  display: grid;
+  position: absolute;
+  left: 50%;
+}
+#wrap .container .sec04 > div div:nth-child(1) {
+  top: 15.6rem;
+  margin-left: -68.1rem;
+  gap: 4.1rem;
+}
+#wrap .container .sec04 > div div:nth-child(1) img {
+  animation-delay: 0.2s;
+}
+#wrap .container .sec04 > div div:nth-child(2) {
+  top: 31.6rem;
+  margin-left: -24.7rem;
+  gap: 2.4rem;
+}
+#wrap .container .sec04 > div div:nth-child(2) img {
+  animation-delay: 0.3s;
+}
+#wrap .container .sec04 > div div:nth-child(3) {
+  top: 15.3rem;
+  margin-left: 18.7rem;
+  gap: 1rem;
+}
+#wrap .container .sec04 > div div:nth-child(3) img {
+  animation-delay: 0.4s;
 }/*# sourceMappingURL=FNT_PJ_02_b004.css.map */

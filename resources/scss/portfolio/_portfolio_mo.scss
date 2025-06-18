@@ -1,0 +1,316 @@
+@import '../mixins/rem';
+
+.pc {
+  display: none !important;
+}
+img {
+  vertical-align: top;
+}
+
+.historyBack {
+  display: inline-block;
+  position: absolute;
+  width: rem(24);
+  height: rem(24);
+  top: rem(16);
+  left: rem(20);
+  > button {
+    &::before {
+      display: block;
+      content: '';
+      width: rem(24);
+      height: rem(24);
+      background: url('../../img/pc/portfolio/icon_backW.svg') no-repeat left top / contain;
+    }
+    > em {
+      @include blind();
+    }
+  }
+  &.chgImg {
+    > button {
+      &::before {
+        background: url('../../img/pc/portfolio/icon_backB.svg') no-repeat left top / contain;
+      }
+    }
+  }
+}
+
+.motionBox {
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 0 rem(20) rem(95) rem(20);
+  background-attachment: fixed !important;
+  justify-content: flex-end;
+  flex-direction: column;
+  gap: rem(32);
+
+  &::before {
+    content: '';
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: visualAni 1.2s ease-out forwards;
+    animation-delay: 0.2s;
+    flex: none;
+  }
+
+  dl {
+    color: #fff;
+    transition-delay: 0.4s;
+    letter-spacing: 0;
+    dt {
+      font-family: 'Pretendard Bold';
+      font-size: rem(13);
+      font-weight: 700;
+      line-height: 1.3;
+      text-transform: uppercase;
+
+      & ~ dt {
+        margin-top: rem(12);
+      }
+    }
+
+    dd {
+      font-family: 'PretendardR';
+      font-size: rem(13);
+      font-weight: 400;
+      line-height: 1.3;
+      text-transform: uppercase;
+      margin-top: rem(4);
+    }
+  }
+
+  h2 {
+    font-family: 'Pretendard Bold';
+    font-size: rem(36);
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    color: #fff;
+    &.active {
+      transition-delay: 0.5s;
+    }
+  }
+
+  button {
+    display: inline-block;
+    position: absolute !important;
+    left: 50%;
+    bottom: 0;
+    width: rem(56);
+    height: rem(56);
+    margin-left: rem(-28);
+    font-size: 0;
+    line-height: 0;
+    background: url('../../img/mobile/portfolio/icon_scroll.svg') no-repeat 50% rem(8) / rem(24) rem(24);
+    animation: scrollAni 1.3s ease-out forwards infinite;
+    animation-delay: 0.3s;
+
+    &.scrollBlack {
+      background: url('../../img/mobile/portfolio/icon_scrollB.svg') no-repeat 50% rem(8) / rem(24) rem(24);
+    }
+  }
+}
+
+.overview {
+  padding: rem(60) rem(20);
+
+  h2 {
+    font-family: 'Pretendard exBold';
+    margin-bottom: rem(20);
+    font-size: rem(16);
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    color: #111;
+
+    br {
+      display: none;
+    }
+  }
+
+  strong {
+    font-family: 'Pretendard Bold';
+    display: block;
+    font-size: rem(30);
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    color: #111;
+
+    span {
+      display: block;
+    }
+
+    &.active {
+      transition-delay: 0.3s;
+    }
+  }
+
+  p {
+    margin-top: rem(32);
+    font-size: rem(16);
+    color: #444;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    &.active {
+      transition-delay: 0.6s;
+    }
+
+    & + p {
+      margin-top: rem(20);
+      &.active {
+        transition-delay: 0.9s;
+      }
+    }
+  }
+
+  div {
+    div {
+      &.active {
+        transition-delay: 1.2s;
+      }
+      display: flex;
+      margin-top: rem(32);
+      gap: rem(6);
+      flex-wrap: wrap;
+
+      span {
+        font-family: 'Pretendard semi';
+        padding: rem(10) rem(16.5);
+        font-size: rem(16);
+        font-weight: 600;
+        line-height: 1;
+        color: #111;
+        border-radius: rem(999);
+        border: rem(1) solid #111;
+        letter-spacing: 0;
+
+        // @for $i from 1 to 10 {
+        //   &:nth-child(#{$i}){
+        //     &.active{
+        //         transition-delay: 1.2s + ($i - 1) * 0.1s;
+        //     }
+        //   }
+        // }
+      }
+    }
+  }
+
+  * {
+    word-break: keep-all;
+  }
+}
+
+[data-scroll-event] {
+  opacity: 0;
+  &.leftInteraction {
+    &.active {
+      animation: slideLeft 0.3s ease-out forwards;
+    }
+  }
+  &.rightInteraction {
+    &.active {
+      animation: slideRight 0.3s ease-out forwards;
+    }
+  }
+  &.upInteraction {
+    &.active {
+      animation: slideUp 0.5s ease-out forwards;
+    }
+  }
+  &.zoomInteraction {
+    transform: scale(0.8);
+    &.active {
+      animation: zoom 0.5s ease-out forwards;
+    }
+  }
+  &.fadeInteraction {
+    &.active {
+      animation: fade 1s ease-out forwards;
+    }
+  }
+}
+
+@keyframes visualAni {
+  from {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes zoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(rem(-50));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(rem(50));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(rem(50));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollAni {
+  0% {
+    opacity: 0.5;
+    background-position: 50% rem(8);
+  }
+  50% {
+    opacity: 1;
+    background-position: 50% rem(24);
+  }
+  100% {
+    opacity: 0.5;
+    background-position: 50% rem(8);
+  }
+}

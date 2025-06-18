@@ -1,138 +1,20 @@
 @import '../mixins';
 @import '../base';
+@import './portfolio';
+
 #wrap {
-  .mo {
-    display: none;
-  }
-
-  // 상단 공통 영역 [s]
   .motionBox {
-    overflow: hidden;
-    display: flex;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    padding: rem(120) rem(80);
-    background-attachment: fixed !important;
-    justify-content: flex-end;
-    flex-direction: column;
-    gap: rem(76);
+    background-color: #1d1d1b;
 
-    * {
-      position: relative;
-      z-index: 1;
+    &::before {
+      background-image: url('../../img/pc/portfolio/b003/top_img.png');
+      background-position: right top;
     }
-
-    dl {
-      color: #fff;
-
-      dt {
-        font-size: rem(16);
-        font-weight: 700;
-        line-height: 1.3;
-        text-transform: uppercase;
-
-        & ~ dt {
-          margin-top: rem(24);
-        }
-      }
-
-      dd {
-        font-size: rem(18);
-        line-height: 1.3;
-        text-transform: uppercase;
-        margin-top: rem(8);
-      }
-    }
-
-    h2 {
-      font-size: rem(80);
-      font-weight: 700;
-      line-height: 1;
-      letter-spacing: -0.02em;
-      color: #fff;
-    }
-
-    button {
-      display: inline-block;
-      position: absolute;
-      left: 50%;
-      bottom: 0;
-      width: rem(72);
-      height: rem(72);
-      margin-left: rem(-36);
-      font-size: 0;
-      line-height: 0;
-      background: url('../../img/pc/portfolio/icon_scroll.svg') no-repeat 50% calc(50% + rem(12)) / 100%;
-    }
-  }
-
-  .overview {
-    display: flex;
-    max-width: rem(1378);
-    margin: 0 auto;
-    padding: rem(160) rem(38);
-    justify-content: space-between;
-
-    h2 {
-      margin-bottom: rem(64);
-      font-size: rem(28);
-      font-weight: 800;
-      line-height: 1.3;
-      letter-spacing: 0;
-      color: #111;
-    }
-
-    strong {
-      display: block;
-      font-size: rem(64);
-      font-weight: 700;
-      line-height: 1.4;
-      letter-spacing: -0.03em;
-      color: #111;
-
-      span {
-        display: block;
-      }
-    }
-
-    p {
-      margin-top: rem(64);
-      font-size: rem(24);
-      line-height: 1.5;
-      letter-spacing: -0.02em;
-
-      & + p {
-        margin-top: rem(20);
-      }
-    }
-
-    div {
-      div {
-        display: flex;
-        margin-top: rem(128);
-        gap: rem(8);
-
-        span {
-          padding: rem(12) rem(20);
-          font-size: rem(24);
-          font-weight: 600;
-          line-height: 1;
-          letter-spacing: -0.03em;
-          color: #222;
-          border-radius: rem(999);
-          border: rem(1) solid #222;
-        }
-      }
-    }
-  }
-  // 상단 공통 영역 [e]
-
-  .motionBox {
-    background: #1d1d1b url('../../img/pc/portfolio/b003/top_img.png') no-repeat right rem(95);
   }
 
   .container {
+    // max-width: rem(1920);
+    margin: 0 auto;
     @for $i from 1 to 8 {
       .sec0#{$i} {
         text-align: center;
@@ -144,28 +26,244 @@
     }
 
     .sec01 {
-      padding: rem(54) 0 rem(174);
+      position: relative;
+      max-width: rem(1920);
+      margin: 0 auto;
+      padding: rem(58) rem(40) rem(174);
+      display: grid;
+      grid-template-columns: calc(37.17% - rem(12)) calc(62.83% - rem(12));
+      gap: rem(24);
+
+      img {
+        border-radius: rem(40);
+      }
+
+      .rightBox {
+        display: flex;
+        gap: rem(24);
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: stretch;
+
+        > img {
+          width: calc(50% - rem(12));
+          height: calc(50% - rem(12));
+
+          &.pc:nth-of-type(3) {
+            animation-delay: 0.1s;
+          }
+        }
+
+        .activeBox {
+          flex: none;
+          width: 100%;
+          height: calc(50% - rem(12));
+          background: #000 url('../../img/pc/portfolio/b003/lina_active.gif') no-repeat center center / rem(805) auto;
+          border-radius: rem(40);
+          animation-delay: 0.2s;
+        }
+      }
     }
 
     .sec02 {
-      margin-bottom: rem(174);
+      max-width: rem(1920);
+      margin: 0 auto rem(174);
+      padding: 0 rem(40);
     }
 
     .sec03 {
-      margin-bottom: rem(344);
+      position: relative;
+      max-width: rem(1920);
+      margin: 0 auto rem(300);
+
+      img {
+        width: 100%;
+      }
+
+      div {
+        position: relative;
+        margin-top: rem(-337);
+        padding: 0 rem(324);
+        animation-delay: 0.5s;
+        animation-duration: 0.8s;
+        &::before {
+          content: '';
+          overflow: hidden;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          z-index: 1;
+          width: rem(1276);
+          height: rem(748);
+          border-radius: rem(40);
+          transform: translateX(-50%);
+          box-shadow: rem(100) rem(100) rem(100) 0 rgba(0, 0, 0, 0.2);
+        }
+      }
     }
 
     .sec04 {
-      margin-bottom: rem(300);
+      overflow: hidden;
+      position: relative;
+      max-width: rem(1920);
+      height: rem(1562);
+      margin: 0 auto;
+      padding-bottom: rem(300);
+      box-sizing: unset;
+
+      [class*='img'] {
+        position: absolute;
+        left: 50%;
+      }
+      .img01 {
+        top: 0;
+        z-index: 1;
+        margin-left: rem(552);
+      }
+      .img02 {
+        top: rem(34);
+        margin-left: rem(24);
+        border-radius: rem(30);
+        box-shadow: rem(50) rem(50) rem(100) 0 rgba(0, 0, 0, 0.2);
+      }
+      .img03 {
+        top: rem(34);
+        margin-left: rem(370);
+        border-radius: rem(30);
+        box-shadow: rem(50) rem(50) rem(100) 0 rgba(0, 0, 0, 0.2);
+        animation-delay: 0.1s;
+      }
+      .img04 {
+        top: rem(326);
+        margin-left: rem(-457);
+        animation-delay: 0.3s;
+        animation-duration: 0.5s;
+      }
+      .img05 {
+        top: rem(557);
+        margin-left: rem(-657);
+        border-radius: rem(30);
+        box-shadow: rem(50) rem(50) rem(100) 0 rgba(0, 0, 0, 0.2);
+        animation-delay: 0.3s;
+
+        img {
+          &:nth-child(2) {
+            position: absolute;
+            top: rem(200);
+            left: rem(62);
+            height: rem(128);
+          }
+        }
+      }
+      .img06 {
+        top: rem(855);
+        z-index: 1;
+        margin-left: rem(-139);
+        animation-delay: 0.3s;
+        animation-duration: 0.5s;
+      }
+      .img07 {
+        top: rem(978);
+        margin-left: rem(24);
+        border-radius: rem(30);
+        box-shadow: rem(50) rem(50) rem(100) 0 rgba(0, 0, 0, 0.2);
+      }
+      .img08 {
+        top: rem(978);
+        margin-left: rem(370);
+        border-radius: rem(30);
+        box-shadow: rem(50) rem(50) rem(100) 0 rgba(0, 0, 0, 0.2);
+        animation-delay: 0.1s;
+      }
+    }
+
+    .sec05 {
+      max-width: rem(1920);
+      margin: 0 auto rem(300);
+    }
+    .sec06 {
+      max-width: rem(1920);
+      margin: 0 auto;
+
+      div {
+        overflow: hidden;
+        position: relative;
+        height: rem(584);
+        padding-bottom: rem(300);
+        box-sizing: unset;
+
+        img {
+          position: absolute;
+          left: 50%;
+
+          &:nth-child(1),
+          &:nth-child(2) {
+            overflow: hidden;
+            border-radius: rem(30);
+            outline: rem(6) solid #111;
+            outline-offset: rem(-6);
+            box-shadow: rem(50) rem(50) rem(100) 0 rgba(0, 0, 0, 0.2);
+          }
+
+          &:nth-child(1) {
+            top: rem(0);
+            margin-left: rem(-699);
+          }
+          &:nth-child(2) {
+            top: rem(0);
+            margin-left: rem(-353);
+            animation-delay: 0.2s;
+          }
+          &:nth-child(3) {
+            top: rem(165);
+            z-index: 1;
+            margin-left: rem(63);
+            animation-delay: 0.3s;
+          }
+          &:nth-child(4) {
+            top: rem(219);
+            margin-left: rem(257);
+            animation-delay: 0.4s;
+          }
+          &:nth-child(5) {
+            top: rem(324);
+            margin-left: rem(541);
+            animation-delay: 0.5s;
+          }
+          &:nth-child(6) {
+            top: rem(199);
+            margin-left: rem(740);
+            animation-delay: 0.3s;
+          }
+        }
+      }
     }
 
     .sec07 {
-      margin: 0 rem(40) rem(240);
+      max-width: rem(1920);
+      margin: 0 auto rem(240);
+      padding: 0 rem(40);
+
+      img {
+        width: 100%;
+        border-radius: rem(60);
+      }
 
       .sec07_01 {
         display: flex;
-        justify-content: space-between;
         margin-bottom: rem(40);
+        justify-content: space-between;
+        p {
+          width: calc(50% - rem(20));
+
+          & + p {
+            animation-delay: 0.2s;
+          }
+        }
+      }
+
+      > p {
+        animation-delay: 0.5s;
       }
     }
   }

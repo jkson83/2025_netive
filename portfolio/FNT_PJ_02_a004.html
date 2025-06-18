@@ -2,6 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
+    <title>삼성웰스토리 W+ | Porfolio | NETIVE</title>
     <script src="../resources/js/head.js"></script>
     <script type="text/javascript">
       initPage(1);
@@ -23,81 +24,155 @@
   <body>
     <div id="wrap" class="wrap">
       <header id="headerPort" class="header"></header>
-      <div class="motionBox">
-        <div>
-          <video src="../resources/video/Wellstory.mp4" autoplay loop muted></video>
-        </div>
-
-        <dl>
-          <dt>Client</dt>
-          <dd>Samsung welstory+</dd>
-          <dt>Release Date</dt>
-          <dd>july, 2024</dd>
-        </dl>
-        <h2>삼성웰스토리 W+</h2>
-
-        <button type="button" class="scroll-down" onclick="scrollDown()">
-          <span>아래로</span>
-        </button>
-      </div>
       <div id="container" class="container">
+        <div class="motionBox">
+          <dl data-scroll-effect>
+            <dt>Client</dt>
+            <dd>Samsung welstory<sup>+</sup></dd>
+            <dt>Release Date</dt>
+            <dd>july, 2024</dd>
+          </dl>
+          <h2 data-scroll-effect>삼성웰스토리 W<sup>+</sup></h2>
+
+          <button type="button" class="scroll-down" onclick="portfolioScrollDown()">
+            <span>아래로</span>
+          </button>
+        </div>
         <div class="overview">
-          <h2>Experience <br />Overview</h2>
+          <h2 data-scroll-effect>Experience <br />Overview</h2>
           <div>
-            <strong>
+            <strong data-scroll-effect>
               <span>식단, 운동, 건강지표까지</span>
               <span>일상을 하나로 잇는</span>
               <span>맞춤형 건강관리 앱</span>
             </strong>
-            <p>건강한 하루를 위한 모든 데이터를 한곳에 모았습니다.</p>
-            <p>삼성헬스 연동으로 더 똑똑하게, 식단과 운동은 물론 건강 상태까지 손쉽게 관리할 수 있습니다. <br />지금, 내 몸에 가장 가까운 건강 루틴을 시작해보세요.</p>
-            <div>
-              <span>Health Care</span>
-              <span>UI / UX Design</span>
-              <span>Publishing</span>
+            <p data-scroll-effect>건강한 하루를 위한 모든 데이터를 한곳에 모았습니다.</p>
+            <p data-scroll-effect>삼성헬스 연동으로 더 똑똑하게, 식단과 운동은 물론 건강 상태까지 손쉽게 관리할 수 있습니다. <br />지금, 내 몸에 가장 가까운 건강 루틴을 시작해보세요.</p>
+            <div data-scroll-effect>
+              <span>Healthcare</span>
+              <span>Build</span>
+              <span>UI/UX Design</span>
+              <span>App</span>
             </div>
           </div>
         </div>
-        <div class="sec01">
+        <div class="sec01" data-scroll-effect>
           <div class="inner">
-            <img src="../resources/img/pc/portfolio/a004/img_sec01_01.png" alt="" class="pc" />
-            <img src="../resources/img/mobile/portfolio/a004/img_sec01_01.png" alt="" class="mo" />
+            <img src="../resources/img/pc/portfolio/a004/img_sec01_01.png" alt="웰스토리폰화면" class="pc upInteraction" data-scroll-event />
+            <img src="../resources/img/mobile/portfolio/a004/img_sec01_01.png" alt="웰스토리폰화면" class="mo" />
           </div>
-          <img src="../resources/img/pc/portfolio/a004/img_sec01_02.png" alt="" class="pc" />
-          <img src="../resources/img/mobile/portfolio/a004/img_sec01_02.png" alt="" class="mo" />
+          <div class="slide">
+            <div class="slide-box">
+              <ul class="slide-inner">
+                <li class="slide-item">
+                  <img src="../resources/img/pc/portfolio/a004/slide_item1.png" alt="음식이미지" class="pc">
+                  <img src="../resources/img/mobile/portfolio/a004/slide_item1.png" alt="음식이미지" class="mo">
+                </li>
+                <li class="slide-item">
+                  <img src="../resources/img/pc/portfolio/a004/slide_item2.png" alt="음식이미지" class="pc">
+                  <img src="../resources/img/mobile/portfolio/a004/slide_item2.png" alt="음식이미지" class="mo">
+                </li>
+                <li class="slide-item">
+                  <img src="../resources/img/pc/portfolio/a004/slide_item3.png" alt="음식이미지" class="pc">
+                  <img src="../resources/img/mobile/portfolio/a004/slide_item3.png" alt="음식이미지" class="mo">
+                </li>
+                <li class="slide-item">
+                  <img src="../resources/img/pc/portfolio/a004/slide_item4.png" alt="음식이미지" class="pc">
+                  <img src="../resources/img/mobile/portfolio/a004/slide_item4.png" alt="음식이미지" class="mo">
+                </li>
+                <li class="slide-item">
+                  <img src="../resources/img/pc/portfolio/a004/slide_item5.png" alt="음식이미지" class="pc">
+                  <img src="../resources/img/mobile/portfolio/a004/slide_item5.png" alt="음식이미지" class="mo">
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div class="sec02">
-          <img src="../resources/img/pc/portfolio/a004/bg_sec02.png" alt="" class="bg pc" />
-          <img src="../resources/img/pc/portfolio/a004/img_sec02.png" alt="" class="pc" />
-          <img src="../resources/img/mobile/portfolio/a004/bg_sec02.png" alt="" class="bg mo" />
-          <img src="../resources/img/mobile/portfolio/a004/img_sec02.png" alt="" class="mo" />
+          <div class="inner pc">
+            <p class="leftIcon leftInteraction" data-scroll-event>
+            <img src="../resources/img/pc/portfolio/a004/sec02_img01.svg" alt="Welfit Healthy Care Meals" class="pc" />
+            <img src="../resources/img/pc/portfolio/a004/sec02_img02.svg" alt="Welfit Lounge" class="pc" />
+            </p>
+            <p class="rightIcon rightInteraction" data-scroll-event>
+              <img src="../resources/img/pc/portfolio/a004/sec02_img03.svg" alt="Welfit Coach" class="pc" />
+              <img src="../resources/img/pc/portfolio/a004/sec02_img04.svg" alt="W+" class="pc" /> 
+            </p>
+            <p class="centerImg upInteraction" data-scroll-event>
+              <img src="../resources/img/pc/portfolio/a004/img_sec02.png" alt="Make Wellness Stories Well" class="pc" />
+            </p>
+          </div>
+          <div class="inner mo">
+            <p class="leftIcon leftInteraction" data-scroll-event>
+              <img src="../resources/img/mobile/portfolio/a004/sec02_img01.svg" alt="Welfit Healthy Care Meals" />
+              <img src="../resources/img/mobile/portfolio/a004/sec02_img02.svg" alt="Welfit Lounge" />
+            </p>
+            <p class="rightIcon rightInteraction" data-scroll-event>
+              <img src="../resources/img/mobile/portfolio/a004/sec02_img03.svg" alt="Welfit Coach" />
+              <img src="../resources/img/mobile/portfolio/a004/sec02_img04.svg" alt="W+" /> 
+            </p>
+            <p class="centerImg upInteraction" data-scroll-event>
+              <img src="../resources/img/mobile/portfolio/a004/img_sec02.png" alt="" />
+            </p>
+          </div>          
         </div>
         <div class="sec03">
           <div class="inner01">
-            <img src="../resources/img/pc/portfolio/a004/img_sec03_01.png" alt="" class="pc" />
-            <img src="../resources/img/mobile/portfolio/a004/img_sec03_01.png" alt="" class="mo" />
+            <img src="../resources/img/pc/portfolio/a004/story_active.gif" alt="" />
           </div>
-          <div class="inner02">
+          <div class="inner02" data-scroll-effect>
             <img src="../resources/img/pc/portfolio/a004/img_sec03_02.png" alt="" class="pc" />
             <img src="../resources/img/mobile/portfolio/a004/img_sec03_02.png" alt="" class="mo" />
           </div>
-          <div class="inner03">
-            <img src="../resources/img/pc/portfolio/a004/img_sec03_03.png" alt="" class="pc" />
-            <img src="../resources/img/mobile/portfolio/a004/img_sec03_03.png" alt="" class="mo" />
+        </div>
+        <div class="sec04">
+          <div class="inner pc">
+            <p class="textBox" data-scroll-effect>
+              <img src="../resources/img/pc/portfolio/a004/textImage.svg" alt="FOOD SERVICE&CARE" class="upInteraction" data-scroll-event />
+            </p>
+            <div class="imgBox1" data-scroll-effect>
+              <img src="../resources/img/pc/portfolio/a004/sec04_img_01.png" alt="웰스토리화면1" data-scroll-effect/>
+              <img src="../resources/img/pc/portfolio/a004/sec04_img_02.png" alt="웰스토리화면2" data-scroll-effect/>
+              <img src="../resources/img/pc/portfolio/a004/sec04_img_03.png" alt="웰스토리화면3" data-scroll-effect/>
+            </div>
+            <div class="imgBox2" data-scroll-effect>
+              <img src="../resources/img/pc/portfolio/a004/sec04_img_04.png" alt="웰스토리화면4"  data-scroll-effect />
+              <img src="../resources/img/pc/portfolio/a004/sec04_img_05.png" alt="웰스토리화면5" data-scroll-effect />
+            </div>
+          </div>
+          <div class="inner mo">
+            <p class="textBox" data-scroll-effect>
+              <img src="../resources/img/pc/portfolio/a004/textImage.svg" alt="FOOD SERVICE&CARE" class="upInteraction" data-scroll-event />
+            </p>
+            <div class="imgFlexBox">
+              <ul>
+                <li class="upInteraction" data-scroll-event>
+                  <img src="../resources/img/pc/portfolio/a004/sec04_img_01.png" alt="웰스토리화면1" data-scroll-effect/>
+                  <img src="../resources/img/pc/portfolio/a004/sec04_img_04.png" alt="웰스토리화면4" data-scroll-effect/>
+                  <img src="../resources/img/pc/portfolio/a004/sec04_img_03.png" alt="웰스토리화면3" data-scroll-effect/>
+                </li>
+              </ul>
+              <ul>
+                <li class="upInteraction" data-scroll-event>
+                  <img src="../resources/img/pc/portfolio/a004/sec04_img_02.png" alt="웰스토리화면2" data-scroll-effect/>
+                  
+                  <img src="../resources/img/pc/portfolio/a004/sec04_img_05.png" alt="웰스토리화면5" data-scroll-effect/>
+                </li>
+              </ul>              
+            </div>
           </div>
         </div>
         <div class="workforce">
           <dl>
             <dt>Project Manager</dt>
             <dd>
-              <span>Choi Yongsoo</span>
+              <span>Choi Yongsu</span>
             </dd>
-            <dt>Planning</dt>
+            <dt>UX Planning</dt>
             <dd>
               <span>Ahn Jeonggyun,</span>
               <span>Seo Youngjin,</span>
-              <span>Lee Jaejoon,</span>
-              <span>Kim Dongkook</span>
+              <span>Kim Dongguk</span>
             </dd>
             <dt>UI/UX Design</dt>
             <dd>
@@ -112,7 +187,7 @@
           </dl>
         </div>
       </div>
-      <footer id="footer" class="footer">
+      <footer id="footer" class="footer" data-scroll-effect>
         <script src="../resources/js/footer.js"></script>
         <script type="text/javascript">
           initFooter(1);
@@ -123,14 +198,5 @@
 
   <script type="text/javascript">
     window.addEventListener('DOMContentLoaded', setHeader(2));
-
-    const scrollDown = () => {
-      let targetTop = document.querySelector('.motionBox').offsetHeight;
-      window.scrollTo({
-        top: targetTop,
-        behavior: 'smooth',
-        delay: 1,
-      });
-    };
   </script>
 </html>

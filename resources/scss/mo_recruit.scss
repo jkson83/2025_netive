@@ -2,8 +2,10 @@
 @import "./base";
 
 .subWrap{
+  //margin:0 !important;
   & .recWarp{
-    padding-top:rem(80 );
+    //margin:0 rem(20);
+    padding-top:rem(80);
     > h3{
       @include mosubPageFont(#111);
       >span{
@@ -14,14 +16,22 @@
       margin-top:rem(16);
       @include font16(400, #444);
       line-height: rem(24);
+      word-break: keep-all;
+      & .pc{
+        display: none;
+      }
     }
     & .graphicBox{
-      padding:rem(88) 0 rem(80);
+      padding:rem(80) 0 rem(120);
+      @media screen and (min-width: 1024px){
+        @include flexRow(center, center, noWrap, rem(60));
+      }
       @include flexRow(center, center, Wrap, rem(60));
       > ul{
         position: relative;
         width:rem(405);
         > li{
+          font-family: 'Pretendard Bold';
           font-size:rem(24);
           font-weight: 700;
           line-height: rem(33);
@@ -31,6 +41,7 @@
             margin-bottom:rem(6);
           }
           &:last-of-type{
+            font-family: 'PretendardR';
             @include font16(400, rgba(255, 255, 255, 0.60));
             letter-spacing: rem(-0.1);
             margin-top:rem(16);
@@ -55,8 +66,9 @@
         }
         &:nth-of-type(2){
           &::before{
-            background:url('../img/pc/main_item1.png') no-repeat center top;
+            background:url('../img/pc/main_item1.png') no-repeat center rem(40);
             background-size:rem(200) rem(193);
+            height:rem(300);
           }
         }
         &:nth-of-type(3){
@@ -67,75 +79,24 @@
         }
       }
     }
-    & .slide{
-      position: relative;
-      margin:rem(60) auto rem(0);
-      height:rem(300);
-      &-box{
-        > ul{
-          > li{
-            position: relative;
-            width:rem(255);
-            height: rem(300);
-            border-radius: rem(16);
-            color:#fff;
-            letter-spacing: rem(-0.3);
-            padding:rem(28) rem(0) rem(0) rem(28);
-            > p{
-              font-size: rem(20);
-              font-weight: 800;
-              line-height: rem(28);
-            }
-            > span{
-              font-size: rem(14);
-              font-weight: 400;
-              line-height: rem(21);
-            }
-            &:before{
-              display: inline-block;
-              position: absolute;
-              content:'';
-              width:rem(255);
-              height:rem(300);
-              top:0;
-              left:0;
-              border-radius: rem(16);
-              z-index: -1;
-            }
-          }
-          @for $i from 1 through 5 {
-            > li:nth-of-type(#{$i}) {
-              &::before {
-                background: url('../img/mobile/benefit_0#{$i}.png') no-repeat top left;
-                background-size: cover;
-              }
-            }
-          }
-          @for $i from 6 through 10 {
-            > li:nth-of-type(#{$i}) {
-              &::before {
-                background: url('../img/mobile/benefit_0#{$i - 5}.png') no-repeat top left;
-                background-size: cover;
-              }
-            }
-          } 
-        }
-      }
-    }
-    & .boardWrap{ 
+    & .boardWrap{
       margin-top:rem(60);
       & .AccoBox{
         > button{
           position: relative;
           width:100%;
           > span.deptName{
+            padding-right:rem(28);
+            font-family: 'PretendardR';
             color:#111;
             font-size:rem(22);
             font-weight: 400;
             line-height: rem(30);
+            letter-spacing: rem(-.22);
             > strong{
+              font-family: 'Pretendard Bold';
               font-weight:700;
-              padding-right:rem(16);
+              padding-right:rem(8);
             }
           }
           > span.deptCont{
@@ -144,9 +105,17 @@
             font-weight: 400;
             line-height: rem(24);
             text-align: left;
+            word-break: keep-all;
           }
           > span.toggleIcon{
             top:rem(32) !important;
+            width:rem(28) !important;
+            height:rem(28) !important;
+            transform:none !important;
+            &::before{
+              width: rem(28) !important;
+              height:rem(28) !important;
+            }
           }
         }
         & .listStyle{
@@ -159,6 +128,7 @@
                 }
                 >strong{
                   @include font16(700, #444);
+                  font-family: 'Pretendard Bold';
                 }
                 > li{
                   position: relative;
@@ -169,7 +139,7 @@
             }
             & .recruitSite{
               @include flexRow(flex-start, center, Wrap, rem(10));
-              margin-top:rem(24);
+              //margin-top:rem(24);
               > button{
                 display: inline-block;
                 position: relative;
@@ -189,7 +159,7 @@
                 }
                 &.jobkorea{
                   &::before{
-                    background:url('../img/mobile/mark_Jobkorea.png') no-repeat left top / contain;
+                    background:url('../img/mobile/mark_jobkorea.png') no-repeat left top / contain;
                   }
                 }
                 &.wanted{
@@ -208,7 +178,7 @@
               }
             }
           }
-          
+
         }
         &.open{
           background-color: #FAFAFA;
@@ -220,28 +190,38 @@
       }
     }
     & .stepBox{
-      @include flexRow(space-between, center, Wrap, rem(20));
-      margin:rem(60) auto rem(80);
+      max-width: rem(335);
+      @include flexRow(space-between, center, wrap, rem(20) 0);
+      margin:rem(60) auto rem(140);
       > dl{
+        display: flex;
         width:rem(140);
         height:rem(140);
         border-radius: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         text-align: center;
         > dt{
-          margin-top:rem(43);
           opacity: 0.6;
-          
+
         }
         > dd{
+          font-family: 'Pretendard Bold';
           margin-top:rem(6);
           font-size:rem(20);
           font-weight: 700;
           line-height: rem(28);
+          letter-spacing: rem(-0.02);
         }
         &:nth-of-type(odd){
           background-color:#2A2A2A;
           > dt{
-            @include font14(500,#fff);
+            font-size: rem(14);
+            font-weight: 500;
+            line-height: 1.4;
+            letter-spacing: rem(-.14);
+            color:#fff;
           }
           > dd{
             color:#fff;
@@ -250,38 +230,60 @@
         &:nth-of-type(even){
           background-color: #FFDF34;
           > dt{
-            @include font14(500,#111);
+            font-size: rem(14);
+            font-weight: 500;
+            line-height: 1.4;
+            letter-spacing: rem(-.14);
+            color:#111;
           }
           > dd{
             color:#111;
           }
         }
+        &:nth-of-type(3){
+          order: 2;
+        }
+      }
+      span{
+        display: block;
+        width:rem(32);
+        height:rem(32);
+        background:url('../img/mobile/ico_select_arrow.png') no-repeat center center;
+        background-size: rem(32) rem(32);
+
         &:nth-of-type(2){
-          > dt{
-            margin-top:rem(29);
-          }
+          display: none;
         }
         &:nth-of-type(3){
-          &:before{
-            transform: translateY(-50%) rotate(-270deg) !important;
-          }
+          order: 1;
         }
-        &:not(:last-of-type){
-          position: relative;
-          &:before{
-            display: inline-block;
-            position: absolute;
-            content:'';
-            width:rem(48);
-            height:rem(48);
-            top:50%;
-            right:rem(-60);
-            transform: translateY(-50%) rotate(-90deg);
-            background:url('../img/pc/ico_select_arrow.png') no-repeat center center;
-            background-size: 60% 60%;
+      }
+
+      @media screen and (max-width: 360px){
+        flex-direction: column;
+        dl{
+          order: 0 !important;
+        }
+
+        span{
+          order: 0 !important;
+          display: block !important;
+          transform: rotate(90deg);
+        }
+      }
+      @media screen and (min-width: 696px){
+        max-width: 100%;
+        dl{
+          order: 0 !important;
+        }
+        span{
+          order: 0 !important;
+          &:nth-of-type(2){
+            display: block;
           }
         }
       }
+
       &.stPc{
         display: none;
       }
@@ -289,18 +291,37 @@
   }
   &:first-of-type{
     & .recWarp{
-      > img{
-        display: block;
-        width:100%;
+      margin-top:rem(56);
+      > h3{
+        font-family: 'Pretendard exBold';
+        font-size:rem(32);
+        font-weight:800;
+        line-height:rem(44);
+        letter-spacing: rem(-0.32);
+        color:#111;
+        transition-delay: .1s;
+      }
+      .imgBox {
+        position: relative;
+        overflow: hidden;
         border-radius: rem(16);
-        margin:rem(60) auto rem(32);
-        &.imgPc{
-          display: none;
+        margin:rem(60) auto rem(80);
+        img{
+          display: block;
+          width:100%;
+          &.imgPc{
+            display: none;
+          }
         }
+        transition-delay: .6s;
+      }
+      > p{
+        transition-delay: .3s;
       }
     }
   }
   &.bgBlack{
+    padding:0 rem(20) !important;
     & .recWarp{
       text-align: center;
       > h3{
@@ -317,18 +338,75 @@
       }
     }
   }
-  //가로슬라이드 CSS  
+  & .slide{
+    position: relative;
+    margin:rem(60) 0 0;
+    height:rem(300);
+    &-box{
+      > ul{
+        > li{
+          position: relative;
+          width:rem(255);
+          height: rem(300);
+          border-radius: rem(16);
+          color:#fff;
+          letter-spacing: rem(-0.3);
+          padding:rem(28) rem(0) rem(0) rem(28);
+          > p{
+            font-size: rem(20);
+            font-weight: 800;
+            line-height: rem(28);
+          }
+          > span{
+            display: block;
+            font-size: rem(14);
+            font-weight: 400;
+            line-height: rem(21);
+            margin-top:rem(8);
+          }
+          &:before{
+            display: inline-block;
+            position: absolute;
+            content:'';
+            width:rem(255);
+            height:rem(300);
+            top:0;
+            left:0;
+            border-radius: rem(16);
+            z-index: -1;
+          }
+        }
+        @for $i from 1 through 5 {
+          > li:nth-of-type(#{$i}) {
+            &::before {
+              background: url('../img/mobile/benefit_0#{$i}.png') no-repeat top left;
+              background-size: cover;
+            }
+          }
+        }
+        @for $i from 6 through 10 {
+          > li:nth-of-type(#{$i}) {
+            &::before {
+              background: url('../img/mobile/benefit_0#{$i - 5}.png') no-repeat top left;
+              background-size: cover;
+            }
+          }
+        }
+      }
+    }
+  }
+  //가로슬라이드 CSS
   & .slide{
     //overflow: scroll;
-    overflow:hidden;
+    //overflow:hidden;
     &-box{
       position: absolute;
       top:0;
       left:0;
-    } 
+    }
     &-inner{
       width:100%;
-      @include flexRow(flex-start, center, nowrap, rem(20)); 
+      @include flexRow(flex-start, center, nowrap, rem(20));
     }
     &-item{
       > img{

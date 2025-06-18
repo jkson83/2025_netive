@@ -78,6 +78,12 @@ table {
   font-weight: 400;
   font-display: swap;
 }
+@font-face {
+  font-family: "Ins_SansB";
+  src: url("../fonts/InstrumentSans/InstrumentSans-Bold.woff2") format("woff2");
+  font-weight: 800;
+  font-display: swap;
+}
 /**
  * font: Pretendard.custom
  * ------------------------------------
@@ -131,32 +137,33 @@ button {
   cursor: pointer;
 }
 
-input[type=text], textarea, select {
+input[type=text], input[type=tel], textarea, select {
   width: 100%;
   border: 2px solid #ccc;
   border-radius: 12px;
   padding: 1.5rem 2.4rem;
-  font-family: "Pretendard";
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 500;
-  color: #222;
-  line-height: 2.5rem;
+  font-family: "Pretendard";
+  color: #111;
+  line-height: 2.2rem;
   letter-spacing: -0.07rem;
 }
-input[type=text]::placeholder, textarea::placeholder, select::placeholder {
-  font-family: "Pretendard";
-  font-size: 1.8rem;
+input[type=text]::placeholder, input[type=tel]::placeholder, textarea::placeholder, select::placeholder {
+  font-size: 1.6rem;
   font-weight: 500;
+  font-family: "Pretendard";
   color: #999;
-  line-height: 2.5rem;
+  line-height: 2.2rem;
   letter-spacing: -0.07rem;
 }
 
 textarea {
   display: block;
-  min-height: 17.4vh;
+  min-height: 20rem;
   padding: 0rem;
   border: 0;
+  border-radius: 0;
   overflow: auto;
   resize: none;
 }
@@ -210,94 +217,50 @@ textarea:focus {
 .inputWrap > div.inputBox input[type=checkbox] + label {
   display: block;
   position: static;
-  min-width: 12rem;
-  font-family: "Pretendard";
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: #222;
-  line-height: 2.5rem;
-  letter-spacing: -0.07rem;
+  font-family: "Pretendard semi";
+  font-size: 2rem;
+  line-height: 100%;
   text-align: center;
-  padding: 1.2rem 2rem;
+  padding: 1.6rem 2.4rem;
   border: 1px solid #222;
   border-radius: 99.9rem;
   cursor: pointer;
 }
 .inputWrap > div.inputBox input[type=checkbox]:checked + label {
-  background-color: #222;
+  background-color: #111;
   color: #fff;
-  border-color: #222;
+  border-color: #111;
 }
 .inputWrap > div.inputBox input[type=checkbox]:focus + label {
   outline: solid 1px #111;
   border-radius: 99.9rem;
 }
-.inputWrap .agreeChk {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  align-items: center !important;
-  flex-wrap: noWrap;
-  gap: 1.2rem;
-  margin-top: 3.2rem;
-}
-.inputWrap .agreeChk input[type=checkbox] {
-  width: 0.1rem;
-  height: 0.1rem;
-}
-.inputWrap .agreeChk input[type=checkbox] + label {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 2.4rem;
-  height: 2.4rem;
-  border: 1px solid #000;
-  border-radius: 0.6rem;
-  background-color: #fff;
-  cursor: pointer;
-}
-.inputWrap .agreeChk input[type=checkbox]:checked + label {
-  background-color: #222;
-  cursor: pointer;
-}
-.inputWrap .agreeChk input[type=checkbox]:checked + label:before {
-  display: block;
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 2.4rem;
-  height: 2.4rem;
-  background: url("../img/pc/icon_chk.svg") left top;
-  background-size: contain;
-}
-.inputWrap .agreeChk > span {
-  margin-left: 1.2rem;
-  font-family: "Pretendard";
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: #444;
-  line-height: 2.5rem;
-  letter-spacing: -0.07rem;
-}
-.inputWrap.moBox > div.inputBox input[type=checkbox] + label {
-  min-width: 7rem;
-  font-family: "Pretendard";
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: #222;
-  line-height: 2.2rem;
-  letter-spacing: -0.07rem;
-  text-align: center;
-  padding: 0.9rem 1.5rem;
-}
-.inputWrap.moBox > div.inputBox input[type=checkbox]:checked + label {
-  background-color: #222;
-  color: #fff;
-  border-color: #222;
+@media screen and (max-width: 1024px) {
+  .inputWrap textarea {
+    min-height: 24rem;
+    border-radius: 0;
+  }
+  .inputWrap input[type=text], .inputWrap input[type=tel], .inputWrap select {
+    border: 1px solid #ccc;
+    padding: 1.8rem 2rem;
+  }
+  .inputWrap.moBox > div.inputBox input[type=checkbox] + label {
+    min-width: 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    font-family: "Pretendard semi";
+    color: #111;
+    line-height: 2.2rem;
+    letter-spacing: -0.07rem;
+    text-align: center;
+    padding: 1.2rem 1.6rem;
+    line-height: 1;
+  }
+  .inputWrap.moBox > div.inputBox input[type=checkbox]:checked + label {
+    background-color: #111;
+    color: #fff;
+    border-color: #111;
+  }
 }
 
 html {
@@ -339,57 +302,114 @@ body a {
 #wrap {
   display: block;
 }
-#wrap img {
+
+.mo {
+  display: none !important;
+}
+
+img {
+  vertical-align: top;
+}
+
+.historyBack {
+  display: inline-block;
+  position: absolute;
+  width: 3.2rem;
+  height: 3.2rem;
+  top: 50%;
+  left: 3rem;
+  transform: translateY(-50%);
+}
+.historyBack > button::before {
+  display: block;
+  content: "";
+  width: 3.2rem;
+  height: 3.2rem;
+  background: url("../../img/pc/portfolio/icon_backW.svg") no-repeat left top/contain;
+}
+.historyBack > button > em {
+  position: absolute;
+  display: inline-block;
+  font-size: 1px;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  visibility: hidden;
   overflow: hidden;
-  max-width: 100%;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
 }
-#wrap .mo {
-  display: none;
+.historyBack.chgImg > button::before {
+  background: url("../../img/pc/portfolio/icon_backB.svg") no-repeat left top/contain;
 }
-#wrap .motionBox {
+
+.motionBox {
   overflow: hidden;
   display: flex;
   position: relative;
   width: 100%;
   height: 100vh;
   padding: 12rem 8rem;
-  background-attachment: fixed !important;
   justify-content: flex-end;
+  background-attachment: fixed !important;
   flex-direction: column;
-  gap: 7.6rem;
+  gap: 7.2rem;
 }
-#wrap .motionBox * {
-  position: relative;
-  z-index: 1;
+.motionBox::before {
+  content: "";
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: visualAni 1.2s ease-out forwards;
+  animation-delay: 0.2s;
+  flex: none;
 }
-#wrap .motionBox dl {
+@media screen and (max-width: 1500px) {
+  .motionBox::before {
+    width: 100%;
+  }
+}
+.motionBox dl {
   color: #fff;
+  letter-spacing: 0;
+  transition-delay: 0.4s;
 }
-#wrap .motionBox dl dt {
+.motionBox dl dt {
+  font-family: "Pretendard Bold";
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.3;
   text-transform: uppercase;
 }
-#wrap .motionBox dl dt ~ dt {
+.motionBox dl dt ~ dt {
   margin-top: 2.4rem;
 }
-#wrap .motionBox dl dd {
+.motionBox dl dd {
   font-size: 1.8rem;
   line-height: 1.3;
   text-transform: uppercase;
   margin-top: 0.8rem;
 }
-#wrap .motionBox h2 {
+.motionBox h2 {
+  font-family: "Pretendard Bold";
   font-size: 8rem;
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.3;
   letter-spacing: -0.02em;
   color: #fff;
 }
-#wrap .motionBox button {
+.motionBox h2.active {
+  transition-delay: 0.5s;
+}
+.motionBox button {
   display: inline-block;
-  position: absolute;
+  position: absolute !important;
   left: 50%;
   bottom: 0;
   width: 7.2rem;
@@ -397,65 +417,337 @@ body a {
   margin-left: -3.6rem;
   font-size: 0;
   line-height: 0;
-  background: url("../../img/pc/portfolio/icon_scroll.svg") no-repeat 50% calc(50% + 1.2rem)/100%;
+  background: url("../../img/pc/portfolio/icon_scroll.svg") no-repeat 50% 1.2rem/2.8rem 2.8rem;
+  animation: scrollAni 1.3s ease-out forwards infinite;
+  animation-delay: 0.3s;
 }
-#wrap .overview {
+.motionBox button.scrollBlack {
+  background: url("../../img/pc/portfolio/icon_scrollB.svg") no-repeat 50% 1.2rem/2.8rem 2.8rem;
+}
+
+.overview {
   display: flex;
-  flex-direction: row;
-  max-width: 137.8rem;
+  max-width: 145.4rem;
   margin: 0 auto;
   padding: 16rem 3.8rem;
   justify-content: flex-start;
-  gap: 8rem;
-  padding-bottom: 68.1rem;
+  gap: 0 25.8rem;
 }
-#wrap .overview h2 {
-  width: 38.5rem;
+.overview h2 {
+  font-family: "Pretendard exBold";
+  width: 21rem;
   margin-bottom: 6.4rem;
   font-size: 2.8rem;
   font-weight: 800;
   line-height: 1.3;
-  letter-spacing: 0;
+  letter-spacing: -0.02rem;
   color: #111;
 }
-#wrap .overview strong {
+.overview strong {
+  font-family: "Pretendard Bold";
   display: block;
   font-size: 6.4rem;
   font-weight: 700;
   line-height: 1.4;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.2rem;
   color: #111;
 }
-#wrap .overview strong span {
+.overview strong span {
   display: block;
 }
-#wrap .overview p {
+.overview p {
   margin-top: 6.4rem;
   font-size: 2.4rem;
   line-height: 1.5;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.048rem;
+  color: #444;
 }
-#wrap .overview p + p {
+.overview p.active {
+  transition-delay: 0.3s;
+}
+.overview p + p {
   margin-top: 2rem;
 }
-#wrap .overview div div {
-  display: flex;
-  margin-top: 12.8rem;
-  gap: 0.8rem;
+.overview p + p.active {
+  transition-delay: 0.6s;
 }
-#wrap .overview div div span {
+.overview div div {
+  display: flex;
+  margin-top: 8rem;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+.overview div div.active {
+  transition-delay: 0.9s;
+}
+.overview div div span {
+  font-family: "Pretendard semi";
   padding: 1.2rem 2rem;
   font-size: 2.4rem;
   font-weight: 600;
   line-height: 1;
-  letter-spacing: -0.03em;
-  color: #222;
+  color: #111;
   border-radius: 99.9rem;
-  border: 0.1rem solid #222;
+  border: 0.1rem solid #111;
+  letter-spacing: 0;
+}
+.overview * {
+  word-break: keep-all;
+}
+
+[data-scroll-event] {
+  opacity: 0;
+}
+[data-scroll-event].leftInteraction {
+  transform: translateX(-10rem);
+}
+[data-scroll-event].leftInteraction.active {
+  animation: slideLeft 0.5s ease-out forwards;
+}
+[data-scroll-event].rightInteraction {
+  transform: translateX(10rem);
+}
+[data-scroll-event].rightInteraction.active {
+  animation: slideRight 0.5s ease-out forwards;
+}
+[data-scroll-event].upInteraction {
+  transform: translateY(10rem);
+}
+[data-scroll-event].upInteraction.active {
+  animation: slideUp 0.5s ease-out forwards;
+}
+[data-scroll-event].zoomInteraction {
+  transform: scale(0.8);
+}
+[data-scroll-event].zoomInteraction.active {
+  animation: zoom 0.5s ease-out forwards;
+}
+[data-scroll-event].fadeInteraction.active {
+  animation: fade 1s ease-out forwards;
+}
+
+@keyframes visualAni {
+  from {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes zoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes scrollAni {
+  0% {
+    opacity: 0.5;
+    background-position: 50% 1.2rem;
+  }
+  50% {
+    opacity: 1;
+    background-position: 50% 3.2rem;
+  }
+  100% {
+    opacity: 0.5;
+    background-position: 50% 1.2rem;
+  }
+}
+#wrap img {
+  overflow: hidden;
+  max-width: 100%;
 }
 #wrap .motionBox {
   position: relative;
-  background: #0a141a url("/resources/img/pc/portfolio/a003/bg_main.png") no-repeat center top/100% 110%;
+}
+#wrap .motionBox::before {
+  background-image: url("../../img/pc/portfolio/a003/bg_main.png");
+  background-position: right center;
+}
+#wrap .overview {
+  padding-bottom: 68.2rem;
+}
+#wrap .container > div {
+  position: relative;
+}
+#wrap .container .sec01 dl > dt {
+  font-family: "Pretendard exBold";
+  font-size: 7.6rem;
+  font-weight: 800;
+  line-height: 10.6rem;
+  letter-spacing: -0.228rem;
+}
+#wrap .container .sec01 dl > dd {
+  font-family: "Pretendard";
+  font-size: 3.2rem;
+  font-weight: 500;
+  line-height: 4.8rem;
+  letter-spacing: -0.064rem;
+  color: #444;
+  margin-top: 2.4rem;
+  opacity: 0.8;
+}
+#wrap .container .sec02 dl > dt {
+  font-family: "Pretendard exBold";
+  font-size: 7.6rem;
+  font-weight: 800;
+  line-height: 10.6rem;
+  letter-spacing: -0.228rem;
+}
+#wrap .container .sec02 dl > dd {
+  font-family: "Pretendard";
+  font-size: 3.2rem;
+  font-weight: 500;
+  line-height: 4.8rem;
+  letter-spacing: -0.064rem;
+  color: #444;
+  margin-top: 2.4rem;
+  opacity: 0.8;
+}
+#wrap .container .sec03 dl > dt {
+  font-family: "Pretendard exBold";
+  font-size: 7.6rem;
+  font-weight: 800;
+  line-height: 10.6rem;
+  letter-spacing: -0.228rem;
+}
+#wrap .container .sec03 dl > dd {
+  font-family: "Pretendard";
+  font-size: 3.2rem;
+  font-weight: 500;
+  line-height: 4.8rem;
+  letter-spacing: -0.064rem;
+  color: #444;
+  margin-top: 2.4rem;
+  opacity: 0.8;
+}
+#wrap .container .sec04 dl > dt {
+  font-family: "Pretendard exBold";
+  font-size: 7.6rem;
+  font-weight: 800;
+  line-height: 10.6rem;
+  letter-spacing: -0.228rem;
+}
+#wrap .container .sec04 dl > dd {
+  font-family: "Pretendard";
+  font-size: 3.2rem;
+  font-weight: 500;
+  line-height: 4.8rem;
+  letter-spacing: -0.064rem;
+  color: #444;
+  margin-top: 2.4rem;
+  opacity: 0.8;
+}
+#wrap .container .sec05 dl > dt {
+  font-family: "Pretendard exBold";
+  font-size: 7.6rem;
+  font-weight: 800;
+  line-height: 10.6rem;
+  letter-spacing: -0.228rem;
+}
+#wrap .container .sec05 dl > dd {
+  font-family: "Pretendard";
+  font-size: 3.2rem;
+  font-weight: 500;
+  line-height: 4.8rem;
+  letter-spacing: -0.064rem;
+  color: #444;
+  margin-top: 2.4rem;
+  opacity: 0.8;
+}
+#wrap .container .sec06 dl > dt {
+  font-family: "Pretendard exBold";
+  font-size: 7.6rem;
+  font-weight: 800;
+  line-height: 10.6rem;
+  letter-spacing: -0.228rem;
+}
+#wrap .container .sec06 dl > dd {
+  font-family: "Pretendard";
+  font-size: 3.2rem;
+  font-weight: 500;
+  line-height: 4.8rem;
+  letter-spacing: -0.064rem;
+  color: #444;
+  margin-top: 2.4rem;
+  opacity: 0.8;
+}
+#wrap .container .sec07 dl > dt {
+  font-family: "Pretendard exBold";
+  font-size: 7.6rem;
+  font-weight: 800;
+  line-height: 10.6rem;
+  letter-spacing: -0.228rem;
+}
+#wrap .container .sec07 dl > dd {
+  font-family: "Pretendard";
+  font-size: 3.2rem;
+  font-weight: 500;
+  line-height: 4.8rem;
+  letter-spacing: -0.064rem;
+  color: #444;
+  margin-top: 2.4rem;
+  opacity: 0.8;
+}
+#wrap .container .sec03 {
+  margin: 0 auto;
+}
+#wrap .container .sec04 {
+  margin: 0 auto;
+}
+#wrap .container .sec05 {
+  margin: 0 auto;
+}
+#wrap .container .sec06 {
+  margin: 0 auto;
+}
+#wrap .container .sec07 {
+  margin: 0 auto;
 }
 #wrap .container .sec01 {
   position: relative;
@@ -467,50 +759,219 @@ body a {
 }
 #wrap .container .sec01 .tit {
   padding: 14.5rem 0rem 0rem 14.1rem;
-  font-family: "PretendardM";
+  font-family: "Pretendard exBold";
   font-size: 10rem;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 12rem;
   color: #FFF;
   text-align: left;
   padding-bottom: 15.7rem;
 }
-#wrap .container .sec01 > img.lineImg {
+#wrap .container .sec01 .bigPhone {
+  width: 93.8rem;
+  height: 94.2rem;
   position: absolute;
   top: -56.1rem;
   left: 50%;
   transform: translateX(-50%);
 }
-#wrap .container .sec02 .sec02_Cont {
-  position: relative;
-  padding-top: 132.1rem;
-  background: url("../../img/pc/portfolio/a003/sec2_bg_img.png") no-repeat center top/auto auto;
-  z-index: -1;
-  text-align: center;
+#wrap .container .sec01 .bigPhone > img.lineImg {
+  opacity: 0;
+  scale: 1.3;
+  transition: all 1s cubic-bezier(0, 0, 0.2, 1);
+  transition-delay: 1s;
+}
+#wrap .container .sec01 .bigPhone > img.lineImg.active {
+  opacity: 1;
+  scale: 1;
+}
+#wrap .container .sec01 .effectBox {
+  width: 100%;
+  overflow: hidden;
+  transition-delay: 0.5s;
+}
+#wrap .container .sec02 {
+  overflow: hidden;
+}
+#wrap .container .sec02 .inner {
+  background: url("../../img/pc/portfolio/a003/sec2_bg_img.jpg") no-repeat center top/cover;
+  padding-bottom: 72.9166666667%;
+  opacity: 0;
+  scale: 1.3;
+}
+#wrap .container .sec02 .inner.active {
+  opacity: 1;
+  scale: 1;
 }
 #wrap .container .sec03 {
-  z-index: 10;
-  margin-top: -24rem;
-  text-align: center;
+  height: 84.7rem;
+  background: linear-gradient(280deg, #E81825 0.92%, #FE4B04 116.88%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-items: flex-start !important;
+  flex-wrap: noWrap;
+  gap: 12rem;
+  padding-left: 42.1rem;
+}
+#wrap .container .sec03 > img {
+  width: 34.2rem;
+  border: 5px solid #111;
+  border-radius: 4rem;
+  background-color: #fff;
+  box-shadow: 50px 50px 100px 0px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  padding-top: 2.7rem;
+  margin-top: -6.1rem;
+  margin-left: -14rem;
+}
+#wrap .container .sec03 > dl {
+  padding-top: 18.1rem;
+  color: #fff;
+}
+#wrap .container .sec03 > dl > dd {
+  color: #fff;
 }
 #wrap .container .sec04 {
+  height: 151rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 28rem;
+}
+#wrap .container .sec04 .tbox01, #wrap .container .sec04 .tbox02 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-items: flex-start !important;
+  flex-wrap: noWrap;
+}
+#wrap .container .sec04 .tbox01 > img, #wrap .container .sec04 .tbox02 > img {
+  width: 34.2rem;
+  padding-top: 3.6rem;
+  border: 5px solid #111;
+  border-radius: 4rem;
+  background-color: #fff;
+  box-shadow: 50px 50px 100px 0px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+#wrap .container .sec04 .tbox01 {
+  gap: 12.2rem;
+  padding-left: 37.2rem;
+}
+#wrap .container .sec04 .tbox01 > img {
+  margin-top: -4rem;
+}
+#wrap .container .sec04 .tbox01 > dl {
+  margin-top: 24.9rem;
+  text-align: right;
+}
+#wrap .container .sec04 .tbox02 {
+  gap: 16rem;
+  padding-left: 56.3rem;
+}
+#wrap .container .sec04 .tbox02 > img {
+  margin-top: 2rem;
+}
+#wrap .container .sec04 .tbox02 > dl {
+  margin-top: 23.4rem;
+}
+#wrap .container .sec05 {
+  height: 102rem;
+  background: linear-gradient(280deg, #00A3A8 0.92%, #20D6B5 116.88%);
+  color: #FFF;
+}
+#wrap .container .sec05 .tit {
+  padding: 16.8rem 0rem 0rem 23.9rem;
+  font-family: "Pretendard exBold";
+  font-size: 7.6rem;
+  font-weight: 800;
+  line-height: 10.6rem;
+  text-align: left;
+  letter-spacing: -0.228rem;
+}
+#wrap .container .sec05 .tbox01 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-items: flex-start !important;
+  flex-wrap: noWrap;
+  gap: 14.4rem;
+  padding-left: 56.3rem;
+}
+#wrap .container .sec05 .tbox01 .phoneBox {
+  width: 34.2rem;
+  height: 72.1rem;
+  border: 5px solid #111;
+  border-radius: 4rem;
+  background-color: #fff;
+  box-shadow: 50px 50px 100px 0px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  background-color: #23BDB7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4.4rem;
+}
+#wrap .container .sec05 .tbox01 > span {
+  display: block;
+  width: 71.6rem;
+  font-size: 3.2rem;
+  line-height: 4.8rem;
+  opacity: 0.8;
+  letter-spacing: -0.64px;
+  margin-top: 17.1rem;
+}
+#wrap .container .sec06 {
+  position: relative;
+  height: 62.1rem;
   text-align: center;
+}
+#wrap .container .sec06 > img {
+  position: absolute;
+  width: 34.2rem;
+  bottom: 0;
+  left: 50%;
+  border: 5px solid #111;
+  border-radius: 4rem;
+  background-color: #fff;
+  box-shadow: 50px 50px 100px 0px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  padding-top: 1.6rem;
+  margin-left: 13rem;
+}
+#wrap .container .sec07 {
+  height: 196.2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start !important;
+  flex-wrap: noWrap;
+  margin-bottom: 16rem;
+}
+#wrap .container .sec07 > dl {
+  padding: 21.9rem 0 0 23.9rem;
+  transition-delay: 0.5s;
+}
+#wrap .container .sec07 > img {
+  padding-top: 11rem;
 }
 #wrap .workforce {
   position: relative;
-  max-width: 192rem;
   padding: 16rem 27.4rem 24rem;
+  background-color: #F9F9FA;
 }
-#wrap .workforce::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 34.5rem;
-  height: 28.3rem;
-  background: url("../../img/pc/portfolio/a003/img_logo.png") no-repeat 100% 100%/contain;
+#wrap .workforce dl {
+  overflow: visible;
 }
 #wrap .workforce dl dt {
+  font-family: "Pretendard Bold";
   font-size: 1.8rem;
   font-weight: 700;
   line-height: 1;
@@ -521,6 +982,7 @@ body a {
   margin-top: 5.2rem;
 }
 #wrap .workforce dl dd {
+  font-family: "PretendardR";
   display: flex;
   margin-top: 1.6rem;
   font-size: 2.8rem;

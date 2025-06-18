@@ -34,7 +34,12 @@ $truepath: '../fonts/InstrumentSans/';
 	font-weight: 400;
 	font-display: swap;
 }
-
+@font-face {
+	font-family: 'Ins_SansB';
+	src: url($truepath + 'InstrumentSans-Bold.woff2') format('woff2');
+	font-weight: 800;
+	font-display: swap;
+}
 /**
  * font: Pretendard.custom
  * ------------------------------------
@@ -93,7 +98,7 @@ $fontpath: '../fonts/pretendard/';
 }
 
 @mixin PageTitle {
-	font-family: "Ins_SansM";
+	font-family: "Ins_SansB";
 	font-weight: 800;
 	font-size: rem(200);
 	line-height: 100%;
@@ -101,7 +106,7 @@ $fontpath: '../fonts/pretendard/';
 }
 
 @mixin TitleInfo {
-	font-family: 'Pretendard';
+	font-family: 'Pretendard Bold';
 	font-size:rem(48);
 	font-weight:700;
 	line-height:rem(67);
@@ -109,7 +114,7 @@ $fontpath: '../fonts/pretendard/';
 }
 
 @mixin WorkTitle {
-	font-family: 'Pretendard';
+	font-family: 'Pretendard Bold';
 	font-size:rem(80);
 	font-weight:700;
 	line-height:rem(80);
@@ -117,7 +122,7 @@ $fontpath: '../fonts/pretendard/';
 }
 
 @mixin boardTitle {
-	font-family: 'Pretendard';
+	font-family: 'Pretendard Bold';
 	font-size:rem(28);
 	font-weight:700;
 	line-height:rem(39);
@@ -126,13 +131,19 @@ $fontpath: '../fonts/pretendard/';
 }
 
 @mixin font14($Weight:'', $Fcolor:''){ 
-	font-family: 'Pretendard';
 	font-size:rem(14);
 	@if $Weight != ''{
 		font-weight:$Weight;
 	}
+	@else if $Weight == 500{
+		font-family: 'Pretendard';
+	}
+	@else if $Weight == 700{
+		font-family: 'Pretendard Bold';
+	}
 	@else{
 		font-weight:400;
+		font-family: 'Pretendard';
 	}	
 	@if $Fcolor != ''{
 		color:$Fcolor;
@@ -145,14 +156,28 @@ $fontpath: '../fonts/pretendard/';
 }
 
 @mixin font16($Weight:'', $Fcolor:''){ 
-	font-family: 'Pretendard';
 	font-size:rem(16);
-	@if $Weight != ''{
-		font-weight:$Weight;
+	 // font-weight 및 font-family 설정
+	 @if $Weight == 600 {
+    font-weight: $Weight;
+    font-family: 'Pretendard semi';
+  }
+	@else if $Weight == 700{
+		font-weight: $Weight;
+    font-family: 'Pretendard Bold';
 	}
-	@else{
-		font-weight:400;
-	}	
+  @else if $Weight == 800 {
+    font-weight: $Weight;
+    font-family: 'Pretendard exBold';
+  }
+  @else if $Weight != '' {
+    font-weight: $Weight;
+    font-family: 'Pretendard';
+  }
+  @else {
+    font-weight: 400;
+    font-family: 'Pretendard';
+  }
 	@if $Fcolor != ''{
 		color:$Fcolor;
 	}
@@ -163,14 +188,17 @@ $fontpath: '../fonts/pretendard/';
 	letter-spacing: rem(-0.7);
 }
 
-@mixin font18($Weight:'', $Fcolor:''){ 
-	font-family: 'Pretendard';
+@mixin font18($Weight:'', $Fcolor:''){ 	
 	font-size:rem(18);
 	@if $Weight != ''{
 		font-weight:$Weight;
 	}
+	@if $Weight == 700{
+		font-family: 'Pretendard Bold';
+	}
 	@else{
 		font-weight:400;
+		font-family: 'Pretendard';
 	}	
 	@if $Fcolor != ''{
 		color:$Fcolor;
@@ -183,7 +211,7 @@ $fontpath: '../fonts/pretendard/';
 }
 
 @mixin subPageFont($Fcolor:'') {
-	font-family: 'Pretendard';
+	font-family: 'Pretendard Bold';
 	font-size:rem(64);
 	font-weight:700;
 	line-height:rem(89);
@@ -206,23 +234,25 @@ $fontpath: '../fonts/pretendard/';
 }
 
 @mixin moPageTitle {
-	font-family: "Ins_SansM";
+	font-family: "Ins_SansB";
 	font-weight: 800;
 	font-size: rem(50);
 	line-height: rem(50);
 	letter-spacing: rem(0);
+	color:#111;
 }
 
 @mixin moTitleInfo {
-	font-family: 'Pretendard';
+	font-family: 'Pretendard Bold';
 	font-size:rem(16);
 	font-weight:700;
 	line-height:rem(22);
 	letter-spacing: rem(-0.4);
+	color:#111;
 }
 
 @mixin moWorkTitle {
-	font-family: 'Pretendard';
+	font-family: 'Pretendard Bold';
 	font-size:rem(80);
 	font-weight:700;
 	line-height:rem(80);
@@ -230,16 +260,16 @@ $fontpath: '../fonts/pretendard/';
 }
 
 @mixin moboardTitle {
-	font-family: 'Pretendard';
-	font-size:rem(28);
+	font-family: 'Pretendard Bold';
+	font-size:rem(24);
 	font-weight:700;
-	line-height:rem(39);
-	letter-spacing: rem(-1.2);
+	line-height:rem(33);
+	letter-spacing: rem(-0.96);
 	color:#000;
 }
 
 @mixin mosubPageFont($Fcolor:'') {
-	font-family: 'Pretendard';
+	font-family: 'Pretendard Bold';
 	font-size:rem(28);
 	font-weight:700;
 	line-height:rem(39);

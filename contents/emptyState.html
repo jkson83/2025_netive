@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Error 404(Not Found) | NETIVE</title>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, shrink-to-fit=no">
+
+    <style>
+      body{border:0;margin:0;padding:0;background-color:#050505;}
+      div, h1, p, button{margin:0;padding:0;box-sizing: border-box;}
+      @font-face {
+        font-family: 'Ins_SansB';
+        src: url('../resources/fonts/InstrumentSans/InstrumentSans-Bold.woff2') format('woff2');
+        font-weight: 700;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Pretendard';
+        src: url('../resources/fonts/pretendard/Pretendard-Regular.woff') format('woff2');
+        font-weight: 500;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Pretendard Bold';
+        src: url('../resources/fonts/pretendard/Pretendard-Bold.woff') format('woff2');
+        font-weight: 700;
+        font-display: swap;
+      }
+      .wrap {position: relative;width:100%;height:100vh;}
+      .wrap .box .textBox{color:#fff;text-align:center;}
+      .wrap .box .textBox .btnBox{display: flex;flex-direction: row;justify-content: center;align-items: center;}
+      .wrap .box .textBox .btnBox button{border-radius: 999px;font-family: 'Pretendard Bold','Noto Sans';}
+      .wrap .box .textBox .btnBox button.goBack{background-color: transparent;border:1px solid #fff;color:#fff;}
+      .wrap .box .textBox .btnBox button.goHome{background-color: #FFDF34;border:1px solid #FFDF34;color:#111;}
+
+      /* ============================== pc화면일때 ==================================== */
+      .wrap .box.pc{position: relative;width:100%;height:100%;}
+      .wrap .box.pc::before{position:absolute; display: block;content: '';width:868px;height:736px;top:50%;left:50%;transform: translate(-50%,-50%);background:url('../resources/img/pc/errorBgItem.png') no-repeat center top / contain;opacity: 0.4;z-index:-1;}
+      .wrap .box.pc .logo{display:block;width:136px;margin:0 auto;padding-top:64px;}
+      .wrap .box.pc .logo img{width:100%;}
+      .wrap .box.pc .textBox {position:absolute;top:0;left:50%;transform: translateX(-50%); height:100%;display:flex;flex-direction: column;justify-content: center;align-items: center;}
+      .wrap .box.pc .textBox h1{font-family: 'Ins_SansB','Noto Sans';font-size:140px;line-height:140px;}
+      .wrap .box.pc .textBox p{font-family: 'Pretendard','Noto Sans';font-size:32px;line-height: 48px;padding-top:32px;}
+      .wrap .box.pc .btnBox{gap:18px;padding-top:80px;}
+      .wrap .box.pc .btnBox button{min-width:164px;padding:16px 30px;font-size:20px;cursor: pointer;}
+
+      /* ============================== mobile화면일때 ==================================== */
+      .wrap .box.mo{position: relative;width:100%;height:100%;}
+      .wrap .box.mo::before{position:absolute; display: block;content: '';width:100%;height:100%;top:-48px;left:0;background:url('../resources/img/mobile/errorBgItem.png') no-repeat left center / contain;opacity: 0.4;z-index:-1;}
+      .wrap .box.mo .logo{position:relative;display:block;width:82px;margin:0 auto;padding-top:48px;}
+      .wrap .box.mo .logo > img{width:100%;}
+      .wrap .box.mo .textBox{height:100%;display:flex;flex-direction: column;justify-content: start;align-items: center;padding-top:234px;}
+      .wrap .box.mo .textBox h1{font-family: 'Ins_SansB','Noto Sans';font-size:60px;line-height:60px;}
+      .wrap .box.mo .textBox p{font-family: 'Pretendard','Noto Sans';font-size:16px;line-height: 22px;padding-top:24px;}
+      .wrap .box.mo .btnBox{gap:8px;padding-top:48px;}
+      .wrap .box.mo .btnBox button{min-width:133px;padding:16px 30px;font-size:14px;}
+
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- <div class="box pc">
+        <div class="logo"><img src="../resources/img/pc/logo_netiveW.svg" alt="NETIVE"></div>
+        <div class="textBox">
+          <div>
+            <h1>OOPS!</h1>
+            <p>링크가 잘못되었거나 페이지가 없어졌을 수 있어요.</p>
+          </div>
+          <div class="btnBox">
+            <button type="button" class="goBack">이전 페이지로</button>
+            <button type="button" class="goHome">홈으로</button>
+          </div>
+        </div>
+      </div> -->
+      <div class="box mo">
+        <div class="logo"><img src="../resources/img/pc/logo_netiveW.svg" alt="NETIVE"></div>
+        <div class="textBox">
+          <div>
+            <h1>OOPS!</h1>
+            <p>링크가 잘못되었거나<br />페이지가 없어졌을 수 있어요.</p>
+          </div>
+          <div class="btnBox">
+              <button type="button" class="goBack">이전 페이지로</button>
+              <button type="button" class="goHome">홈으로</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

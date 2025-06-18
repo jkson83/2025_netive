@@ -78,6 +78,12 @@ table {
   font-weight: 400;
   font-display: swap;
 }
+@font-face {
+  font-family: "Ins_SansB";
+  src: url("../fonts/InstrumentSans/InstrumentSans-Bold.woff2") format("woff2");
+  font-weight: 800;
+  font-display: swap;
+}
 /**
  * font: Pretendard.custom
  * ------------------------------------
@@ -131,32 +137,33 @@ button {
   cursor: pointer;
 }
 
-input[type=text], textarea, select {
+input[type=text], input[type=tel], textarea, select {
   width: 100%;
   border: 2px solid #ccc;
   border-radius: 12px;
   padding: 1.5rem 2.4rem;
-  font-family: "Pretendard";
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 500;
-  color: #222;
-  line-height: 2.5rem;
+  font-family: "Pretendard";
+  color: #111;
+  line-height: 2.2rem;
   letter-spacing: -0.07rem;
 }
-input[type=text]::placeholder, textarea::placeholder, select::placeholder {
-  font-family: "Pretendard";
-  font-size: 1.8rem;
+input[type=text]::placeholder, input[type=tel]::placeholder, textarea::placeholder, select::placeholder {
+  font-size: 1.6rem;
   font-weight: 500;
+  font-family: "Pretendard";
   color: #999;
-  line-height: 2.5rem;
+  line-height: 2.2rem;
   letter-spacing: -0.07rem;
 }
 
 textarea {
   display: block;
-  min-height: 17.4vh;
+  min-height: 20rem;
   padding: 0rem;
   border: 0;
+  border-radius: 0;
   overflow: auto;
   resize: none;
 }
@@ -210,94 +217,50 @@ textarea:focus {
 .inputWrap > div.inputBox input[type=checkbox] + label {
   display: block;
   position: static;
-  min-width: 12rem;
-  font-family: "Pretendard";
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: #222;
-  line-height: 2.5rem;
-  letter-spacing: -0.07rem;
+  font-family: "Pretendard semi";
+  font-size: 2rem;
+  line-height: 100%;
   text-align: center;
-  padding: 1.2rem 2rem;
+  padding: 1.6rem 2.4rem;
   border: 1px solid #222;
   border-radius: 99.9rem;
   cursor: pointer;
 }
 .inputWrap > div.inputBox input[type=checkbox]:checked + label {
-  background-color: #222;
+  background-color: #111;
   color: #fff;
-  border-color: #222;
+  border-color: #111;
 }
 .inputWrap > div.inputBox input[type=checkbox]:focus + label {
   outline: solid 1px #111;
   border-radius: 99.9rem;
 }
-.inputWrap .agreeChk {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  align-items: center !important;
-  flex-wrap: noWrap;
-  gap: 1.2rem;
-  margin-top: 3.2rem;
-}
-.inputWrap .agreeChk input[type=checkbox] {
-  width: 0.1rem;
-  height: 0.1rem;
-}
-.inputWrap .agreeChk input[type=checkbox] + label {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 2.4rem;
-  height: 2.4rem;
-  border: 1px solid #000;
-  border-radius: 0.6rem;
-  background-color: #fff;
-  cursor: pointer;
-}
-.inputWrap .agreeChk input[type=checkbox]:checked + label {
-  background-color: #222;
-  cursor: pointer;
-}
-.inputWrap .agreeChk input[type=checkbox]:checked + label:before {
-  display: block;
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 2.4rem;
-  height: 2.4rem;
-  background: url("../img/pc/icon_chk.svg") left top;
-  background-size: contain;
-}
-.inputWrap .agreeChk > span {
-  margin-left: 1.2rem;
-  font-family: "Pretendard";
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: #444;
-  line-height: 2.5rem;
-  letter-spacing: -0.07rem;
-}
-.inputWrap.moBox > div.inputBox input[type=checkbox] + label {
-  min-width: 7rem;
-  font-family: "Pretendard";
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: #222;
-  line-height: 2.2rem;
-  letter-spacing: -0.07rem;
-  text-align: center;
-  padding: 0.9rem 1.5rem;
-}
-.inputWrap.moBox > div.inputBox input[type=checkbox]:checked + label {
-  background-color: #222;
-  color: #fff;
-  border-color: #222;
+@media screen and (max-width: 1024px) {
+  .inputWrap textarea {
+    min-height: 24rem;
+    border-radius: 0;
+  }
+  .inputWrap input[type=text], .inputWrap input[type=tel], .inputWrap select {
+    border: 1px solid #ccc;
+    padding: 1.8rem 2rem;
+  }
+  .inputWrap.moBox > div.inputBox input[type=checkbox] + label {
+    min-width: 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    font-family: "Pretendard semi";
+    color: #111;
+    line-height: 2.2rem;
+    letter-spacing: -0.07rem;
+    text-align: center;
+    padding: 1.2rem 1.6rem;
+    line-height: 1;
+  }
+  .inputWrap.moBox > div.inputBox input[type=checkbox]:checked + label {
+    background-color: #111;
+    color: #fff;
+    border-color: #111;
+  }
 }
 
 html {
@@ -336,24 +299,32 @@ body a {
   color: #333;
 }
 
-.subWrap .recWarp {
+.container {
+  width: 100%;
+}
+.container .subWrap .recWarp {
   padding-top: 16rem;
 }
-.subWrap .recWarp > h3 {
-  font-family: "Pretendard";
+.container .subWrap .recWarp > h3 {
+  font-family: "Pretendard Bold";
   font-size: 6.4rem;
   font-weight: 700;
   line-height: 8.9rem;
   letter-spacing: -0.19rem;
   color: #111;
+  font-family: "Pretendard Bold";
+  letter-spacing: -0.064rem;
 }
-.subWrap .recWarp > p {
+.container .subWrap .recWarp > p {
   margin-top: 4rem;
   font-size: 2.4rem;
   color: #444;
   line-height: 3.6rem;
 }
-.subWrap .recWarp .graphicBox {
+.container .subWrap .recWarp > p .mo {
+  display: none;
+}
+.container .subWrap .recWarp .graphicBox {
   padding: 12rem 0 20rem;
   display: flex;
   flex-direction: row;
@@ -363,26 +334,28 @@ body a {
   flex-wrap: noWrap;
   gap: 8rem;
 }
-.subWrap .recWarp .graphicBox > ul {
+.container .subWrap .recWarp .graphicBox > ul {
   position: relative;
   width: 40.5rem;
   padding-top: 35rem;
 }
-.subWrap .recWarp .graphicBox > ul > li {
+.container .subWrap .recWarp .graphicBox > ul > li {
+  font-family: "Pretendard Bold";
   font-size: 3.2rem;
   line-height: 4.4rem;
   color: #fff;
 }
-.subWrap .recWarp .graphicBox > ul > li:not(:last-of-type) {
+.container .subWrap .recWarp .graphicBox > ul > li:not(:last-of-type) {
   margin-bottom: 1.2rem;
 }
-.subWrap .recWarp .graphicBox > ul > li:last-of-type {
+.container .subWrap .recWarp .graphicBox > ul > li:last-of-type {
+  font-family: "PretendardR";
   font-size: 2.4rem;
   color: rgba(255, 255, 255, 0.6);
   line-height: 3.3rem;
   margin-top: 2rem;
 }
-.subWrap .recWarp .graphicBox > ul:before {
+.container .subWrap .recWarp .graphicBox > ul:before {
   display: block;
   position: absolute;
   content: "";
@@ -392,154 +365,83 @@ body a {
   width: 45rem;
   height: 35rem;
 }
-.subWrap .recWarp .graphicBox > ul:nth-of-type(1)::before {
+.container .subWrap .recWarp .graphicBox > ul:nth-of-type(1)::before {
   background: url("../img/pc/main_item7.png") no-repeat center top;
   background-size: 28.1rem 28.1rem;
 }
-.subWrap .recWarp .graphicBox > ul:nth-of-type(2)::before {
+.container .subWrap .recWarp .graphicBox > ul:nth-of-type(2)::before {
   background: url("../img/pc/main_item1.png") no-repeat center top;
   background-size: 25.1rem 24.2rem;
 }
-.subWrap .recWarp .graphicBox > ul:nth-of-type(3)::before {
+.container .subWrap .recWarp .graphicBox > ul:nth-of-type(3)::before {
   background: url("../img/pc/main_item5.png") no-repeat center -3.4rem;
   background-size: 32.6rem 33.7rem;
 }
-.subWrap .recWarp .slide {
-  position: relative;
-  margin: 12rem auto 10rem;
-  height: 54rem;
-}
-.subWrap .recWarp .slide-box > ul > li {
-  position: relative;
-  width: 45rem;
-  height: 53rem;
-  border-radius: 1.6rem;
-  color: #fff;
-  letter-spacing: -0.03rem;
-  padding: 5rem 0rem 0rem 5rem;
-}
-.subWrap .recWarp .slide-box > ul > li > p {
-  font-size: 3.6rem;
-  font-weight: 800;
-  line-height: 5rem;
-}
-.subWrap .recWarp .slide-box > ul > li > span {
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 3rem;
-}
-.subWrap .recWarp .slide-box > ul > li:before {
-  display: inline-block;
-  position: absolute;
-  content: "";
-  width: 45rem;
-  height: 53rem;
-  top: 0;
-  left: 0;
-  border-radius: 1.6rem;
-  z-index: -1;
-}
-.subWrap .recWarp .slide-box > ul > li:nth-of-type(1)::before {
-  background: url("../img/pc/benefit_01.png") no-repeat top left;
-  background-size: cover;
-}
-.subWrap .recWarp .slide-box > ul > li:nth-of-type(2)::before {
-  background: url("../img/pc/benefit_02.png") no-repeat top left;
-  background-size: cover;
-}
-.subWrap .recWarp .slide-box > ul > li:nth-of-type(3)::before {
-  background: url("../img/pc/benefit_03.png") no-repeat top left;
-  background-size: cover;
-}
-.subWrap .recWarp .slide-box > ul > li:nth-of-type(4)::before {
-  background: url("../img/pc/benefit_04.png") no-repeat top left;
-  background-size: cover;
-}
-.subWrap .recWarp .slide-box > ul > li:nth-of-type(5)::before {
-  background: url("../img/pc/benefit_05.png") no-repeat top left;
-  background-size: cover;
-}
-.subWrap .recWarp .slide-box > ul > li:nth-of-type(6)::before {
-  background: url("../img/pc/benefit_01.png") no-repeat top left;
-  background-size: cover;
-}
-.subWrap .recWarp .slide-box > ul > li:nth-of-type(7)::before {
-  background: url("../img/pc/benefit_02.png") no-repeat top left;
-  background-size: cover;
-}
-.subWrap .recWarp .slide-box > ul > li:nth-of-type(8)::before {
-  background: url("../img/pc/benefit_03.png") no-repeat top left;
-  background-size: cover;
-}
-.subWrap .recWarp .slide-box > ul > li:nth-of-type(9)::before {
-  background: url("../img/pc/benefit_04.png") no-repeat top left;
-  background-size: cover;
-}
-.subWrap .recWarp .slide-box > ul > li:nth-of-type(10)::before {
-  background: url("../img/pc/benefit_05.png") no-repeat top left;
-  background-size: cover;
-}
-.subWrap .recWarp .boardWrap {
-  margin-top: 12rem;
+.container .subWrap .recWarp .boardWrap {
+  margin-top: 10rem;
   width: 100%;
   border-top: 2px solid #000;
 }
-.subWrap .recWarp .boardWrap .AccoBox {
+.container .subWrap .recWarp .boardWrap .AccoBox {
   width: 100%;
   border-bottom: 2px solid #eee;
 }
-.subWrap .recWarp .boardWrap .AccoBox > button {
+.container .subWrap .recWarp .boardWrap .AccoBox > button {
   position: relative;
   flex-direction: column !important;
+  flex-wrap: wrap !important;
   gap: 1.6rem !important;
+  padding: 4.8rem 0 !important;
 }
-.subWrap .recWarp .boardWrap .AccoBox > button > span {
+.container .subWrap .recWarp .boardWrap .AccoBox > button > span {
+  width: 100%;
   padding: 0rem 2.4rem;
+  text-align: left;
 }
-.subWrap .recWarp .boardWrap .AccoBox > button > span.deptName {
-  color: #111;
+.container .subWrap .recWarp .boardWrap .AccoBox > button > span.deptName {
   font-size: 3.2rem;
   font-weight: 400;
   line-height: 4.4rem;
+  color: #111;
 }
-.subWrap .recWarp .boardWrap .AccoBox > button > span.deptName > strong {
+.container .subWrap .recWarp .boardWrap .AccoBox > button > span.deptName > strong {
+  font-family: "Pretendard Bold";
   font-weight: 700;
   padding-right: 1.6rem;
 }
-.subWrap .recWarp .boardWrap .AccoBox > button > span.deptCont {
+.container .subWrap .recWarp .boardWrap .AccoBox > button > span.deptCont {
   color: #444;
   font-size: 1.8rem;
   font-weight: 400;
   line-height: 2.4rem;
   text-align: left;
 }
-.subWrap .recWarp .boardWrap .AccoBox > button > span.toggleIcon {
+.container .subWrap .recWarp .boardWrap .AccoBox > button > span.toggleIcon {
   position: absolute !important;
-  top: 50%;
+  top: 4.8rem;
   right: 1.6rem;
-  transform: translateY(-50%);
 }
-.subWrap .recWarp .boardWrap .AccoBox .listStyle > li {
+.container .subWrap .recWarp .boardWrap .AccoBox .listStyle > li {
   padding: 2.4rem 2.4rem 4.8rem !important;
 }
-.subWrap .recWarp .boardWrap .AccoBox .listStyle > li > h4 {
+.container .subWrap .recWarp .boardWrap .AccoBox .listStyle > li > h4 {
   padding-top: 4.8rem;
-  font-family: "Pretendard";
+  font-family: "Pretendard Bold";
   font-size: 2.8rem;
   font-weight: 700;
   line-height: 3.9rem;
   letter-spacing: -0.03rem;
   color: #444;
 }
-.subWrap .recWarp .boardWrap .AccoBox .listStyle > li > section {
+.container .subWrap .recWarp .boardWrap .AccoBox .listStyle > li > section {
   height: 100%;
 }
-.subWrap .recWarp .boardWrap .AccoBox .listStyle > li > section > ul:not(:first-of-type) {
+.container .subWrap .recWarp .boardWrap .AccoBox .listStyle > li > section > ul:not(:first-of-type) {
   margin-top: 4rem;
 }
-.subWrap .recWarp .boardWrap .AccoBox .listStyle > li > section > ul > strong {
+.container .subWrap .recWarp .boardWrap .AccoBox .listStyle > li > section > ul > strong {
   display: block;
-  font-family: "Pretendard";
+  font-family: "Pretendard Bold";
   font-size: 2.8rem;
   font-weight: 700;
   line-height: 3.9rem;
@@ -547,12 +449,12 @@ body a {
   color: #444;
   margin-bottom: 1.6rem;
 }
-.subWrap .recWarp .boardWrap .AccoBox .listStyle > li > section > ul > li {
+.container .subWrap .recWarp .boardWrap .AccoBox .listStyle > li > section > ul > li {
   position: relative;
   padding: 0 !important;
   color: #444;
 }
-.subWrap .recWarp .boardWrap .AccoBox .listStyle > li .recruitSite {
+.container .subWrap .recWarp .boardWrap .AccoBox .listStyle > li .recruitSite {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -560,15 +462,15 @@ body a {
   align-items: center !important;
   flex-wrap: noWrap;
   gap: 1.6rem;
-  margin-top: 6rem;
+  margin-top: 4rem;
 }
-.subWrap .recWarp .boardWrap .AccoBox .listStyle > li .recruitSite > button {
+.container .subWrap .recWarp .boardWrap .AccoBox .listStyle > li .recruitSite > button {
   display: inline-block;
   position: relative;
   width: 19.3rem;
   height: 7.2rem;
 }
-.subWrap .recWarp .boardWrap .AccoBox .listStyle > li .recruitSite > button > em {
+.container .subWrap .recWarp .boardWrap .AccoBox .listStyle > li .recruitSite > button > em {
   position: absolute;
   display: inline-block;
   font-size: 1px;
@@ -581,7 +483,7 @@ body a {
   border: 0;
   clip: rect(0, 0, 0, 0);
 }
-.subWrap .recWarp .boardWrap .AccoBox .listStyle > li .recruitSite > button:before {
+.container .subWrap .recWarp .boardWrap .AccoBox .listStyle > li .recruitSite > button:before {
   display: block;
   position: absolute;
   content: "";
@@ -590,19 +492,19 @@ body a {
   width: 100%;
   height: 100%;
 }
-.subWrap .recWarp .boardWrap .AccoBox .listStyle > li .recruitSite > button.jobkorea::before {
+.container .subWrap .recWarp .boardWrap .AccoBox .listStyle > li .recruitSite > button.jobkorea::before {
   background: url("../img/pc/mark_jobkorea.png") no-repeat left top/auto auto;
 }
-.subWrap .recWarp .boardWrap .AccoBox .listStyle > li .recruitSite > button.wanted::before {
+.container .subWrap .recWarp .boardWrap .AccoBox .listStyle > li .recruitSite > button.wanted::before {
   background: url("../img/pc/mark_wanted.png") no-repeat left top/auto auto;
 }
-.subWrap .recWarp .boardWrap .AccoBox .listStyle > li .recruitSite > button.saramin::before {
+.container .subWrap .recWarp .boardWrap .AccoBox .listStyle > li .recruitSite > button.saramin::before {
   background: url("../img/pc/mark_saramin.png") no-repeat left top/auto auto;
 }
-.subWrap .recWarp .boardWrap .AccoBox .listStyle > li .recruitSite > span {
+.container .subWrap .recWarp .boardWrap .AccoBox .listStyle > li .recruitSite > span {
   color: #999;
 }
-.subWrap .recWarp .stepBox {
+.container .subWrap .recWarp .stepBox {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -611,57 +513,60 @@ body a {
   flex-wrap: noWrap;
   margin: 12rem auto 24rem;
 }
-.subWrap .recWarp .stepBox > dl {
+.container .subWrap .recWarp .stepBox > dl {
   width: 28.4rem;
   height: 28.4rem;
   border-radius: 100%;
   text-align: center;
 }
-.subWrap .recWarp .stepBox > dl > dt {
+.container .subWrap .recWarp .stepBox > dl > dt {
   margin-top: 10.3rem;
   opacity: 0.6;
 }
-.subWrap .recWarp .stepBox > dl > dd {
+.container .subWrap .recWarp .stepBox > dl > dd {
+  font-family: "Pretendard Bold";
   margin-top: 0.8rem;
   font-size: 3.2rem;
   font-weight: 700;
   line-height: 4.4rem;
 }
-.subWrap .recWarp .stepBox > dl:nth-of-type(odd) {
+.container .subWrap .recWarp .stepBox > dl:nth-of-type(odd) {
   background-color: #2A2A2A;
 }
-.subWrap .recWarp .stepBox > dl:nth-of-type(odd) > dt {
-  font-family: "Pretendard";
+.container .subWrap .recWarp .stepBox > dl:nth-of-type(odd) > dt {
   font-size: 1.8rem;
   font-weight: 500;
+  font-weight: 400;
+  font-family: "Pretendard";
   color: #fff;
   line-height: 2.5rem;
   letter-spacing: -0.07rem;
 }
-.subWrap .recWarp .stepBox > dl:nth-of-type(odd) > dd {
+.container .subWrap .recWarp .stepBox > dl:nth-of-type(odd) > dd {
   color: #fff;
 }
-.subWrap .recWarp .stepBox > dl:nth-of-type(even) {
+.container .subWrap .recWarp .stepBox > dl:nth-of-type(even) {
   background-color: #FFDF34;
 }
-.subWrap .recWarp .stepBox > dl:nth-of-type(even) > dt {
-  font-family: "Pretendard";
+.container .subWrap .recWarp .stepBox > dl:nth-of-type(even) > dt {
   font-size: 1.8rem;
   font-weight: 500;
+  font-weight: 400;
+  font-family: "Pretendard";
   color: #111;
   line-height: 2.5rem;
   letter-spacing: -0.07rem;
 }
-.subWrap .recWarp .stepBox > dl:nth-of-type(even) > dd {
+.container .subWrap .recWarp .stepBox > dl:nth-of-type(even) > dd {
   color: #111;
 }
-.subWrap .recWarp .stepBox > dl:nth-of-type(2) > dt {
+.container .subWrap .recWarp .stepBox > dl:nth-of-type(2) > dt {
   margin-top: 8rem;
 }
-.subWrap .recWarp .stepBox > dl:not(:last-of-type) {
+.container .subWrap .recWarp .stepBox > dl:not(:last-of-type) {
   position: relative;
 }
-.subWrap .recWarp .stepBox > dl:not(:last-of-type):before {
+.container .subWrap .recWarp .stepBox > dl:not(:last-of-type):before {
   display: inline-block;
   position: absolute;
   content: "";
@@ -673,36 +578,65 @@ body a {
   background: url("../img/pc/ico_select_arrow.png") no-repeat center center;
   background-size: 60% 60%;
 }
-.subWrap .recWarp .stepBox.stMo {
+.container .subWrap .recWarp .stepBox.stMo {
   display: none;
 }
-.subWrap:first-of-type .recWarp > img {
+.container .subWrap:first-of-type .topbox {
   display: block;
+  width: 100%;
+  height: 9rem;
+}
+.container .subWrap:first-of-type .recWarp .imgBox {
+  position: relative;
+  overflow: hidden;
   border-radius: 1.6rem;
   margin: 10rem auto 16rem;
+  transition-delay: 0.6s;
+}
+.container .subWrap:first-of-type .recWarp .imgBox img {
+  display: block;
   width: 100%;
 }
-.subWrap:first-of-type .recWarp > img.imgMo {
+.container .subWrap:first-of-type .recWarp .imgBox img.imgMo {
   display: none;
 }
-.subWrap.bgBlack .recWarp {
+.container .subWrap:first-of-type .recWarp > h3 {
+  font-family: "Pretendard exBold";
+  font-size: 8rem;
+  font-weight: 800;
+  line-height: 11.2rem;
+  letter-spacing: -0.08rem;
+  color: #111;
+  transition-delay: 0.1s;
+}
+.container .subWrap:first-of-type .recWarp > p {
+  transition-delay: 0.3s;
+}
+.container .subWrap.bgBlack > div.recWarp {
   text-align: center;
 }
-.subWrap.bgBlack .recWarp > h3 {
+.container .subWrap.bgBlack > div.recWarp > h3 {
+  font-family: "Pretendard Bold";
+  font-size: 6.4rem;
+  font-weight: 700;
+  line-height: 8.9rem;
+  letter-spacing: -0.19rem;
   color: #fff;
+  font-family: "Pretendard Bold";
+  letter-spacing: -0.064rem;
 }
-.subWrap.bgBlack .recWarp > p {
+.container .subWrap.bgBlack > div.recWarp > p {
   color: rgba(255, 255, 255, 0.6);
 }
-.subWrap .slide {
+.container .subWrap .slide {
   overflow: hidden;
 }
-.subWrap .slide-box {
+.container .subWrap .slide-box {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
 }
-.subWrap .slide-inner {
+.container .subWrap .slide-inner {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -712,6 +646,84 @@ body a {
   flex-wrap: nowrap;
   gap: 4rem;
 }
-.subWrap .slide-item > img {
+.container .subWrap .slide-item > img {
   display: block;
+}
+.container .subWrap .slide {
+  position: relative;
+  margin: 12rem 0 10rem;
+  height: 54rem;
+  cursor: pointer;
+}
+.container .subWrap .slide-box > ul > li {
+  position: relative;
+  width: 45rem;
+  height: 53rem;
+  border-radius: 1.6rem;
+  color: #fff;
+  letter-spacing: -0.03rem;
+  padding: 5rem 0rem 0rem 5rem;
+}
+.container .subWrap .slide-box > ul > li > p {
+  font-size: 3.6rem;
+  font-weight: 800;
+  line-height: 5rem;
+}
+.container .subWrap .slide-box > ul > li > span {
+  display: block;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 3rem;
+  margin-top: 1.6rem;
+}
+.container .subWrap .slide-box > ul > li:before {
+  display: inline-block;
+  position: absolute;
+  content: "";
+  width: 45rem;
+  height: 53rem;
+  top: 0;
+  left: 0;
+  border-radius: 1.6rem;
+  z-index: -1;
+}
+.container .subWrap .slide-box > ul > li:nth-of-type(1)::before {
+  background: url("../img/pc/benefit_01.png") no-repeat top left;
+  background-size: cover;
+}
+.container .subWrap .slide-box > ul > li:nth-of-type(2)::before {
+  background: url("../img/pc/benefit_02.png") no-repeat top left;
+  background-size: cover;
+}
+.container .subWrap .slide-box > ul > li:nth-of-type(3)::before {
+  background: url("../img/pc/benefit_03.png") no-repeat top left;
+  background-size: cover;
+}
+.container .subWrap .slide-box > ul > li:nth-of-type(4)::before {
+  background: url("../img/pc/benefit_04.png") no-repeat top left;
+  background-size: cover;
+}
+.container .subWrap .slide-box > ul > li:nth-of-type(5)::before {
+  background: url("../img/pc/benefit_05.png") no-repeat top left;
+  background-size: cover;
+}
+.container .subWrap .slide-box > ul > li:nth-of-type(6)::before {
+  background: url("../img/pc/benefit_01.png") no-repeat top left;
+  background-size: cover;
+}
+.container .subWrap .slide-box > ul > li:nth-of-type(7)::before {
+  background: url("../img/pc/benefit_02.png") no-repeat top left;
+  background-size: cover;
+}
+.container .subWrap .slide-box > ul > li:nth-of-type(8)::before {
+  background: url("../img/pc/benefit_03.png") no-repeat top left;
+  background-size: cover;
+}
+.container .subWrap .slide-box > ul > li:nth-of-type(9)::before {
+  background: url("../img/pc/benefit_04.png") no-repeat top left;
+  background-size: cover;
+}
+.container .subWrap .slide-box > ul > li:nth-of-type(10)::before {
+  background: url("../img/pc/benefit_05.png") no-repeat top left;
+  background-size: cover;
 }/*# sourceMappingURL=recruit.css.map */

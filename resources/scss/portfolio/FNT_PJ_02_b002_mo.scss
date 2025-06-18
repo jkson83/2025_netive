@@ -1,132 +1,13 @@
 @import '../mixins';
 @import '../base';
+@import './portfolio_mo';
+
 #wrap {
-  .pc {
-    display: none;
-  }
-
-  // 상단 공통 영역 [s]
   .motionBox {
-    overflow: hidden;
-    display: flex;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    padding: 0 rem(20) rem(95) rem(20);
-    justify-content: flex-end;
-    flex-direction: column;
-    gap: rem(32);
-
-    dl {
-      color: #fff;
-
-      dt {
-        font-size: rem(13);
-        font-weight: 700;
-        line-height: 1.3;
-        text-transform: uppercase;
-
-        & ~ dt {
-          margin-top: rem(12);
-        }
-      }
-
-      dd {
-        font-size: rem(13);
-        line-height: 1.3;
-        text-transform: uppercase;
-        margin-top: rem(4);
-      }
+    &::before {
+      background-image: url('../../img/mobile/portfolio/b002/bg_main.png');
+      background-position: center center;
     }
-
-    h2 {
-      font-size: rem(36);
-      font-weight: 700;
-      line-height: 1.3;
-      letter-spacing: -0.02em;
-      color: #fff;
-    }
-
-    button {
-      display: inline-block;
-      position: absolute;
-      left: 50%;
-      bottom: 0;
-      width: rem(62);
-      height: rem(62);
-      margin-left: rem(-31);
-      font-size: 0;
-      line-height: 0;
-      background: url('../../img/mobile/portfolio/icon_scroll.svg') no-repeat 50% 50% / 100%;
-    }
-  }
-
-  .overview {
-    padding: rem(60) rem(20);
-
-    h2 {
-      margin-bottom: rem(20);
-      font-size: rem(16);
-      font-weight: 800;
-      line-height: 1.4;
-      letter-spacing: -0.02em;
-      color: #111;
-
-      br {
-        display: none;
-      }
-    }
-
-    strong {
-      display: block;
-      font-size: rem(30);
-      font-weight: 700;
-      line-height: 1.4;
-      letter-spacing: -0.03em;
-      text-transform: uppercase;
-      color: #111;
-
-      span {
-        display: block;
-      }
-    }
-
-    p {
-      margin-top: rem(32);
-      font-size: rem(16);
-      line-height: 1.4;
-      letter-spacing: -0.01em;
-
-      & + p {
-        margin-top: rem(20);
-      }
-    }
-
-    div {
-      div {
-        display: flex;
-        margin-top: rem(32);
-        gap: rem(6);
-        flex-wrap: wrap;
-
-        span {
-          padding: rem(10) rem(16.5);
-          font-size: rem(16);
-          font-weight: 600;
-          line-height: 1;
-          letter-spacing: -0.03em;
-          color: #222;
-          border-radius: rem(999);
-          border: rem(1) solid #222;
-        }
-      }
-    }
-  }
-  // 상단 공통 영역 [e]
-
-  .motionBox {
-    background: url('../../img/mobile/portfolio/b002/bg_main.png') no-repeat center center;
-    background-size: cover;
   }
 
   .container {
@@ -141,15 +22,112 @@
     }
 
     .sec01 {
-      margin-bottom: rem(120);
+      position: relative;
+      margin-bottom: rem(100);
+      padding: 0 rem(20);
+      .mo {
+        & + .mo {
+          position: absolute;
+          top: 0;
+          left: rem(20);
+          width: calc(100% - rem(40));
+          padding: 0;
+          animation-delay: 0.3s;
+        }
+      }
     }
 
     .sec02 {
-      margin-bottom: rem(120);
+      margin-bottom: rem(100);
+      div {
+        display: flex;
+        justify-content: center;
+        gap: rem(32);
+      }
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: rem(40);
+        li {
+          text-align: left;
+          img {
+            display: block;
+            width: rem(120);
+            width: 32.88vw;
+            border-radius: rem(12);
+            box-shadow: 0 rem(6.383) rem(15.957) 0 rgba(0, 0, 0, 0.12);
+          }
+          span {
+            display: block;
+            position: relative;
+            margin-top: rem(12);
+            padding-left: rem(12);
+            font-size: rem(11);
+            font-weight: 700;
+            line-height: 1.4;
+            letter-spacing: -0.02em;
+            color: #111;
+
+            &::before {
+              content: '';
+              position: absolute;
+              top: 50%;
+              left: rem(6);
+              width: rem(2);
+              height: rem(2);
+              border-radius: 50%;
+              background-color: #111;
+            }
+          }
+        }
+
+        &:nth-child(2) {
+          margin-top: rem(80);
+          li {
+            animation-delay: 0.3s;
+          }
+        }
+      }
     }
 
     .sec03 {
-      margin: 0 rem(20) rem(120);
+      margin: 0 rem(20) rem(100);
+
+      .mo {
+        position: relative;
+        border-radius: rem(20);
+        background-color: #f5f8fb;
+
+        > img {
+          position: relative;
+          z-index: 1;
+          width: 75.62vw;
+        }
+      }
+
+      .slider {
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        z-index: 0;
+        width: 100%;
+        transform: translateY(-50%);
+      }
+
+      .slider-track {
+        display: flex;
+        width: max-content;
+        height: rem(86);
+      }
+
+      .slider-track img {
+        position: relative;
+        width: rem(64);
+        margin-right: rem(12);
+        flex-shrink: 0;
+        border-radius: rem(4);
+      }
 
       .sec03_02 {
         display: flex;
@@ -163,11 +141,59 @@
     }
 
     .sec04 {
-      margin-bottom: rem(120);
+      margin-bottom: rem(100);
+      > img {
+        width: 87.67vw;
+      }
+      > div {
+        position: relative;
+        overflow: hidden;
+        padding-top: 49.3150684932%;
+        margin: 0 auto;
+
+        img {
+          position: absolute;
+          left: 50%;
+          width: 19.18vw;
+          border-radius: 1.944vw;
+          box-shadow: 0 rem(4) rem(10) 0 rgba(0, 0, 0, 0.16);
+
+          @for $i from 1 through 6 {
+            &:nth-child(#{$i}) {
+              animation-delay: #{0.2s * $i + 0.3s};
+            }
+          }
+
+          &:nth-child(1) {
+            top: 0;
+            margin-left: -29.73%;
+          }
+          &:nth-child(2) {
+            top: 0;
+            margin-left: 14.51%;
+          }
+          &:nth-child(3) {
+            top: 16.67%;
+            margin-left: -12.34%;
+          }
+          &:nth-child(4) {
+            top: 22.78%;
+            margin-left: -49.67%;
+          }
+          &:nth-child(5) {
+            top: 38.89%;
+            margin-left: 34.35%;
+          }
+          &:nth-child(6) {
+            top: 48.33%;
+            margin-left: -5.71%;
+          }
+        }
+      }
     }
 
     .sec05 {
-      margin: 0 rem(20) rem(120);
+      margin: 0 rem(20) rem(100);
     }
   }
 }

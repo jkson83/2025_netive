@@ -1,138 +1,25 @@
 @import '../mixins';
 @import '../base';
+@import './portfolio_mo';
+
 #wrap {
-  .pc {
-    display: none;
-  }
-
-  // 상단 공통 영역 [s]
   .motionBox {
-    overflow: hidden;
-    display: flex;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    padding: 0 rem(20) rem(95) rem(20);
-    justify-content: flex-end;
-    flex-direction: column;
-    gap: rem(32);
+    background-color: #1d1d1b;
 
-    dl {
-      color: #fff;
-
-      dt {
-        font-size: rem(13);
-        font-weight: 700;
-        line-height: 1.3;
-        text-transform: uppercase;
-
-        & ~ dt {
-          margin-top: rem(12);
-        }
-      }
-
-      dd {
-        font-size: rem(13);
-        line-height: 1.3;
-        text-transform: uppercase;
-        margin-top: rem(4);
-      }
+    &::before {
+      top: rem(86);
+      right: 0;
+      left: auto;
+      width: rem(211);
+      height: rem(200);
+      background-image: url('../../img/mobile/portfolio/b003/top_img.png');
     }
-
-    h2 {
-      font-size: rem(36);
-      font-weight: 700;
-      line-height: 1.3;
-      letter-spacing: -0.02em;
-      color: #fff;
-    }
-
-    button {
-      display: inline-block;
-      position: absolute;
-      left: 50%;
-      bottom: 0;
-      width: rem(62);
-      height: rem(62);
-      margin-left: rem(-31);
-      font-size: 0;
-      line-height: 0;
-      background: url('../../img/mobile/portfolio/icon_scroll.svg') no-repeat 50% 50% / 100%;
-    }
-  }
-
-  .overview {
-    padding: rem(60) rem(20);
-
-    h2 {
-      margin-bottom: rem(20);
-      font-size: rem(16);
-      font-weight: 800;
-      line-height: 1.4;
-      letter-spacing: -0.02em;
-      color: #111;
-
-      br {
-        display: none;
-      }
-    }
-
-    strong {
-      display: block;
-      font-size: rem(30);
-      font-weight: 700;
-      line-height: 1.4;
-      letter-spacing: -0.03em;
-      text-transform: uppercase;
-      color: #111;
-
-      span {
-        display: block;
-      }
-    }
-
-    p {
-      margin-top: rem(32);
-      font-size: rem(16);
-      line-height: 1.4;
-      letter-spacing: -0.01em;
-
-      & + p {
-        margin-top: rem(20);
-      }
-    }
-
-    div {
-      div {
-        display: flex;
-        margin-top: rem(32);
-        gap: rem(6);
-        flex-wrap: wrap;
-
-        span {
-          padding: rem(10) rem(16.5);
-          font-size: rem(16);
-          font-weight: 600;
-          line-height: 1;
-          letter-spacing: -0.03em;
-          color: #222;
-          border-radius: rem(999);
-          border: rem(1) solid #222;
-        }
-      }
-    }
-  }
-  // 상단 공통 영역 [e]
-
-  .motionBox {
-    background: #1d1d1b url('../../img/pc/portfolio/b003/top_img.png') no-repeat right top rem(86) / rem(211);
   }
 
   .container {
     @for $i from 1 to 8 {
       .sec0#{$i} {
         text-align: center;
-
         img {
           width: 100%;
         }
@@ -141,6 +28,36 @@
 
     .sec01 {
       margin: 0 rem(20) rem(100);
+      display: grid;
+      grid-template-columns: calc(50% - rem(4)) calc(50% - rem(4));
+      gap: rem(8);
+
+      img {
+        border-radius: rem(16);
+      }
+
+      .rightBox {
+        display: flex;
+        gap: rem(8);
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: stretch;
+        flex-direction: column;
+
+        img {
+          &.mo:nth-of-type(4) {
+            animation-delay: 0.1s;
+          }
+        }
+      }
+      .activeBox {
+        width: 100%;
+        height: 42.67vw;
+        background: #000 url('../../img/pc/portfolio/b003/lina_active.gif') no-repeat center center / 61.79% auto;
+        border-radius: rem(16);
+        grid-column: span 2;
+        animation-delay: 0.2s;
+      }
     }
 
     .sec02 {
@@ -148,11 +65,107 @@
     }
 
     .sec03 {
+      position: relative;
       margin-bottom: rem(100);
+      div {
+        position: relative;
+        margin-top: -20.8vw;
+        animation-delay: 0.5s;
+        animation-duration: 0.8s;
+        &::before {
+          content: '';
+          overflow: hidden;
+          position: absolute;
+          top: 0;
+          right: 10.66666666666667vw;
+          left: 10.66666666666667vw;
+          z-index: 1;
+          height: 46.4vw;
+          border-radius: 4.266666666666667vw;
+          box-shadow: rem(23.119) rem(23.119) rem(23.119) 0 rgba(0, 0, 0, 0.2);
+        }
+      }
     }
 
     .sec04 {
-      margin-bottom: rem(100);
+      position: relative;
+      height: 260vw;
+      padding-bottom: rem(100);
+      box-sizing: unset;
+
+      [class*='img'] {
+        position: absolute;
+        left: 50%;
+      }
+      .img01 {
+        top: 20.8vw;
+        z-index: 2;
+        width: 31.73333333333333vw;
+        margin-left: 26.93333333333333vw;
+      }
+      .img02 {
+        top: 8.266666666666667vw;
+        width: 32vw;
+        margin-left: -34.4vw;
+        border-radius: 4.266666666666667vw;
+        box-shadow: 5.5944vw 5.5944vw 11.1888vw 0 rgba(0, 0, 0, 0.2);
+      }
+      .img03 {
+        top: 8.266666666666667vw;
+        z-index: 1;
+        width: 32vw;
+        margin-left: 2.933333333333333vw;
+        border-radius: 4.266666666666667vw;
+        box-shadow: 5.5944vw 5.5944vw 11.1888vw 0 rgba(0, 0, 0, 0.2);
+        animation-delay: 0.1s;
+      }
+      .img04 {
+        top: 85.33333333333333vw;
+        width: 35.46666666666667vw;
+        margin-left: 11.46666666666667vw;
+        animation-delay: 0.3s;
+        animation-duration: 0.5s;
+      }
+      .img05 {
+        top: 94.93333333333333vw;
+        width: 32vw;
+        margin-left: -22.93333333333333vw;
+        border-radius: 4.266666666666667vw;
+        box-shadow: 5.5944vw 5.5944vw 11.1888vw 0 rgba(0, 0, 0, 0.2);
+        animation-delay: 0.3s;
+
+        img {
+          &:nth-child(2) {
+            position: absolute;
+            top: 22.4vw;
+            left: 6.933333333333333vw;
+            width: 18.17333333333333vw;
+          }
+        }
+      }
+      .img06 {
+        top: 166.1333333333333vw;
+        z-index: 1;
+        width: 25.86666666666667vw;
+        margin-left: -49.86666666666667vw;
+        animation-delay: 0.3s;
+        animation-duration: 0.5s;
+      }
+      .img07 {
+        top: 181.6vw;
+        width: 32vw;
+        margin-left: -34.4vw;
+        border-radius: 4.266666666666667vw;
+        box-shadow: 5.5944vw 5.5944vw 11.1888vw 0 rgba(0, 0, 0, 0.2);
+      }
+      .img08 {
+        top: 181.6vw;
+        width: 32vw;
+        margin-left: 2.933333333333333vw;
+        border-radius: 4.266666666666667vw;
+        box-shadow: 5.5944vw 5.5944vw 11.1888vw 0 rgba(0, 0, 0, 0.2);
+        animation-delay: 0.1s;
+      }
     }
 
     .sec05 {
@@ -161,19 +174,85 @@
 
     .sec06 {
       margin-bottom: rem(100);
+      div {
+        position: relative;
+        height: 127.7333333333333vw;
+
+        img {
+          position: absolute;
+          left: 50%;
+
+          &:nth-child(1),
+          &:nth-child(2) {
+            overflow: hidden;
+            width: 32vw;
+            border-radius: 4.266666666666667vw;
+            outline: 1.6vw solid #111;
+            outline-offset: -1.6vw;
+            box-shadow: 5.5944vw 5.5944vw 11.1888vw 0 rgba(0, 0, 0, 0.2);
+          }
+
+          &:nth-child(1) {
+            top: 6.666666666666667vw;
+            margin-left: -34.93333333333333vw;
+          }
+          &:nth-child(2) {
+            top: 6.666666666666667vw;
+            margin-left: 2.933333333333333vw;
+            animation-delay: 0.2s;
+          }
+          &:nth-child(3) {
+            top: 92vw;
+            z-index: 1;
+            width: 24vw;
+            margin-left: -49.97vw;
+            animation-delay: 0.3s;
+          }
+          &:nth-child(4) {
+            top: 98.13333333333333vw;
+            width: 18.93333333333333vw;
+            margin-left: -28.26666666666667vw;
+            animation-delay: 0.4s;
+          }
+          &:nth-child(5) {
+            top: 109.8666666666667vw;
+            width: 16vw;
+            margin-left: 3.466666666666667vw;
+            animation-delay: 0.5s;
+          }
+          &:nth-child(6) {
+            top: 96vw;
+            width: 24.53333333333333vw;
+            margin-left: 25.6vw;
+            animation-delay: 0.3s;
+          }
+        }
+      }
     }
 
     .sec07 {
       margin: 0 rem(20) rem(100);
 
+      img {
+        width: 100%;
+        border-radius: rem(16);
+      }
+
       .sec07_01 {
         display: flex;
-        justify-content: space-between;
         margin-bottom: rem(9);
+        justify-content: space-between;
+        p {
+          width: calc(50% - rem(4.5));
 
-        > p {
-          width: 48.9%;
+          & + p {
+            animation-delay: 0.2s;
+          }
         }
+      }
+
+      > p {
+        animation-delay: 0.5s;
       }
     }
   }
